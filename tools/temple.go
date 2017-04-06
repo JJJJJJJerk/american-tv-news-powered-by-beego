@@ -7,7 +7,7 @@ import (
 //注册tmeplate的一些实用函数
 //https://beego.me/docs/mvc/view/template.md
 func init() {
-	println("temple function is initialized!!!")
+	//注册template function
 	beego.AddFuncMap("hi", hello)
 }
 
