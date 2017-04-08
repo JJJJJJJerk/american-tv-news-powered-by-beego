@@ -17,7 +17,28 @@ func (c *AuthController) GetSignup() {
 
 }
 func (c *AuthController) PostSignup() {
-
+	email := c.GetString("email")
+	password := c.GetString("password")
+	password_comfirmed := c.GetString("password_comfirmed")
+	if password == password_comfirmed {
+		c.Data["json"] = map[string]interface{}{"code": 0, "message": "两次输入的密码不相同"}
+		c.ServeJSON()
+	}
+	//hash password
+	password_byte := []byte(password)
+	hashedPassword, _ := bcrypt.GenerateFromPassword(password_byte, bcrypt.DefaultCost)
+	//new struct from package
+	//TODO:需要搞清楚 go语言的 pointer * &的用法
+	var user_model models.Users
+	user_model.Email = email
+	user_model.Password = string(hashedPassword)
+	_, err := models.AddUsers(&user_model)
+	if err != nil {
+		c.Data["json"] = map[string]interface{}{"code": 0, "message": "创建用户错误"}
+	} else {
+		c.Data["json"] = map[string]interface{}{"code": 1, "message": "注册成功", "data": user_model}
+	}
+	c.ServeJSON()
 }
 
 //sign in
@@ -47,8 +68,8 @@ func (c *AuthController) PostLogin() {
 		// Comparing the password with the hash
 		db_hashed_password := []byte(user.Password)
 		err = bcrypt.CompareHashAndPassword(db_hashed_password, password)
-		if err == nil {// nil means it is a match
-			c.Data["json"] = map[string]interface{}{"code":1, "message": "登陆成功"}
+		if err == nil { // nil means it is a match
+			c.Data["json"] = map[string]interface{}{"code": 1, "message": "登陆成功"}
 		}
 	}
 	c.ServeJSON()
