@@ -1,13 +1,6 @@
 {
     "version": "0.2.0",
     "configurations": [
-    {
-        "name": "Launch file",
-        "type": "go",
-        "request": "launch",
-        "mode": "debug",
-        "program": "${file}"
-    },
         {
             "name": "Launch",
             "type": "go",
@@ -16,7 +9,7 @@
             "remotePath": "",
             "port": 2345,
             "host": "127.0.0.1",
-            "program": "${fileDirname}",
+            "program": "${workspaceRoot}",
             "env": {},
             "args": [],
             "showLog": true
