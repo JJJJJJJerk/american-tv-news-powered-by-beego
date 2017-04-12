@@ -12,10 +12,10 @@ type AuthController struct {
 }
 
 //sign up
-func (c *AuthController) GetSignup() {
-
+func (c *AuthController) GetRegister() {
+	c.TplName = "auth/register.html"
 }
-func (c *AuthController) PostSignup() {
+func (c *AuthController) PostRegister() {
 	email := c.GetString("email")
 	password := c.GetString("password")
 	password_comfirmed := c.GetString("password_comfirmed")
