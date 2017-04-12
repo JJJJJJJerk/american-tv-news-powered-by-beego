@@ -76,7 +76,8 @@ module.exports = function (grunt) {
                   "dist/css/alt/AdminLTE-fullcalendar.css",
                   "dist/css/alt/AdminLTE-bootstrap-social.css",
                   //Non minified skin files
-                  "dist/css/skins/_all-skins.css"
+                  "dist/css/skins/_all-skins.css",
+                  "plugins/iCheck/square/blue.css"
                 ]
         }
       }
@@ -98,11 +99,8 @@ module.exports = function (grunt) {
                                               'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
                                               'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
                                               'plugins/slimScroll/jquery.slimscroll.min.js',
-                                              'plugins/chartjs/Chart.min.js'
-
-                                              
-                                              
-                                              
+                                              'plugins/chartjs/Chart.min.js',
+                                              'plugins/iCheck/icheck.min.js'
                                               ]
         }
       }

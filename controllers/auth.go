@@ -42,6 +42,7 @@ func (c *AuthController) PostSignup() {
 
 //sign in
 func (c *AuthController) GetLogin() {
+	c.TplName = "auth/login.html"
 
 }
 func (c *AuthController) PostLogin() {
@@ -58,11 +59,6 @@ func (c *AuthController) PostLogin() {
 
 		// Hashing the password with the default cost of 10  DefaultCost int = 10
 		//laravel bcrypt /Library/WebServer/Documents/estate/vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php
-		hashedPassword, err := bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
-		if err != nil {
-			panic(err)
-		}
-
 		// Comparing the password with the hash
 		db_hashed_password := []byte(user.Password)
 		err = bcrypt.CompareHashAndPassword(db_hashed_password, password)
@@ -91,5 +87,5 @@ func (c *AuthController) GetLogout() {
 	if session == nil {
 		c.DelSession("loginInfo")
 	}
-	c.Ctx.Redirect(302, "/")
+	c.Redirect("/", 302)
 }
