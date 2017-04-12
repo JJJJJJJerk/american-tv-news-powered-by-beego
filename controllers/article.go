@@ -15,16 +15,6 @@ func (c *ArticlesController) GetOne() {
 	articleID, _ := c.GetInt(":id")
 	v, err := models.GetArticlesById(articleID)
 
-	ssion := c.GetSession("asta")
-	if ssion == nil {
-		c.SetSession("asta", int(1))
-		c.Data["num"] = 0
-	} else {
-		c.SetSession("asta", ssion.(int)+1)
-		c.Data["num"] = ssion.(int)
-	}
-	//get cookie string
-
 	cookieeee := c.Ctx.GetCookie("haitou_cc")
 	c.Data["CookieString"] = cookieeee
 

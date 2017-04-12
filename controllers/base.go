@@ -1,43 +1,26 @@
 package controllers
 
 import (
-	"strconv"
-	"strings"
+	"my_go_web/models"
 
 	"github.com/astaxie/beego"
 )
 
 type BaseController struct {
 	beego.Controller //集成beego controller
-	IsLogin          bool
-	UserUserId       int64
-	UserUsername     string
-	UserAvatar       string
+	Uid              int
+	UserInfo         *models.Users
 }
 
 func (this *BaseController) Prepare() {
 	//判断用户数是否已近登陆
-	userLogin := this.GetSession("userLogin")
+	//读取session
+	userLogin := this.GetSession("loginInfo")
 	if userLogin == nil {
-		this.IsLogin = false
+		this.Uid = 0
 	} else {
-		this.IsLogin = true
-		tmp := strings.Split((this.GetSession("userLogin")).(string), "||")
-
-		userid, _ := strconv.Atoi(tmp[0])
-		longid := int64(userid)
-		this.Data["LoginUserid"] = longid
-		this.Data["LoginUsername"] = tmp[1]
-		this.Data["LoginAvatar"] = tmp[2]
-
-		this.UserUserId = longid
-		this.UserUsername = tmp[1]
-		this.UserAvatar = tmp[2]
-
-		this.Data["PermissionModel"] = this.GetSession("userPermissionModel")
-		this.Data["PermissionModelc"] = this.GetSession("userPermissionModelc")
-		//TODO:显示消息
-
+		this.UserInfo = userLogin.(*models.Users)
+		this.Uid = this.UserInfo.Id
 	}
-	this.Data["IsLogin"] = this.IsLogin
+	//做一些权限判断
 }

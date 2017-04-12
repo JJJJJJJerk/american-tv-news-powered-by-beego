@@ -63,12 +63,13 @@ func (c *AuthController) PostLogin() {
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println(string(hashedPassword))
 
 		// Comparing the password with the hash
 		db_hashed_password := []byte(user.Password)
 		err = bcrypt.CompareHashAndPassword(db_hashed_password, password)
 		if err == nil { // nil means it is a match
+			//设置登陆session info
+			c.SetSession("loginInfo",user)
 			c.Data["json"] = map[string]interface{}{"code": 1, "message": "登陆成功"}
 		}
 	}
