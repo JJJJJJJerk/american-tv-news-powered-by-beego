@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"my_go_web/models"
 
 	"github.com/astaxie/beego"
@@ -69,7 +68,7 @@ func (c *AuthController) PostLogin() {
 		err = bcrypt.CompareHashAndPassword(db_hashed_password, password)
 		if err == nil { // nil means it is a match
 			//设置登陆session info
-			c.SetSession("loginInfo",user)
+			c.SetSession("loginInfo", user)
 			c.Data["json"] = map[string]interface{}{"code": 1, "message": "登陆成功"}
 		}
 	}
@@ -84,4 +83,13 @@ func (c *AuthController) GetResetPassword() {
 func (c *AuthController) PostResetPassword() {
 	//获取email地址 发送邮件
 
+}
+
+//注销
+func (c *AuthController) GetLogout() {
+	session := c.GetSession("loginInfo")
+	if session == nil {
+		c.DelSession("loginInfo")
+	}
+	c.Ctx.Redirect(302, "/")
 }
