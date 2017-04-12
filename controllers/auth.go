@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"html/template"
 	"my_go_web/models"
 
 	"github.com/astaxie/beego"
@@ -13,6 +14,8 @@ type AuthController struct {
 
 //sign up
 func (c *AuthController) GetRegister() {
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
+
 	c.TplName = "auth/register.html"
 }
 func (c *AuthController) PostRegister() {
@@ -42,6 +45,7 @@ func (c *AuthController) PostRegister() {
 
 //sign in
 func (c *AuthController) GetLogin() {
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
 	c.TplName = "auth/login.html"
 
 }
@@ -74,6 +78,7 @@ func (c *AuthController) PostLogin() {
 
 //find password 填写email
 func (c *AuthController) GetResetPassword() {
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
 
 }
 func (c *AuthController) PostResetPassword() {

@@ -84,7 +84,7 @@
     </object>
     <object type="LMREQUEST" id="z105">
         <attribute name="uuid" type="string">B8BC96B2-E253-4452-9F7B-D24B1C67C598</attribute>
-        <attribute name="url" type="string">http://www.golang.zhou:9999/auth/register</attribute>
+        <attribute name="url" type="string">http://www.golang.zhou/auth/register</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -127,7 +127,7 @@
     </object>
     <object type="LMREQUEST" id="z110">
         <attribute name="uuid" type="string">E1652AA2-01E3-4BDD-B53B-30060C4D8171</attribute>
-        <attribute name="url" type="string">http://localhost:9999/auth/login</attribute>
+        <attribute name="url" type="string">http://www.golang.zhou/auth/login</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -143,7 +143,7 @@
     </object>
     <object type="LMREQUEST" id="z111">
         <attribute name="uuid" type="string">AB004F49-2201-4BAC-BEF6-2B0389D0231A</attribute>
-        <attribute name="url" type="string">http://localhost:9999/article/1425</attribute>
+        <attribute name="url" type="string">http://www.golang.zhou/article/1425</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
