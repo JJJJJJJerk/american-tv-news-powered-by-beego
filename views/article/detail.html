@@ -1,4 +1,6 @@
-<!-- Example row of columns -->
+{{ template "layout/base.html" . }}
+
+{{ define "mycontent" }}
 <div class="well">
     <h1>cookie-session:{{.num}}</h1>
     <h1>cookie_string:{{.CookieString}}</h1>
@@ -6,3 +8,4 @@
     <!--str2html 显示输出html代码-->
     <p>{{str2html .Article.Body}}</p>
 </div>
+{{end}}

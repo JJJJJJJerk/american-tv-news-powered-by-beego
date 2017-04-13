@@ -1,8 +1,10 @@
 <!-- Example row of columns -->
+
+{{ template "layout/base.html" . }}
+
+{{ define "mycontent" }}
 <div class="row">
     <div class="col-md-4">
-
-
         <h2>{{"Eric Zhou" | hi}}</h2>
         <p>
             <ul>
@@ -28,3 +30,4 @@
         <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
     </div>
 </div>
+{{end}}

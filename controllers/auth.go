@@ -65,7 +65,7 @@ func (c *AuthController) PostLogin() {
 		//laravel bcrypt /Library/WebServer/Documents/estate/vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php
 		// Comparing the password with the hash
 		db_hashed_password := []byte(user.Password)
-		err = bcrypt.CompareHashAndPassword(db_hashed_password, password)
+		err := bcrypt.CompareHashAndPassword(db_hashed_password, password)
 		if err == nil { // nil means it is a match
 			//设置登陆session info
 			c.SetSession("loginInfo", user)
