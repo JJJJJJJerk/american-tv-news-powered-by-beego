@@ -6,6 +6,12 @@ import (
 	"github.com/astaxie/beego"
 )
 
+const (
+	FlashSuccess = "flash_success"
+	FlashInfo    = "flash_info"
+	FlashError   = "flash_Error"
+)
+
 type BaseController struct {
 	beego.Controller //集成beego controller
 	Uid              int
@@ -23,4 +29,20 @@ func (this *BaseController) Prepare() {
 		this.Uid = this.UserInfo.Id
 	}
 	//做一些权限判断
+
+	//处理flash session
+
+
+	this.Data[FlashError] = this.GetSession(FlashError).([]string)
+	this.DelSession(FlashError)
+}
+
+func (this *BaseController) FlashError(messages []string) {
+	this.SetSession(FlashError,messages);
+}
+func (this *BaseController) FlashSuccess(messages []string) {
+	this.SetSession(FlashSuccess,messages);
+}
+func (this *BaseController) FlashInfo(messages []string) {
+	this.SetSession(FlashInfo,messages);
 }
