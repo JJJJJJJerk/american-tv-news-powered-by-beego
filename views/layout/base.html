@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="哈哈">
-    <meta name="author" content="https://news.trytv.org">
-    <link rel="icon" href="../../favicon.ico">
-    <title>Go语言测试:{{.Title}}</title>
-    <link href="{{cdnSrc "css/all.min.css"}}" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <title>AdminLTE 2 | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href='{{cdnSrc "css/all.min.css"}}'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    {{ block "mycss" . }}{{ end }}
-
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 
-<body>
-    <!--top nav bar-->
-    {{template "layout/_nav.html" .}}
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron
-                and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-        </div>
-    </div>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
 
-    <div class="container">
-        <!--page conetent-->
-        {{ block "mycontent" . }}{{ end }}
-        <!--buttom footer-->
-        {{ template "layout/_footer.html" .}}
+        {{template "layout/_nav.html"}} {{template "layout/_side_bar_left.html"}}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Dashboard
+                    <small>Version 2.0</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                {{ block "mycontent" . }}{{ end }}
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        {{template "layout/_footer.html" .}}
+        {{template "layout/_side_bar_right.html" .}}
     </div>
-    <script src="{{cdnSrc "js/all-package.min.js"}}"></script>
+    <!-- ./wrapper -->
+
+    <script src='{{cdnSrc "js/all-package.min.js"}}'></script>
+    <script src='{{cdnSrc "js/dashoard2.js"}}'></script>
+        <script src='{{cdnSrc "js/demo.js"}}'></script>
+
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!--<script src="{{cdnSrc "js/dashboard2.js"}}"></script>-->
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="{{cdnSrc "js/demo.js"}}"></script>-->
     {{ block "myjs" . }}{{ end }}
 </body>
 
