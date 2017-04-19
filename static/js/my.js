@@ -5,8 +5,8 @@
 
 
 //设置left side bar 高亮
-var current_url = window.location.href;
-var menus = $('body > div > aside.main-sidebar > section > ul > li').not('.header');
+let current_url = window.location.href;
+let menus = $('body > div > aside.main-sidebar > section > ul > li').not('.header');
 jQuery.each(menus, function (i, dom) {
     //在html data-uri设置uri
     //根据网站设置高亮菜单
@@ -17,7 +17,7 @@ jQuery.each(menus, function (i, dom) {
 });
 
 //设置left side bar 二级菜单高亮
-var sub_menus = $('body > div > aside.main-sidebar > section > ul > li > ul > li');
+let sub_menus = $('body > div > aside.main-sidebar > section > ul > li > ul > li');
 jQuery.each(sub_menus, function (i, sub_dom) {
     //在html data-uri设置uri
     //根据网站设置高亮菜单

@@ -19,6 +19,7 @@ type BaseController struct {
 }
 
 func (this *BaseController) Prepare() {
+	this.Data["app_name"] = beego.BConfig.AppName
 	//判断用户数是否已近登陆
 	//读取session
 	userLogin := this.GetSession("loginInfo")
