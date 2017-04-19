@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"my_go_web/models"
-
 	"github.com/astaxie/beego"
 )
 

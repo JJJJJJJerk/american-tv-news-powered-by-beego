@@ -6,6 +6,11 @@ import (
 	"github.com/astaxie/beego"
 )
 
+//功能一:使用电视剧角色和名称图像
+//功能二:发帖功能
+//功能三:提供小视屏播放功能
+//仿照斗鱼打赏功能
+//
 func init() {
 	beego.Router("/", &controllers.HomeController{}, "get:Get")
 	//注册自动路由
