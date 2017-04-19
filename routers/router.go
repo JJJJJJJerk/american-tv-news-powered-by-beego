@@ -7,7 +7,7 @@ import (
 )
 
 func init() {
-	beego.Router("/", &controllers.HomeController{})
+	beego.Router("/", &controllers.HomeController{}, "get:Get")
 	//注册自动路由
 	beego.Router("/article", &controllers.ArticlesController{}, "get:GetAll")
 	beego.Router("/article/:id([0-9]+)", &controllers.ArticlesController{}, "get:GetOne") //匹配:id 是数字的路由

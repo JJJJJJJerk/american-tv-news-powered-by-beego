@@ -19,7 +19,7 @@ type BaseController struct {
 }
 
 func (this *BaseController) Prepare() {
-	this.Data["app_name"] = beego.BConfig.AppName
+	this.Data["app_name"] = beego.AppConfig.String("appname")
 	//判断用户数是否已近登陆
 	//读取session
 	userLogin := this.GetSession("loginInfo")
@@ -32,19 +32,4 @@ func (this *BaseController) Prepare() {
 	//在模板里面判断登陆状态
 	this.Data["Uid"] = this.Uid
 	//做一些权限判断
-
-	//处理flash session
-
-	this.Data[FlashError] = this.GetSession(FlashError).([]string)
-	this.DelSession(FlashError)
-}
-
-func (this *BaseController) FlashError(messages []string) {
-	this.SetSession(FlashError, messages)
-}
-func (this *BaseController) FlashSuccess(messages []string) {
-	this.SetSession(FlashSuccess, messages)
-}
-func (this *BaseController) FlashInfo(messages []string) {
-	this.SetSession(FlashInfo, messages)
 }
