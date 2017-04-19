@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"my_go_web/models"
+
 	"github.com/astaxie/beego"
 )
 
@@ -15,6 +16,11 @@ type BaseController struct {
 	beego.Controller //集成beego controller
 	Uid              int
 	UserInfo         *models.Users
+}
+
+//为了生成breadcrumb
+type Bread struct {
+	Name, Href, Class string
 }
 
 func (this *BaseController) Prepare() {
