@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base target="_blank"/>
     <title>{{.app_name}}| {{.Title}}</title>
     <meta name="Keywords" content="{{.app_name}}|{{.Keyword}}" />
     <meta name="Description" content="{{.Description}}"/>
@@ -21,7 +20,7 @@
     <script src="/static/js/jquery-2.2.3.min.js"></script>
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini sidebar-collapse">
     <div class="wrapper">
 
         {{template "layout/_nav.html" .}} {{template "layout/_side_bar_left.html" .}}
@@ -35,7 +34,7 @@
                 </h1>
                 <ol class="breadcrumb">
                     {{range $index, $elem := .BreadCrumbs}}
-                        <li><a href="{{$elem.Href}}" target="_blank"><i class="{{$elem.Class}}"></i> {{$elem.Name}}</a></li>
+                        <li><a href="{{$elem.Href}}"><i class="{{$elem.Class}}"></i> {{$elem.Name}}</a></li>
                     {{end}}
                 </ol>
             </section>

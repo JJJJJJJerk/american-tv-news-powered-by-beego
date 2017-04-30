@@ -77,7 +77,8 @@ module.exports = function (grunt) {
                   "dist/css/alt/AdminLTE-bootstrap-social.css",
                   //Non minified skin files
                   "dist/css/skins/_all-skins.css",
-                  "plugins/iCheck/square/blue.css"
+                  "plugins/iCheck/square/blue.css",
+                  "cropper-master/dist/cropper.css"
                 ]
         }
       }
@@ -100,7 +101,8 @@ module.exports = function (grunt) {
                                               'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
                                               'plugins/slimScroll/jquery.slimscroll.min.js',
                                               'plugins/chartjs/Chart.min.js',
-                                              'plugins/iCheck/icheck.min.js'
+                                              'plugins/iCheck/icheck.min.js',
+                                              'cropper-master/dist/cropper.js'
                                               ]
         }
       }

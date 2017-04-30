@@ -6,7 +6,7 @@ type HomeController struct {
 
 func (c *HomeController) Get() {
 	//c.Data["BreadCrumb"] = []string
-	breadCrumbs := []Bread{{"美剧", "/awesome", "fa fa-dashboard"}, {"how i met your mother", "/how i met", "fa fa-dashboard"}, {"prison", "prison break", "fa fa-dashboard"}}
+	breadCrumbs := []Bread{{"美剧", "/awesome", "fa fa-dashboard"}, {"how i met your mother", "/how i met", "fa fa-dashboard"}, {"prison break", "#", "active"}}
 	c.Data["BreadCrumbs"] = breadCrumbs
 	c.Data["Title"] = "首页"
 	c.Data["UpdateTime"] = "2017-12-12 12:30:55"

@@ -20,4 +20,7 @@ func init() {
 	beego.Router("/auth/login", &controllers.AuthController{}, "get:GetLogin")
 	beego.Router("/auth/register", &controllers.AuthController{}, "get:GetRegister")
 	beego.Router("/auth/register", &controllers.AuthController{}, "post:PostRegister")
+
+	beego.AutoRouter(&controllers.ImageController{}) //对image使用自动路由
+
 }

@@ -1,0 +1,49 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-target="#modal" data-toggle="modal">
+      Launch demo modal
+    </button>
+
+<!-- Modal -->
+<div class="modal fade" id="modal" aria-labelledby="modalLabel" role="dialog" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Crop the image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <img id="image" class="img-responsive" src="https://oeveb4zm9.qnssl.com/jkmj_17_0430_112107?watermark/2/text/VFJZ576O5Ymn/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0ZDRkJGQg==/dissolve/100/gravity/NorthWest/dx/5/dy/5" alt="Picture">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        var $image = $('#image');
+        var cropBoxData;
+        var canvasData;
+
+        $('#modal').on('shown.bs.modal', function () {
+            $image.cropper({
+                viewMode:1,
+                guides:true,
+                autoCropArea: 0.5,
+                ready: function () {
+                    $image.cropper('setCanvasData', canvasData);
+                    $image.cropper('setCropBoxData', cropBoxData);
+                }
+            });
+        }).on('hidden.bs.modal', function () {
+            cropBoxData = $image.cropper('getCropBoxData');
+            canvasData = $image.cropper('getCanvasData');
+            $image.cropper('destroy');
+        });
+    });
+</script>
