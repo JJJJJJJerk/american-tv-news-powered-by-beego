@@ -1,4 +1,4 @@
-package routers
+package tools
 
 //防止模板相关的方便函数
 import (
