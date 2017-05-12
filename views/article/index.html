@@ -1,13 +1,14 @@
 <div class="row">
     <div class="col-md-12">
-        <h2>{{ hi "jerk"}}</h2>
-        <p>
-            <ul>
-                {{range $index, $value := .Articles}}
-                <li>{{$index}} - {{$value.Title}} </li>
-                {{end}}
-            </ul>
-        </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+        {{range $index, $value := .Articles}}
+            <div class="well-xs well">
+                <h3>
+                                    {{$value.Title}}
+                </h3>
+                <img src='{{$value.UrlVideo}}'>
+            </div>
+        {{end}}
+
     </div>
 </div>
