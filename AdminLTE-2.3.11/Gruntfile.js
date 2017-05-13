@@ -81,7 +81,8 @@ module.exports = function (grunt) {
                   //Non minified skin files
                   "dist/css/skins/_all-skins.css",
                   "plugins/iCheck/square/blue.css",
-                  "cropper-master/dist/cropper.css"
+                  "bower_components/cropper/dist/cropper.css",
+                  "bower_components/dropload/dropload.css"
                 ]
         }
       }
@@ -105,7 +106,8 @@ module.exports = function (grunt) {
                                               'plugins/slimScroll/jquery.slimscroll.min.js',
                                               'plugins/chartjs/Chart.min.js',
                                               'plugins/iCheck/icheck.min.js',
-                                              'cropper-master/dist/cropper.js'
+                                              'bower_components/cropper/dist/cropper.js',
+                                              'bower_components/dropload/dropload.min.js'
                                               ]
         }
       }
