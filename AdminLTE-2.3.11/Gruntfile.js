@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         },
         files: {
           //编译bootstrap 重新定义bootstrap 的常量
-          "bootstrap/css/bootstrap.css": "bower_components/bootstrap/less/bootstrap.less",
+          "dist/css/my-compiled-bootstrap.css": "bower_components/bootstrap/less/bootstrap.less",
 
           // compilation.css  :  source.less
           "dist/css/AdminLTE.css": "build/less/AdminLTE.less",
@@ -62,15 +62,13 @@ module.exports = function (grunt) {
       target: {
         files: {
           '../static/css/all.min.css': [
-                  "bootstrap/css/bootstrap.css",
+                  "dist/css/my-compiled-bootstrap.css",
                   //font awesome 放在这里
                   "dist/css/font-awesome_4.7.0.2.css",
                   //font ionicons 放在这里
                   "dist/css/ionicons_2.0.1.css",
 
-
                   "plugins/jvectormap/jquery-jvectormap-1.2.2.css",
-
                   "dist/css/AdminLTE.css",
                   // AdminLTE without plugins
                   //"dist/css/alt/AdminLTE-without-plugins.css",
@@ -98,7 +96,7 @@ module.exports = function (grunt) {
           //合并 jq bootstrap fastclick slimscroll
           '../static/js/all-package.min.js': [
                                               'bower_components/jquery/dist/jquery.js',
-                                              'bootstrap/js/bootstrap.js',
+                                              'bower_components/bootstrap/dist/js/bootstrap.js',
                                               'plugins/fastclick/fastclick.js',
                                               'dist/js/app.js',
                                               'plugins/slimScroll/jquery.slimscroll.min.js',
