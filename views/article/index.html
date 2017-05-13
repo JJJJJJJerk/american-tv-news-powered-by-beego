@@ -14,30 +14,50 @@
             {{ substr ($value.Body | html2str) 0 480}}...
         </p>
         <ul class="list-inline text-green">
-                <li>
-                    <strong><span class="fa fa-calendar" title="发布日期"></strong>
-                    {{dateformat $value.CreatedAt "2006-01-02"}}
-                </li>
-                                
-                <li>
-                    <strong><span class="ion-clock" title="发布时间 publiced time"></strong>
-                    {{dateformat $value.CreatedAt "15:04"}}
-                    
-                </li>
-                <li>
-                    <strong><span class="glyphicon glyphicon-eye-open" title="阅读数量 read count"></strong>
-                    {{$value.ReadCount}}
-                </li>
-                <li>
-                    <strong><span class="ion-heart" title="收藏数量 favarate count"></strong>
-                    {{1000}}
-                </li>
-                <li>
-                    <strong><span class="fa fa-commenting" title="评论数量 comment count"></strong>
-                    {{1001}}
-                </li>
+            <li>
+                <strong><span class="fa fa-calendar" title="发布日期"></strong> {{dateformat $value.CreatedAt "2006-01-02"}}
+            </li>
+
+            <li>
+                <strong><span class="ion-clock" title="发布时间 publiced time"></strong> {{dateformat $value.CreatedAt "15:04"}}
+
+            </li>
+            <li>
+                <strong><span class="glyphicon glyphicon-eye-open" title="阅读数量 read count"></strong> {{$value.ReadCount}}
+            </li>
+            <li>
+                <strong><span class="ion-heart" title="收藏数量 favarate count"></strong> {{1000}}
+            </li>
+            <li>
+                <strong><span class="fa fa-commenting" title="评论数量 comment count"></strong> {{1001}}
+            </li>
         </ul>
     </div>
 
 </div>
 {{end}}
+
+<script>
+    $(function () {
+        $('section.content').dropload({
+            scrollArea: window,
+            loadDownFn: function (me) {
+                $.ajax({
+                    type: 'GET',
+                    url: 'json/more.json',
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data);
+                        // 每次数据加载完，必须重置
+                        me.resetload();
+                    },
+                    error: function (xhr, type) {
+                        alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+            }
+        });
+    })
+</script>

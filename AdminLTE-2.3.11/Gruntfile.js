@@ -79,8 +79,9 @@ module.exports = function (grunt) {
                   //Non minified skin files
                   "dist/css/skins/_all-skins.css",
                   "plugins/iCheck/square/blue.css",
-                  "bower_components/cropper/dist/cropper.css",
-                  "bower_components/dropload/dropload.css"
+                  "bower_components/cropper/dist/cropper.css",//图片剪切
+                  'bower_components/dropload/dropload.css'//图片剪切
+
                 ]
         }
       }
@@ -95,15 +96,14 @@ module.exports = function (grunt) {
         files: {
           //合并 jq bootstrap fastclick slimscroll
           '../static/js/all-package.min.js': [
-                                              'bower_components/jquery/dist/jquery.js',
                                               'bower_components/bootstrap/dist/js/bootstrap.js',
                                               'plugins/fastclick/fastclick.js',
                                               'dist/js/app.js',
                                               'plugins/slimScroll/jquery.slimscroll.min.js',
                                               'plugins/chartjs/Chart.min.js',
                                               'plugins/iCheck/icheck.min.js',
-                                              'bower_components/cropper/dist/cropper.js',
-                                              'bower_components/dropload/dropload.min.js'
+                                              'bower_components/cropper/dist/cropper.js',//图片剪切
+                                              'bower_components/dropload/dropload.min.js'//图片剪切
                                               ]
         }
       }
