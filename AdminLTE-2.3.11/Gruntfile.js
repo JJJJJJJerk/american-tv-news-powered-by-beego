@@ -19,6 +19,9 @@ module.exports = function (grunt) {
           compress: false
         },
         files: {
+          //编译bootstrap 重新定义bootstrap 的常量
+          "bootstrap/css/bootstrap.css": "bower_components/bootstrap/less/bootstrap.less",
+
           // compilation.css  :  source.less
           "dist/css/AdminLTE.css": "build/less/AdminLTE.less",
           // AdminLTE without plugins

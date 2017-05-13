@@ -146,8 +146,8 @@ body.hold-transition .main-header .logo {
   padding: 15px;
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
 }
 /* H1 - H6 font */
 h1,
@@ -253,7 +253,7 @@ a:focus {
   float: left;
   background-color: transparent;
   background-image: none;
-  padding: 15px 15px;
+  padding: 16.5px 7px;
   font-family: fontAwesome;
 }
 .main-header .sidebar-toggle:before {
@@ -365,7 +365,7 @@ a:focus {
   color: #fff;
   border: 0;
   margin: 0;
-  padding: 15px 15px;
+  padding: 16.5px 7px;
 }
 @media (max-width: 991px) {
   .navbar-custom-menu .navbar-nav > li {
@@ -1323,17 +1323,17 @@ a:focus {
 }
 /* support Font Awesome icons in form-control */
 .form-control-feedback.fa {
-  line-height: 34px;
+  line-height: 25px;
 }
 .input-lg + .form-control-feedback.fa,
 .input-group-lg + .form-control-feedback.fa,
 .form-group-lg .form-control + .form-control-feedback.fa {
-  line-height: 46px;
+  line-height: 32px;
 }
 .input-sm + .form-control-feedback.fa,
 .input-group-sm + .form-control-feedback.fa,
 .form-group-sm .form-control + .form-control-feedback.fa {
-  line-height: 30px;
+  line-height: 22px;
 }
 /*
  * Component: Progress Bar

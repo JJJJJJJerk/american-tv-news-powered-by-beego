@@ -1,5 +1,11 @@
 package routers
 
+import (
+	"my_go_web/controllers"
+
+	"github.com/astaxie/beego"
+)
+
 //功能一:使用电视剧角色和名称图像
 //功能二:发帖功能
 //功能三:提供小视屏播放功能
@@ -8,7 +14,7 @@ package routers
 func init() {
 	// beego.Router("/", &controllers.HomeController{}, "get:Get")
 	// //注册自动路由
-	// beego.Router("/article", &controllers.ArticlesController{}, "get:GetAll")
+	beego.Router("/article", &controllers.ArticlesController{}, "get:Index")
 	// beego.Router("/article/:id([0-9]+)", &controllers.ArticlesController{}, "get:GetOne") //匹配:id 是数字的路由
 	// beego.Router("/auth/login", &controllers.AuthController{}, "post:PostLogin")
 	// beego.Router("/auth/login", &controllers.AuthController{}, "get:GetLogin")

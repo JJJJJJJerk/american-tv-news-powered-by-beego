@@ -12,6 +12,7 @@ import (
 
 //这个是查血的初始
 var Gorm *gorm.DB
+var PageSize int
 
 func init() {
 	user := beego.AppConfig.String("mysqluser")
@@ -27,9 +28,8 @@ func init() {
 	db.DB().SetMaxOpenConns(128)
 	db.DB().SetMaxIdleConns(16)
 	//https://github.com/jinzhu/gorm/issues/1053
+	Gorm = db
 
-	userM := new(Article)
-	db.Preload("Images").First(&userM)
-	fmt.Println(userM.Images[0])
+	PageSize, _ = beego.AppConfig.Int("pagesize")
 
 }

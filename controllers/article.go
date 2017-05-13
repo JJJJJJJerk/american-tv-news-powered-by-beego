@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"my_go_web/models"
+
 	"github.com/astaxie/beego"
 )
 
@@ -26,10 +28,12 @@ type ArticlesController struct {
 // 	}
 // }
 
-// func (c *ArticlesController) GetAll() {
-// 	_, articles := models.GetAllArticles()
-// 	c.Data["Articles"] = articles
-// 	c.Data["Title"] = "aweosme go web application!!!!"
-// 	c.Layout = "layout/base.html"
-// 	c.TplName = "article/index.html"
-// }
+func (c *ArticlesController) Index() {
+	articles := []models.Article{}
+	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Find(&articles)
+	c.Data["Articles"] = articles
+
+	c.Data["Title"] = "美剧资讯"
+	c.Layout = "layout/base.html"
+	c.TplName = "article/index.html"
+}
