@@ -1,2 +1,21 @@
 /*自定义css全部都写在这里*/
 /*之前定义了bootstrap adminlte 相关样式*/
+
+ /* 文章列表信息的 span li 间距 */
+ div.media-body > ul > li {
+    padding-right: 25px!important;
+ }
+ /* 文章列表信息的 span icon */
+div.media-body > ul > li > strong > span {
+    margin-right: 6px!important;
+}
+/*文章的摘要部分*/
+p.text-excerpt {
+    height: 70px!important;
+    text-overflow:ellipsis!important;
+    overflow: hidden!important;
+}
+/* 文章列表的时间*/
+body > div > div.content-wrapper > section.content > div > div.media-body > ul {
+    margin-bottom: 0px !important; 
+}

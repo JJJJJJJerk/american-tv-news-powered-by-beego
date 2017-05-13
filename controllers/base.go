@@ -15,6 +15,11 @@ type BaseController struct {
 	Uid              int
 	//UserInfo         *models.Users
 }
+type Crumb struct {
+	Href  string
+	Class string
+	Name  string
+}
 
 // //为了生成breadcrumb
 // type Bread struct {

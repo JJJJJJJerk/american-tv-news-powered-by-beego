@@ -32,11 +32,13 @@
                 <h1>
                     {{.Title}}<small>更新时间:{{.UpdateTime}}</small>
                 </h1>
-                <ol class="breadcrumb">
-                    {{range $index, $elem := .BreadCrumbs}}
-                        <li><a href="{{$elem.Href}}"><i class="{{$elem.Class}}"></i> {{$elem.Name}}</a></li>
-                    {{end}}
-                </ol>
+                {{if  .BreadCrumbs }}
+                    <ol class="breadcrumb">
+                        {{range $index, $elem := .BreadCrumbs}}
+                            <li><a href="{{$elem.Href}}"><i class="{{$elem.Class}}"></i> {{$elem.Name}}</a></li>
+                        {{end}}
+                    </ol>
+                {{end}}
             </section>
 
             <!-- Main content -->

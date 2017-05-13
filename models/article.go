@@ -21,7 +21,9 @@ type Article struct {
 	MobileCode  string
 	Discription string
 	CoverageId  uint32
+	Coverage    *Image `gorm:"ForeignKey:CoverageId"`
 	Images      []Image
+	ReadCount   uint16
 }
 
 func GetAllArticles(pageIndex int) (articles []Article, totalPage int) {
