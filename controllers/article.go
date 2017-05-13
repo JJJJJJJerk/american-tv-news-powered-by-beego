@@ -3,23 +3,22 @@ package controllers
 import (
 	"fmt"
 	"my_go_web/models"
-
-	"github.com/astaxie/beego"
 )
 
 // ArticlesController operations for Articles
 type ArticlesController struct {
-	beego.Controller
+	BaseController
 }
 
 func (c *ArticlesController) Index() {
 
-	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}}
-
 	articles := []models.Article{}
 	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Images").Find(&articles)
-	c.Data["Articles"] = articles
 
+	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}}
+	c.Data["Articles"] = articles
+	c.Data["Keyword"] = "美剧keywords"
+	c.Data["Description"] = "美剧描述"
 	c.Data["Title"] = "美剧资讯"
 	c.Layout = "layout/base.html"
 	c.TplName = "article/index.html"
