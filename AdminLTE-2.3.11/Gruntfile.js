@@ -97,12 +97,10 @@ module.exports = function (grunt) {
         files: {
           //合并 jq bootstrap fastclick slimscroll
           '../static/js/all-package.min.js': [
+                                              'bower_components/jquery/dist/jquery.js',
                                               'bootstrap/js/bootstrap.js',
                                               'plugins/fastclick/fastclick.js',
                                               'dist/js/app.js',
-                                              'plugins/sparkline/jquery.sparkline.min.js',
-                                              'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
-                                              'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
                                               'plugins/slimScroll/jquery.slimscroll.min.js',
                                               'plugins/chartjs/Chart.min.js',
                                               'plugins/iCheck/icheck.min.js',

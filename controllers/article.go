@@ -36,6 +36,8 @@ func (c *ArticlesController) Detail() {
 	url := fmt.Sprintf("/article/%d", articleID)
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}, {url, "fa fa-graduation-cap", article.Title}}
 	c.Data["Article"] = article
+	c.Data["Title"] = article.Title
+
 	c.Layout = "layout/base.html"
 	c.TplName = "article/detail.html"
 }
