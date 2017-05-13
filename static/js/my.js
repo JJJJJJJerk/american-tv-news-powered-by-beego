@@ -29,53 +29,31 @@ jQuery.each(sub_menus, function (i, sub_dom) {
 //设置面包屑高亮
 
 //资讯列表页面就执行以下js
-let htText = $('body > div > div.content-wrapper > section.content-header > h1').text()
+let htText = $('span#page-ID').data('name')
 
-if (htText == "美剧资讯") {
-        function loadResults() {
-            var result = "";
-            for (var i = 0; i < 10; i++) {
-                result += "<li>Result " + i + "</li>";
+if (htText == "article-index-page") {
+
+    $('section.content').dropload({
+    scrollArea : window,
+    loadDownFn : function(me){
+        $.ajax({
+            type: 'GET',
+            url: 'json/more.json',
+            dataType: 'json',
+            success: function(data){
+                alert(data);
+                // 每次数据加载完，必须重置
+                me.resetload();
+            },
+            error: function(xhr, type){
+                alert('Ajax error!');
+                // 即使加载出错，也得重置
+                me.resetload();
             }
-            $.ajax({
-                url: "/echo/html/",
-                type: "post",
-                data: {
-                    html: result,
-                    delay: 3
-                },
-                beforeSend: function(xhr) {
-                    $("#results").after($("<li class='loading'>Loading...</li>").fadeIn('slow')).data("loading", true);
-                },
-                success: function(data) {
-                    var $results = $("#results");
-                    $(".loading").fadeOut('fast', function() {
-                        $(this).remove();
-                    });
-                    var $data = $(data);
-                    $data.hide();
-                    $results.append($data);
-                    $data.fadeIn();
-                    $results.removeData("loading");
-                }
-            });
-        };
-
-        $(function() {
-            loadResults();
-
-            $("section.content").scroll(function() {
-                var $this = $(this);
-                var $results = $("#results");
-
-                if (!$results.data("loading")) {
-
-                    if ($this.scrollTop() + $this.height() == $results.height()) {
-                        loadResults();
-                    }
-                }
-            });
         });
+    }
+});
+
 
 }
 

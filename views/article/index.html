@@ -1,4 +1,5 @@
- {{range $index, $value := .Articles}}
+
+{{range $index, $value := .Articles}}
 <div class="well-xs well media">
     <div class="media-left">
         <a href="/article/{{$value.ID}}">
@@ -37,27 +38,4 @@
 </div>
 {{end}}
 
-<script>
-    $(function () {
-        $('section.content').dropload({
-            scrollArea: window,
-            loadDownFn: function (me) {
-                $.ajax({
-                    type: 'GET',
-                    url: 'json/more.json',
-                    dataType: 'json',
-                    success: function (data) {
-                        alert(data);
-                        // 每次数据加载完，必须重置
-                        me.resetload();
-                    },
-                    error: function (xhr, type) {
-                        alert('Ajax error!');
-                        // 即使加载出错，也得重置
-                        me.resetload();
-                    }
-                });
-            }
-        });
-    })
-</script>
+<span id='page-ID' data-name="article-index-page" hidden></span>
