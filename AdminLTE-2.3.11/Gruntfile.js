@@ -95,7 +95,7 @@ module.exports = function (grunt) {
       my_target: {
         files: {
           //合并 jq bootstrap fastclick slimscroll
-          '../static/js/all-package.min.js': [
+          '../static/js/all.min.js': [
                                               'bower_components/bootstrap/dist/js/bootstrap.js',
                                               'plugins/fastclick/fastclick.js',
                                               'dist/js/app.js',
