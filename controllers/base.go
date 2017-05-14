@@ -43,3 +43,8 @@ func (this *BaseController) Prepare() {
 	// 	this.Data["Uid"] = this.Uid
 	// 	//做一些权限判断
 }
+
+func (this *BaseController) JsonRetrun(status string, message string, data interface{}) {
+	this.Data["json"] = map[string]interface{}{"status": status, "message": message, "data": data}
+	this.ServeJSON()
+}

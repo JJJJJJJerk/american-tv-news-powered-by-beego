@@ -20,6 +20,8 @@ func (c *ArticlesController) Index() {
 	c.Data["Keyword"] = "美剧keywords"
 	c.Data["Description"] = "美剧描述"
 	c.Data["Title"] = "美剧资讯"
+	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
+
 	c.Layout = "layout/base.html"
 	c.TplName = "article/index.html"
 }
@@ -40,4 +42,12 @@ func (c *ArticlesController) Detail() {
 
 	c.Layout = "layout/base.html"
 	c.TplName = "article/detail.html"
+}
+
+func (c *ArticlesController) LoadMore() {
+	offset, _ := c.GetInt("offset")
+	limit := 3
+	articles := []models.Article{}
+	models.Gorm.Offset(offset).Limit(limit).Order("created_at DESC").Preload("Coverage").Preload("Images").Find(&articles)
+	c.JsonRetrun("success", "you are awesome!!!", articles)
 }

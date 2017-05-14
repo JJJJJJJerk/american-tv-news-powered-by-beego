@@ -1,3 +1,5 @@
+<!-- my js page identifier -->
+<span id='identifier' data-name="article-index-page" data-xsrf="{{.Xsrf}}" hidden data-offset="{{len .Articles}}"></span>
 
 {{range $index, $value := .Articles}}
 <div class="well-xs well media">
@@ -20,7 +22,7 @@
             </li>
 
             <li>
-                <strong><span class="ion-clock" title="发布时间 publiced time"></strong> {{dateformat $value.CreatedAt "15:04"}}
+                <strong><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong> {{dateformat $value.CreatedAt "15:04"}}
 
             </li>
             <li>
@@ -38,4 +40,5 @@
 </div>
 {{end}}
 
-<span id='page-ID' data-name="article-index-page" hidden></span>
+
+
