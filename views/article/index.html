@@ -1,11 +1,14 @@
 <!-- my js page identifier -->
 <span id='identifier' data-name="article-index-page" data-xsrf="{{.Xsrf}}" hidden data-offset="{{len .Articles}}"></span>
-
+<!--修复 bugs -->
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<!--正文部分-->
 {{range $index, $value := .Articles}}
 <div class="well-xs well media">
     <div class="media-left">
         <a href="/article/{{$value.ID}}">
-            <img src="{{$value |articleCoverageSrc}}" alt="{{$value.Title}}" class="img-thumbnail img-circle media-object">
+            <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-thumbnail img-circle media-object">
         </a>
     </div>
     <div class="media-body">
@@ -14,15 +17,15 @@
         </a>
 
         <p class="text-excerpt">
-            {{ substr ($value.Body | html2str) 0 480}}...
+            {{ $value.Excerpt }}...
         </p>
         <ul class="list-inline text-green">
             <li>
-                <strong><span class="fa fa-calendar" title="发布日期"></strong> {{dateformat $value.CreatedAt "2006-01-02"}}
+                <strong><span class="fa fa-calendar" title="发布日期"></strong> {{$value.CreatedDate}}
             </li>
 
             <li>
-                <strong><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong> {{dateformat $value.CreatedAt "15:04"}}
+                <strong><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong> {{$value.CreatedTime}}
 
             </li>
             <li>

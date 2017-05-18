@@ -13,7 +13,7 @@ type ArticlesController struct {
 func (c *ArticlesController) Index() {
 
 	articles := []models.Article{}
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Images").Find(&articles)
+	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Tags").Preload("Images").Find(&articles)
 
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}}
 	c.Data["Articles"] = articles
@@ -48,6 +48,6 @@ func (c *ArticlesController) LoadMore() {
 	offset, _ := c.GetInt("offset")
 	limit := 3
 	articles := []models.Article{}
-	models.Gorm.Offset(offset).Limit(limit).Order("created_at DESC").Preload("Coverage").Preload("Images").Find(&articles)
+	models.Gorm.Offset(offset).Limit(limit).Order("created_at DESC").Preload("Tags").Preload("Coverage").Preload("Images").Find(&articles)
 	c.JsonRetrun("success", "you are awesome!!!", articles)
 }

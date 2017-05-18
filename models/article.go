@@ -5,6 +5,7 @@ package models
 import (
 	"math"
 
+	"github.com/astaxie/beego"
 	"github.com/jinzhu/gorm"
 )
 
@@ -24,8 +25,40 @@ type Article struct {
 	Coverage    *Image `gorm:"ForeignKey:CoverageId"`
 	Images      []Image
 	ReadCount   uint16
+
+	Excerpt     string `gorm:"-"` //计算出文章摘要
+	CoverageUrl string `gorm:"-"` //文章封面
+	CreatedDate string `gorm:"-"`
+	CreatedTime string `gorm:"-"`
+	Tags        []Tag  `gorm:"many2many:article_tag;"`
 }
 
+//做一些计算
+func (art *Article) AfterFind() (err error) {
+	//装换excerpt
+	body := beego.HTML2str(art.Body)
+	art.Excerpt = beego.Substr(body, 0, 480)
+	//转换时间啊
+	art.CreatedDate = beego.Date(art.CreatedAt, "Y-m-d")
+	art.CreatedTime = beego.Date(art.CreatedAt, "H:i")
+
+	param := "?imageView2/1/w/120/h/120"
+	if art.Coverage != nil {
+		art.CoverageUrl = art.Coverage.GetImageUrl(param)
+		return
+
+	}
+	if len(art.Images) > 0 {
+		art.CoverageUrl = art.Images[0].GetImageUrl(param)
+		return
+
+	}
+	defaultImage := Image{Key: "1461329417"}
+	art.CoverageUrl = defaultImage.GetImageUrl(param)
+	return
+}
+
+//这个方法要被废弃了
 func GetAllArticles(pageIndex int) (articles []Article, totalPage int) {
 	//设置默认值
 	if pageIndex < 1 {
