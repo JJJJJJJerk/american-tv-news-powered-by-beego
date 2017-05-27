@@ -101,7 +101,15 @@ func RunDygodMeijuSpider() {
 				var title = $(value).text();
 				var href = ThunderEncode(title); //这个js是迅雷页面自带的 还有一种方法可以生成按标签
 				//去掉无用信息
-				//(?<\w+:\d+).+
+				//   /[\u4e00-\u9fa5]+\w+\.\w+\b/ig
+				//todo::bug need fixed
+				var pattern = /[\u4e00-\u9fa5]+.+\b/ig;//正则表达式
+				if(title){
+					var good_title = title.match(pattern)[0]
+					$(value).text(good_title)
+				}
+
+				//过滤迅雷
 				$(value).attr('href',href);//生成迅雷地址
 				$(value).removeAttr('onclick');//
 				$(value).removeAttr('target');//
@@ -113,10 +121,12 @@ func RunDygodMeijuSpider() {
 				$(value).removeAttr('cdedkblh');//
 				//todo 匹配掉文件名字
 
+
 		});
 		var body =$('#Zoom').html();
 		return {title:h1,content:body};
 		}`)
+		//time.Sleep(time.Second)
 
 		if err != nil {
 			log.Fatal(err)
