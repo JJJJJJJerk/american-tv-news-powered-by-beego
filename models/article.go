@@ -11,6 +11,8 @@ import (
 
 type Article struct {
 	gorm.Model
+	RawTitle    string
+	RawContent  string
 	Title       string `gorm:"size:255"`
 	Body        string `orm:"column(body)"`
 	UrlVideo    string

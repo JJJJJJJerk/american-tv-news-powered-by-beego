@@ -3,18 +3,16 @@ package spider
 import (
 	"fmt"
 	"log"
+	"my_go_web/models"
 	"os"
 	"path/filepath"
+
+	"strings"
 
 	"github.com/benbjohnson/phantomjs"
 )
 
-type DygodItem struct {
-	Name string `json:",string"`
-	Href string `json:",string"`
-}
-
-func init() {
+func RunDygodMeijuSpider() {
 	//获取软件的根目录
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
@@ -89,12 +87,36 @@ func init() {
 		if err := page.InjectJS("jquery.min.js"); err != nil {
 			log.Fatal(err)
 		}
+
 		//解析页面
 		jsonUU, err := page.Evaluate(`function() {
 		var h1 = $('h1').text();
-		var body =$('#Zoom').text();
+		$('img').addClass('img-responsive');
+		$('#Zoom > div.play-list-box').remove();
+		$('center').remove();
+		$('hr').remove();
+		$('script').remove();
+		//生成迅雷地址
+		$('#Zoom > table> tbody > tr > td > anchor > a').each(function(index,value){
+				var title = $(value).text();
+				var href = ThunderEncode(title); //这个js是迅雷页面自带的 还有一种方法可以生成按标签
+				//去掉无用信息
+				//(?<\w+:\d+).+
+				$(value).attr('href',href);//生成迅雷地址
+				$(value).removeAttr('onclick');//
+				$(value).removeAttr('target');//
+				$(value).removeAttr('thundertype');//
+				$(value).removeAttr('thunderrestitle');//
+				$(value).removeAttr('oncontextmenu');//
+				$(value).removeAttr('bqloxkcv');//
+				$(value).removeAttr('mritqcam');//
+				$(value).removeAttr('cdedkblh');//
+				//todo 匹配掉文件名字
+
+		});
+		var body =$('#Zoom').html();
 		return {title:h1,content:body};
-	}`)
+		}`)
 
 		if err != nil {
 			log.Fatal(err)
@@ -106,44 +128,17 @@ func init() {
 
 		//储存数据结果
 		fmt.Println(content, title)
+		//写入数据库
+		url := strings.TrimSpace(href)
+		var article models.Article
+		models.Gorm.Where(models.Article{UrlProvider: url}).Assign(models.Article{RawTitle: title, Body: content, RawContent: content, Title: title}).FirstOrCreate(&article)
+		articleTag := models.ArticleTag{ArticleId: article.ID, TagId: 3}
+		models.Gorm.Where(articleTag).Assign(articleTag).FirstOrCreate(&articleTag)
+
+		fmt.Println(article)
+
 	}
 
 	// var array = new Array();
 	// var array = $('#header > div > div.bd2 > div.bd3 > div.bd3r > div.co_area2 > div.co_content8 > ul > table > tbody > tr:nth-child(2) > td:nth-child(2) > b > a:nth-child(2)').each(function(index,value){var href = $(value).attr('href');var name=$(value).attr('title');array.push({href:href,name:name})});
-}
-
-func fetchDyGodPage(name, href string, page *phantomjs.WebPage) map[string]string {
-	if err := page.Open(href); err != nil {
-		log.Fatal(err)
-	}
-
-	//注入js 文件必须在打开文件之后
-	if err := page.InjectJS("jquery.min.js"); err != nil {
-		log.Fatal(err)
-	}
-	//解析页面
-	jsonUU, err := page.Evaluate(`function() {
-		var h1 = $('h1').text();
-		var body =$('#Zoom').text();
-		return {title:h1};
-	}`)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	dic := jsonUU.(map[string]interface{})
-
-	//储存数据结果
-	fmt.Println(dic)
-
-	info := map[string]string{
-		"name": name,
-		// "title":       dic["title"].(string),
-		// "raw_content": dic["content"].(string),
-		"raw_href": href,
-	}
-	fmt.Println("\n\n\n\n", info)
-	return info
-
 }
