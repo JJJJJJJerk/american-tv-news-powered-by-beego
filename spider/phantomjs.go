@@ -12,6 +12,7 @@ import (
 	"github.com/benbjohnson/phantomjs"
 )
 
+//爬去美剧天堂的美剧
 func RunDygodMeijuSpider() {
 	//获取软件的根目录
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
@@ -48,7 +49,7 @@ func RunDygodMeijuSpider() {
 	if err := page.SetLibraryPath(jqueryFileDir); err != nil {
 		log.Fatal(err)
 	}
-	if err := page.Open("http://www.dy2018.com/html/tv/oumeitv/index.html"); err != nil {
+	if err := page.Open("http://www.dygod.net/html/tv/oumeitv/"); err != nil {
 		log.Fatal(err)
 	}
 	//注入js 文件必须在打开文件之后
@@ -56,16 +57,14 @@ func RunDygodMeijuSpider() {
 		log.Fatal(err)
 	}
 
+	//注入爬虫内容处理js
+	if err := page.InjectJS("dygod.js"); err != nil {
+		log.Fatal(err)
+	}
+
 	// Read first link.
 	array, err := page.Evaluate(`function() {
-		var array = new Array();
-		var host = location.host;
-		$('ul > table > tbody > tr:nth-child(2) > td:nth-child(2) > b > a').each(function(index,item){
-			var name = $(item).attr('title');
-			var href = 'http://'+host + $(item).attr('href');
-			array.push({name:name,href:href})
-		});
-		return array;
+		return GetDygodMeijuList();
 	}`)
 	if err != nil {
 		log.Fatal(err)
@@ -87,44 +86,14 @@ func RunDygodMeijuSpider() {
 		if err := page.InjectJS("jquery.min.js"); err != nil {
 			log.Fatal(err)
 		}
+		//注入爬虫内容处理js
+		if err := page.InjectJS("dygod.js"); err != nil {
+			log.Fatal(err)
+		}
 
 		//解析页面
 		jsonUU, err := page.Evaluate(`function() {
-		var h1 = $('h1').text();
-		$('img').addClass('img-responsive');
-		$('#Zoom > div.play-list-box').remove();
-		$('center').remove();
-		$('hr').remove();
-		$('script').remove();
-		//生成迅雷地址
-		$('#Zoom > table> tbody > tr > td > anchor > a').each(function(index,value){
-				var title = $(value).text();
-				var href = ThunderEncode(title); //这个js是迅雷页面自带的 还有一种方法可以生成按标签
-				//去掉无用信息
-				//   /[\u4e00-\u9fa5]+\w+\.\w+\b/ig
-				//todo::bug need fixed
-				var pattern = /[\u4e00-\u9fa5]+.+\b/ig;//正则表达式
-				if(title){
-					var good_title = title.match(pattern)[0]
-					$(value).text(good_title)
-				}
-
-				//过滤迅雷
-				$(value).attr('href',href);//生成迅雷地址
-				$(value).removeAttr('onclick');//
-				$(value).removeAttr('target');//
-				$(value).removeAttr('thundertype');//
-				$(value).removeAttr('thunderrestitle');//
-				$(value).removeAttr('oncontextmenu');//
-				$(value).removeAttr('bqloxkcv');//
-				$(value).removeAttr('mritqcam');//
-				$(value).removeAttr('cdedkblh');//
-				//todo 匹配掉文件名字
-
-
-		});
-		var body =$('#Zoom').html();
-		return {title:h1,content:body};
+			 return getDygodMeijuDetailJson();
 		}`)
 		//time.Sleep(time.Second)
 
@@ -137,16 +106,14 @@ func RunDygodMeijuSpider() {
 		content := dic["content"].(string)
 
 		//储存数据结果
-		fmt.Println(content, title)
+		//fmt.Println(content, title)
 		//写入数据库
 		url := strings.TrimSpace(href)
 		var article models.Article
-		models.Gorm.Where(models.Article{UrlProvider: url}).Assign(models.Article{RawTitle: title, Body: content, RawContent: content, Title: title}).FirstOrCreate(&article)
+		models.Gorm.Where(models.Article{UrlProvider: url, Title: title}).Assign(models.Article{RawTitle: title, Body: content, RawContent: content, Title: title}).FirstOrCreate(&article)
 		articleTag := models.ArticleTag{ArticleId: article.ID, TagId: 3}
 		models.Gorm.Where(articleTag).Assign(articleTag).FirstOrCreate(&articleTag)
-
-		fmt.Println(article)
-
+		//fmt.Println(article)
 	}
 
 	// var array = new Array();
