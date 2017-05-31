@@ -10,6 +10,10 @@ function generateXiaomiLink(url, name) {
 }
 //解析详情页面到json
 function getDygodMeijuDetailJson() {
+	//修改下载标题
+	$('font').closest('p').after('<h3 class="leading text-danger">【迅雷|小米】下载</h3>').remove();
+
+
 	//设置targe rel
 	$('a').each(function (index, node) {
 		$(node).attr('target', '_blank').attr('rel', 'nofollow');

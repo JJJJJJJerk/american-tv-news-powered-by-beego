@@ -49,7 +49,7 @@ func RunDygodMeijuSpider() {
 	if err := page.SetLibraryPath(jqueryFileDir); err != nil {
 		log.Fatal(err)
 	}
-	if err := page.Open("http://www.dygod.net/html/tv/oumeitv/"); err != nil {
+	if err := page.Open("http://www.dy2018.com/html/tv/oumeitv/index.html"); err != nil {
 		log.Fatal(err)
 	}
 	//注入js 文件必须在打开文件之后
@@ -110,7 +110,7 @@ func RunDygodMeijuSpider() {
 		//写入数据库
 		url := strings.TrimSpace(href)
 		var article models.Article
-		models.Gorm.Where(models.Article{UrlProvider: url, Title: title}).Assign(models.Article{RawTitle: title, Body: content, RawContent: content, Title: title}).FirstOrCreate(&article)
+		models.Gorm.Where(models.Article{UrlProvider: url}).Assign(models.Article{RawTitle: title, UrlProvider: url, Body: content, RawContent: content, Title: title}).FirstOrCreate(&article)
 		articleTag := models.ArticleTag{ArticleId: article.ID, TagId: 3}
 		models.Gorm.Where(articleTag).Assign(articleTag).FirstOrCreate(&articleTag)
 		//fmt.Println(article)
