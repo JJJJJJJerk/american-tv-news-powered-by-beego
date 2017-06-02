@@ -11,8 +11,7 @@ function generateXiaomiLink(url, name) {
 //解析详情页面到json
 function getDygodMeijuDetailJson() {
 	//修改下载标题
-	$('font').closest('p').after('<h3 class="leading text-danger">【迅雷|小米】下载</h3>').remove();
-
+	$('#Zoom > p > font').replaceWith('<h3 class="leading text-danger">【迅雷|小米】TryTV下载</h3>');
 
 	//设置targe rel
 	$('a').each(function (index, node) {
@@ -20,7 +19,6 @@ function getDygodMeijuDetailJson() {
 	});
 	//获取标签
 	var h1 = $('h1').text();
-	$('#Zoom > p:nth-child(27) > font > strong>font').text('【迅雷|小米】')
 	//添加response image
 	$('img').addClass('img-responsive');
 	//删除垃圾dom
@@ -78,6 +76,19 @@ function GetDygodMeijuList(){
 		var list = new Array();
 		var host = location.host;
 		$('ul > table > tbody > tr:nth-child(2) > td:nth-child(2) > b > a').each(function(index,item){
+			var nameMovie = $(item).attr('title');
+			var hrefMovie = 'http://'+host + $(item).attr('href');
+			list.push({name:nameMovie,href:hrefMovie})
+		});
+		return list;
+}
+
+
+function GetDygodMovieList(){
+
+		var list = new Array();
+		var host = location.host;
+		$('#header > div > div.bd2 > div.bd3 > div.bd3r > div.co_area2 > div.co_content8 > ul > table > tbody > tr:nth-child(2) > td:nth-child(2) > b > a:nth-child(2)').each(function(index,item){
 			var name = $(item).attr('title');
 			var href = 'http://'+host + $(item).attr('href');
 			list.push({name:name,href:href})

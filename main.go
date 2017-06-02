@@ -13,12 +13,13 @@ import (
 )
 
 func main() {
-	//spider.RunDygodMeijuSpider()
+	//spider.RunDygodMovieSpider()
 	//没56分钟27秒执行一次;
 	//2两小时一次
+	//spider.RunDygodMeijuSpider()
 	taskSpiderDygodMeiju := toolbox.NewTask("taskSpiderDygodMeiju", "27 * */2 * * *", func() error { spider.RunDygodMeijuSpider(); return nil })
 	toolbox.AddTask("taskSpiderDygodMeiju", taskSpiderDygodMeiju)
-	toolbox.StartTask()
+	//toolbox.StartTask()
 
 	beego.Run()
 
