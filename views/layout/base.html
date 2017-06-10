@@ -17,26 +17,35 @@
     {{template "layout/_nav.html" .}}
     <!-- navbar-->
     <!-- 正文 -->
-    <div class="container pt-3">
+    <div class="container pt-1">
         <div class="row">
             <!--正文-->
-            <div class="col-8">
-                {{.LayoutContent}}
+            <div class="col-md-8">
+                <div class="card mb-1">
+                    <!--面包屑-->
+                    {{template "layout/_breadcrumb.html" .}}
+                    <!--面包屑-->
+                    <!--正文-->
+                    {{.LayoutContent}}
+                    <!--正文-->
+                </div>
                 {{template "layout/_share_comment.html" .}}
             </div>
             <!--正文-->
 
             <!-- 侧边栏-->
-            <div class="col-4">
-                侧边栏
+            <div class="col-md-4">
+                <div class="card">
+                    侧边栏
+                </div>
             </div>
             <!-- 侧边栏-->
 
         </div>
-                {{template "layout/_footer.html" .}}
+        {{template "layout/_footer.html" .}}
 
     </div>
-        <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap tooltips -->
     <script src="//cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>

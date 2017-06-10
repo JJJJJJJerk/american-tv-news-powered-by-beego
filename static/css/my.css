@@ -19,3 +19,8 @@ p.text-excerpt {
 body > div > div.content-wrapper > section.content > div > div.media-body > ul {
     margin-bottom: 0px !important; 
 }
+
+/*面包屑背景透明*/
+.breadcrumb {
+    background-color: transparent!important;
+}
