@@ -5,7 +5,6 @@ import (
 	"my_go_web/models"
 )
 
-// ArticlesController operations for Articles
 type ArticlesController struct {
 	BaseController
 }

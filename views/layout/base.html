@@ -1,67 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{.GlobalName}}|{{.Title}}</title>
-    <meta name="Keywords" content="{{.GlobalKeyword}}{{.Keyword}}" />
-    <meta name="Description" content="{{.GlobalDescription}}{{.Description}}"/>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href='{{cdnSrc "css/all.min.css"}}'>
-    <link rel="stylesheet" href='{{cdnSrc "css/my.css"}}'>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src='{{cdnSrc "js/jquery-2.2.3.min.js"}}'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/mdbootstrap/4.3.2/css/mdb.min.css" rel="stylesheet">
+    <link href="/css/my.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<body class="hold-transition skin-green sidebar-mini sidebar-collapse">
-    <div class="wrapper">
-
-        {{template "layout/_nav.html" .}} {{template "layout/_side_bar_left.html" .}}
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    {{.Title}}
-                </h1>
-                {{if  .BreadCrumbs }}
-                    <ol class="breadcrumb">
-                        {{range $index, $elem := .BreadCrumbs}}
-                            <li><a href="{{$elem.Href}}"><i class="{{$elem.Class}}"></i> {{$elem.Name}}</a></li>
-                        {{end}}
-                    </ol>
-                {{end}}
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-                {{.LayoutContent}}
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        {{template "layout/_footer.html" .}} {{template "layout/_side_bar_right.html" .}}
+<body>
+    <!-- navbar-->
+    {{template "layout/_nav.html" .}}
+    <!-- navbar-->
+    <!-- 正文 -->
+    <div class="container pt-3">
+        {{.LayoutContent}}
+        <hr> {{template "layout/_footer.html" .}}
     </div>
-    <!-- ./wrapper -->
-
-    <script src='{{cdnSrc "js/all.min.js"}}'></script>
-    <script src='{{cdnSrc "js/demo.js"}}'></script>
-    <script src='{{cdnSrc "js/my.js"}}'></script>
-
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <!--<script src="{{cdnSrc "js/dashboard2.js"}}"></script>  仪表盘用的   -->
-    <!-- AdminLTE for demo purposes -->
-    <!--<script src="{{cdnSrc "js/demo.js"}}"></script>-->
-
-
+    <!-- Bootstrap tooltips -->
+    <script src="//cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script src="//cdn.bootcss.com/mdbootstrap/4.3.2/js/mdb.min.js"></script>
 </body>
 
 </html>
