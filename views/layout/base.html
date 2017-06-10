@@ -18,9 +18,23 @@
     <!-- navbar-->
     <!-- 正文 -->
     <div class="container pt-3">
-        {{.LayoutContent}}
-        {{template "layout/_share_comment.html" .}}
-        {{template "layout/_footer.html" .}}
+        <div class="row">
+            <!--正文-->
+            <div class="col-8">
+                {{.LayoutContent}}
+                {{template "layout/_share_comment.html" .}}
+            </div>
+            <!--正文-->
+
+            <!-- 侧边栏-->
+            <div class="col-4">
+                侧边栏
+            </div>
+            <!-- 侧边栏-->
+
+        </div>
+                {{template "layout/_footer.html" .}}
+
     </div>
         <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
