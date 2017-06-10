@@ -62,15 +62,10 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
     top: 0;
     left: 0;
     height: 100%;
-    padding: 25px 25px 20px;
+    padding: 1rem;
     width: 100%;
     color: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     opacity: 1;
-    -ms-flex-direction: column;
-    flex-direction: column;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -86,17 +81,6 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
 }
 /* 鼠标悬停的时候 */
 
-    .series-card-details:hover {
-        opacity:0
-    }
-@media screen and (min-width: 769px) {
-    .series-card-details:hover {
-        opacity:0
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .home .series-card-details {
-        opacity:0
-    }
+.series-card-details:hover {
+    opacity:0
 }
