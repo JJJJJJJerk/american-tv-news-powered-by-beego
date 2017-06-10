@@ -39,12 +39,14 @@ type Article struct {
 func (art *Article) AfterFind() (err error) {
 	//装换excerpt
 	body := beego.HTML2str(art.Body)
-	art.Excerpt = beego.Substr(body, 0, 480)
+	art.Excerpt = beego.Substr(body, 0, 120)
 	//转换时间啊
 	art.CreatedDate = beego.Date(art.CreatedAt, "Y-m-d")
 	art.CreatedTime = beego.Date(art.CreatedAt, "H:i")
 
-	param := "?imageView2/1/w/120/h/120"
+	//param := "?imageView2/1/w/120/h/120"
+	param := "?imageView2/1/w/480/h/270"
+
 	if art.Coverage != nil {
 		art.CoverageUrl = art.Coverage.GetImageUrl(param)
 		return

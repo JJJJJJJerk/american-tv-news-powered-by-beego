@@ -1,5 +1,9 @@
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="#">Home</a></li>
-  <li class="breadcrumb-item"><a href="#">Library</a></li>
-  <li class="breadcrumb-item active">Data</li>
-</ol>
+ {{if .BreadCrumbs }}
+<div class="card mb-1">
+  <ol class="breadcrumb mb-0">
+    {{range $index, $elem := .BreadCrumbs}}
+    <li class="breadcrumb-item"><a href="{{$elem.Href}}"><i class="{{$elem.Class}}"></i> {{$elem.Name}}</a></li>
+    {{end}}
+  </ol>
+</div>
+{{end}}

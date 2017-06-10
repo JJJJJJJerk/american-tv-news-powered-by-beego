@@ -17,7 +17,6 @@ func (c *HomeController) Get() {
 	c.Data["Articles"] = articles
 	c.Data["Keyword"] = "美剧keywords"
 	c.Data["Title"] = "美剧资讯"
-	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
 
 	c.Layout = "layout/base.html"
 	c.TplName = "home/index.html"

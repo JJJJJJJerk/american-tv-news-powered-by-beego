@@ -1,0 +1,63 @@
+<!-- my js page identifier -->
+<span id='identifier' data-name="article-index-page" data-xsrf="{{.Xsrf}}" hidden data-offset="{{len .Articles}}"></span>
+<!--修复 bugs -->
+<meta name="full-screen" content="yes">
+<meta name="x5-fullscreen" content="true">
+<!--正文部分-->
+
+<div class="card-columns">
+
+    {{range $index, $value := .Articles}}
+
+
+    <!--Card-->
+    <div class="card mb-1">
+
+        <!--Card image-->
+        <div class="view overlay hm-white-slight">
+            <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-fluid">
+
+            <div class="series-card-details">
+                <p>
+                    <span class="fa fa-calendar" title="发布日期"></strong> {{$value.CreatedDate}}
+                </p>
+            
+                <h4 class="text-center"><a class="text-white" href="/article/{{$value.ID}}"> {{$value.Title}}</a></h4>
+
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <strong><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>                    {{$value.CreatedTime}}
+
+                    </li>
+                    <li class="list-inline-item">
+                        <strong><span class="glyphicon glyphicon-eye-open" title="阅读数量 read count"></strong> {{$value.ReadCount}}
+                    </li>
+                    <li class="list-inline-item">
+                        <strong><span class="ion-heart" title="收藏数量 favarate count"></strong> {{1000}}
+                    </li>
+                    <li class="list-inline-item">
+                        <strong><span class="fa fa-commenting" title="评论数量 comment count"></strong> {{1001}}
+                    </li>
+                </ul>
+            </div>
+            <div class="mask waves-effect waves-light"></div>
+
+        </div>
+        <!--/.Card image-->
+
+
+
+        <!--Card content-->
+        <div class="card-block">
+            <!--Title-->
+            <p class="card-text">{{ $value.Excerpt }}</p>
+
+        </div>
+        <!--/.Card content-->
+    </div>
+    <!--/.Card-->
+
+
+
+    {{end}}
+</div>

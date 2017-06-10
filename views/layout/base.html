@@ -10,6 +10,10 @@
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/mdbootstrap/4.3.2/css/mdb.min.css" rel="stylesheet">
     <link href="/static/css/my.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var csrf_token = '{{.Xsrf}}';
+    </script>
 </head>
 
 <body>
@@ -17,24 +21,22 @@
     {{template "layout/_nav.html" .}}
     <!-- navbar-->
     <!-- 正文 -->
-    <div class="container pt-1">
+    <div class="container-fluid pt-1">
         <div class="row">
             <!--正文-->
-            <div class="col-md-8 pr-sm-0 pr-xs-1">
-                <div class="card mb-1">
-                    <!--面包屑-->
-                    {{template "layout/_breadcrumb.html" .}}
-                    <!--面包屑-->
-                    <!--正文-->
-                    {{.LayoutContent}}
-                    <!--正文-->
-                </div>
+            <div class="col-md-9 pr-sm-0 pr-xs-1">
+                <!--面包屑-->
+                {{template "layout/_breadcrumb.html" .}}
+                <!--面包屑-->
+                <!--正文-->
+                {{.LayoutContent}}
+                <!--正文-->
                 {{template "layout/_share_comment.html" .}}
             </div>
             <!--正文-->
 
             <!-- 侧边栏-->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card">
                     侧边栏
                 </div>
@@ -42,10 +44,9 @@
             <!-- 侧边栏-->
 
         </div>
-        {{template "layout/_footer.html" .}}
 
     </div>
-    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    {{template "layout/_footer.html" .}}
 
     <!-- Bootstrap tooltips -->
     <script src="//cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>

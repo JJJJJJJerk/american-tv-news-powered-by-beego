@@ -4,9 +4,13 @@
 
 
 
-//设置left side bar 高亮
+(function (){
+    //使用原生的js 来设置 导航栏高亮
 let current_url = window.location.href;
-let menus = $('body > div > aside.main-sidebar > section > ul > li').not('.header');
+
+
+
+
 jQuery.each(menus, function (i, dom) {
     //在html data-uri设置uri
     //根据网站设置高亮菜单
@@ -16,17 +20,11 @@ jQuery.each(menus, function (i, dom) {
     }
 });
 
-//设置left side bar 二级菜单高亮
-let sub_menus = $('body > div > aside.main-sidebar > section > ul > li > ul > li');
-jQuery.each(sub_menus, function (i, sub_dom) {
-    //在html data-uri设置uri
-    //根据网站设置高亮菜单
-    let sub_uri = $(sub_dom).find('a').attr('href');
-    if (current_url.indexOf(sub_uri)) {
-        $(sub_dom).toggleClass('active')
-    }
-});
 //设置面包屑高亮
+
+}());
+
+
 
 
 //去掉html tag 得到 plain string

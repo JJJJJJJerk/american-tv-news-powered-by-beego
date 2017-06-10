@@ -1,3 +1,28 @@
+
+html {
+  font-size: 14px;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 28px;
+  }
+}
+
+
+
 /*自定义css全部都写在这里*/
 /*之前定义了bootstrap adminlte 相关样式*/
 
@@ -23,4 +48,55 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
 /*面包屑背景透明*/
 .breadcrumb {
     background-color: transparent!important;
+    padding:0.3rem 1.2rem 0.3rem 1.2rem!important;
+}
+
+.article-column-card-text {
+    text-overflow:ellipsis;
+    max-height: 6rem;
+}
+
+/*  card图片动画效果  */
+.series-card-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 25px 25px 20px;
+    width: 100%;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    z-index: 10;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: rgba(0,0,0,.7);
+    -webkit-transition: opacity .7s;
+    transition: opacity .7s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal
+}
+/* 鼠标悬停的时候 */
+
+    .series-card-details:hover {
+        opacity:0
+    }
+@media screen and (min-width: 769px) {
+    .series-card-details:hover {
+        opacity:0
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home .series-card-details {
+        opacity:0
+    }
 }
