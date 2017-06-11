@@ -19,7 +19,6 @@ func (c *ArticlesController) Index() {
 	c.Data["Keyword"] = "美剧keywords"
 	c.Data["Description"] = "美剧描述"
 	c.Data["Title"] = "美剧资讯"
-	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
 
 	c.Layout = "layout/base.html"
 	c.TplName = "article/index.html"
