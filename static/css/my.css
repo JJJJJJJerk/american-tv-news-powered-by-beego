@@ -66,8 +66,6 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
     width: 100%;
     color: #fff;
     opacity: 1;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
     z-index: 10;
     -webkit-box-pack: justify;
