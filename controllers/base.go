@@ -1,6 +1,9 @@
 package controllers
 
 import (
+	"fmt"
+	"my_go_web/models"
+
 	"github.com/astaxie/beego"
 )
 
@@ -43,6 +46,10 @@ func (this *BaseController) Prepare() {
 	// 	//在模板里面判断登陆状态
 	// 	this.Data["Uid"] = this.Uid
 	// 	//做一些权限判断
+
+	//为每一个view 赋值侧边栏
+	quotes := models.Get3RandomQuote()
+	fmt.Println(quotes)
 }
 
 func (this *BaseController) JsonRetrun(status string, message string, data interface{}) {

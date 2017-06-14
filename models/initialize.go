@@ -6,6 +6,7 @@ import (
 	"fmt"
 
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/cache"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
@@ -13,8 +14,12 @@ import (
 //这个是查血的初始
 var Gorm *gorm.DB
 var PageSize int
+var CacheManager cache.Cache
 
 func init() {
+	//和模型一起实例化一个缓存管理器
+	CacheManager, _ = cache.NewCache("file", `{"CachePath":"./cache","FileSuffix":".cache","DirectoryLevel":2,"EmbedExpiry":3600}`)
+
 	user := beego.AppConfig.String("mysqluser")
 	passwd := beego.AppConfig.String("mysqlpass")
 	host := beego.AppConfig.String("mysqlurls")
@@ -31,5 +36,4 @@ func init() {
 	Gorm = db
 
 	PageSize, _ = beego.AppConfig.Int("pagesize")
-
 }
