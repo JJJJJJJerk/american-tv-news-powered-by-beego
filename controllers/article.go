@@ -14,7 +14,7 @@ func (c *ArticlesController) Index() {
 	articles := []models.Article{}
 	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Tags").Preload("Images").Find(&articles)
 
-	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}}
+	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "fa fa-home", "资讯"}}
 	c.Data["Articles"] = articles
 	c.Data["Keyword"] = "美剧keywords"
 	c.Data["Description"] = "美剧描述"
