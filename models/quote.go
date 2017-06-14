@@ -3,6 +3,7 @@ package models
 //http://jinzhu.me/gorm/ gorm 文档
 
 import (
+	"encoding/json"
 	"fmt"
 	"math/rand"
 	"strconv"
@@ -15,17 +16,20 @@ const CK_QUOTE = "CacheKey.3randomQuotes"
 
 type Quote struct {
 	gorm.Model
-	English  string
-	Chinese  string
-	Writer   string `gorm:"size:255"`
-	ImageUri string `orm:"column(body)"`
+	English  string `json:"english";`
+	Chinese  string `json:"chinese";`
+	Writer   string `gorm:"size:255";json:"writer";`
+	ImageUri string `orm:"column(body)";json:"image_uri";`
 }
 
 func Get3RandomQuote() (quotes []Quote) {
 	if CacheManager.IsExist(CK_QUOTE) {
 		value := CacheManager.Get(CK_QUOTE)
 		fmt.Println(value)
-		quotes = CacheManager.Get(CK_QUOTE).([]Quote)
+		data := value.(string)
+		fmt.Println(data)
+		jsonB := []byte(data)
+		json.Unmarshal(jsonB, &quotes)
 	} else {
 		var count int
 		Gorm.Model(&Quote{}).Count(&count)
@@ -35,7 +39,9 @@ func Get3RandomQuote() (quotes []Quote) {
 		nc := strconv.Itoa(rand.Intn(count))
 		indexs := []string{na, nb, nc}
 		Gorm.Model(&Quote{}).Where("id in (?)", indexs).Find(&quotes)
-		CacheManager.Put(CK_QUOTE, quotes, 600*time.Second)
+		data, _ := json.Marshal(quotes)
+		fmt.Println(string(data))
+		CacheManager.Put(CK_QUOTE, string(data), 600*time.Second)
 
 	}
 	return

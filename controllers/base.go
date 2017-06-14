@@ -50,6 +50,7 @@ func (this *BaseController) Prepare() {
 	//为每一个view 赋值侧边栏
 	quotes := models.Get3RandomQuote()
 	fmt.Println(quotes)
+	//在这里可以把他填充到模板里面
 }
 
 func (this *BaseController) JsonRetrun(status string, message string, data interface{}) {
