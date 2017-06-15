@@ -24,7 +24,7 @@
     <div class="container-fluid pt-1">
         <div class="row">
             <!--正文-->
-            <div class="col-md-9 pr-sm-0 pr-xs-1">
+            <div class="col-md-9">
                 <!--面包屑-->
                 {{template "layout/_breadcrumb.html" .}}
                 <!--面包屑-->
@@ -41,10 +41,17 @@
 
                     <ul class="list-group">
                         {{range $key, $val := .Quotes}}
-                            <li class="list-group-item">{{$key}}{{$val.English}}</li>
+                        <li class="list-group-item">{{$val.English}}</li>
                         {{end}}
                     </ul>
+
                 </div>
+
+                {{range $key, $img := .Imgs}}
+                    <div class="card p-2 mt-1">
+                        <img class="img-thunmbnail" src="{{$img.Src}}">
+                    </div>
+                {{end}}
             </div>
             <!-- 侧边栏-->
 

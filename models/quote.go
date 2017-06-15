@@ -43,7 +43,9 @@ func QuoteRandom3() (quotes []Quote) {
 	na := strconv.Itoa(rand.Intn(count))
 	nb := strconv.Itoa(rand.Intn(count))
 	nc := strconv.Itoa(rand.Intn(count))
-	indexs := []string{na, nb, nc}
+	nd := strconv.Itoa(rand.Intn(count))
+	ne := strconv.Itoa(rand.Intn(count))
+	indexs := []string{na, nb, nc, nd, ne}
 	Gorm.Model(&Quote{}).Where("id in (?)", indexs).Find(&quotes)
 	return
 }
