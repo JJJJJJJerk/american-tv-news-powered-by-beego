@@ -4,21 +4,22 @@ package models
 //http://jinzhu.me/gorm/ gorm 文档
 import (
 	"fmt"
+	"time"
 
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/cache"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
+	"github.com/patrickmn/go-cache"
 )
 
 //这个是查血的初始
 var Gorm *gorm.DB
 var PageSize int
-var CacheManager cache.Cache
+var CacheManager *cache.Cache
 
 func init() {
 	//和模型一起实例化一个缓存管理器
-	CacheManager, _ = cache.NewCache("file", `{"CachePath":"./cache","FileSuffix":".cache","DirectoryLevel":2,"EmbedExpiry":3600}`)
+	CacheManager = cache.New(5*time.Minute, 10*time.Minute)
 
 	user := beego.AppConfig.String("mysqluser")
 	passwd := beego.AppConfig.String("mysqlpass")

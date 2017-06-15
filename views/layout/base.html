@@ -38,7 +38,12 @@
             <!-- 侧边栏-->
             <div class="col-md-3">
                 <div class="card">
-                    侧边栏
+
+                    <ul class="list-group">
+                        {{range $key, $val := .Quotes}}
+                            <li class="list-group-item">{{$key}}{{$val.English}}</li>
+                        {{end}}
+                    </ul>
                 </div>
             </div>
             <!-- 侧边栏-->

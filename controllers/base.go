@@ -50,6 +50,8 @@ func (this *BaseController) Prepare() {
 	//为每一个view 赋值侧边栏
 	quotes := models.Get3RandomQuote()
 	fmt.Println(quotes)
+	this.Data["Quotes"] = quotes
+
 	//在这里可以把他填充到模板里面
 }
 
