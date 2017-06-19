@@ -14,7 +14,6 @@ import (
 var CdnHost string
 
 const CK_IMG_5_RANDOM = "CacheKey.5random.image.quotes"
-
 type Image struct {
 	gorm.Model
 	Key         string

@@ -1,7 +1,5 @@
-<div class="well">
-    <h1>cookie-session:{{.num}}</h1>
-    <h1>cookie_string:{{.CookieString}}</h1>
-    <h2>{{.Article.Title}}</h2>
+<div class="card p-sm-3">
+    <h2 class="text-center text-success lead">{{.Article.Title}}</h2>
     <!--str2html 显示输出html代码-->
     <p>{{str2html .Article.Body}}</p>
 </div>
