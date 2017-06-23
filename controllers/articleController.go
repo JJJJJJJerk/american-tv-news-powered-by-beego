@@ -26,6 +26,12 @@ func (c *ArticlesController) Index() {
 
 func (c *ArticlesController) Detail() {
 	articleID, _ := c.GetInt(":id")
+	//浏览计数
+	vote := models.Vote{}
+	models.Gorm.Where("article_id = ?", articleID).Find(&vote)
+	vote.Visit++
+	models.Gorm.Model(&vote).Update("visit")
+
 	article := models.Article{}
 	models.Gorm.First(&article, articleID)
 
@@ -36,6 +42,7 @@ func (c *ArticlesController) Detail() {
 	url := fmt.Sprintf("/article/%d", articleID)
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}, {url, "fa fa-graduation-cap", article.Title}}
 	c.Data["Article"] = article
+	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
 
 	c.Layout = "layout/base.html"
@@ -48,4 +55,17 @@ func (c *ArticlesController) LoadMore() {
 	articles := []models.Article{}
 	models.Gorm.Offset(offset).Limit(limit).Order("created_at DESC").Preload("Tags").Preload("Coverage").Preload("Images").Find(&articles)
 	c.JsonRetrun("success", "you are awesome!!!", articles)
+}
+
+//评分ajax
+func (c *ArticlesController) VoteScore() {
+	articleId, _ := c.GetInt("articleId")
+	score, _ := c.GetFloat("score")
+	vote := models.Vote{}
+	models.Gorm.Where("article_id = ? ", articleId).Find(&vote)
+	count := float32(vote.VoteCount)
+	vote.Score = (vote.Score*count + float32(score)) / (count + 1)
+	vote.VoteCount++
+	models.Gorm.Model(&vote).Update("vote_count", "score")
+	c.JsonRetrun("success", "rate score successed", vote)
 }

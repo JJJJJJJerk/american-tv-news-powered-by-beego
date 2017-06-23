@@ -14,6 +14,7 @@ import (
 var CdnHost string
 
 const CK_IMG_5_RANDOM = "CacheKey.5random.image.quotes"
+
 type Image struct {
 	gorm.Model
 	Key         string
@@ -48,7 +49,6 @@ func (img *Image) GetQuoteImgUrl() (url string) {
 
 func Fetch5RandomQuoteImage() (images []Image) {
 	var items []Image
-	Gorm.LogMode(true)
 	Gorm.Model(&Image{}).Where("`key` LIKE ?", "%brainyquote%").Order("RAND()").Limit(5).Find(&items)
 	return items
 }

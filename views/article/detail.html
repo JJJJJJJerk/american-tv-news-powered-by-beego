@@ -1,5 +1,58 @@
-<div class="card p-sm-3">
-    <h2 class="text-center text-success lead">{{.Article.Title}}</h2>
+<div class="card p-sm-3 mb-1 p-xs-1">
+    <h1 class="text-center text-danger lead">{{.Article.Title}}</h1>
+
+                            <ul class="list-inline d-flex flex-row-reverse mt-2">
+                                <li class="list-inline-item mr-3">
+                                        <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-grey">{{.Article.CreatedDate}}</span>
+                                </li>
+                                <li class="list-inline-item mr-3">
+                                        <strong class="mr-1"><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat .Article.CreatedAt "2006-01-02 15:04:11"}}></strong>  <span class="text-grey"> {{.Article.CreatedTime}}</span>
+                                </li>
+                                <li class="list-inline-item mr-3">
+                                        <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong><span class="text-grey"> {{.Vote.Visit}}</span>
+                                </li>
+                                
+                                <li class="list-inline-item mr-3">
+                                        <strong class="mr-1"><span class="ion-star" title="评分 review score"></strong><span class="text-grey"> {{.Vote.Score}}</span>
+                                </li>
+                                <li class="list-inline-item mr-3">
+                                        <strong class="mr-1 mr-3"><span class="ion-heart" title="收藏数量 favarate count"></strong><span class="text-grey"> {{.Vote.FavorateCount}}</span>
+                                </li>
+                        </ul>
     <!--str2html 显示输出html代码-->
     <p>{{str2html .Article.Body}}</p>
 </div>
+
+<link href="//cdn.bootcss.com/raty/2.7.1/jquery.raty.css" rel="stylesheet">
+<!--评分-->
+<script src="//cdn.bootcss.com/raty/2.7.1/jquery.raty.js"></script>
+
+
+<script>
+    var rateScore = {{.Vote.Score }};
+    var articleId = {{.Article.ID }};
+    var token = {{.Xsrf}};
+    var voteCount = {{.Vote.VoteCount}};
+    $(function () {
+        $('#raty').raty(
+            {
+                starType: 'i',
+                half: true,
+                noRatedMsg: 'Not rated yet!',
+                hints: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+                targetText: '评分',
+                numberMax: 5,
+                score: rateScore,
+                click: function (score, evt) {
+                    $.post("/article/vote",{articleId:articleId,score:score,_xsrf:token}, function (data, status) {
+                        $("#score").text(data.data.Score);
+                        $("#vote-count").text(data.data.VoteCount);
+                        $('#raty').raty('score', data.data.Score);
+                    });
+                }
+            }
+        ).before("<span style='font-size: 15px!important;position: absolute;right: 172px;top: 19px; '><i id='vote-count' class='text-info'>"+voteCount+"</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>");
+
+    })
+
+</script>
