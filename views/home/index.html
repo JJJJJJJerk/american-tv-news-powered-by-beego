@@ -4,7 +4,6 @@
 
         {{range $index, $value := .Articles}}
 
-
         <!--Card-->
         <div class="card mb-1">
 
@@ -40,13 +39,10 @@
 
                                 </li>
                                 <li class="list-inline-item">
-                                        <strong><span class="glyphicon glyphicon-eye-open" title="阅读数量 read count"></strong>                                        {{$value.ReadCount}}
+                                        <strong><span class="glyphicon glyphicon-eye-open" title="阅读数量 read count"></strong>                                        {{$value.Vote.Visit}}
                                 </li>
                                 <li class="list-inline-item">
-                                        <strong><span class="ion-heart" title="收藏数量 favarate count"></strong> {{1000}}
-                                </li>
-                                <li class="list-inline-item">
-                                        <strong><span class="fa fa-commenting" title="评论数量 comment count"></strong> {{1001}}
+                                        <strong><span class="ion-heart" title="收藏数量 favarate count"></strong> {{$value.Vote.FavorateCount}}
                                 </li>
                         </ul>
 

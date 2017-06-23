@@ -33,6 +33,7 @@ type Article struct {
 	CreatedDate string `gorm:"-"`
 	CreatedTime string `gorm:"-"`
 	Tags        []Tag  `gorm:"many2many:article_tag;"`
+	Vote        Vote
 }
 
 //做一些计算
@@ -76,6 +77,6 @@ func GetAllArticles(pageIndex int) (articles []Article, totalPage int) {
 
 	offset := (pageIndex - 1) * PageSize
 	articles = []Article{}
-	Gorm.Offset(offset).Limit(PageSize).Order("created_time DESC").Find(&articles)
+	Gorm.Offset(offset).Limit(PageSize).Order("created_time DESC").Preload("Vote").Find(&articles)
 	return
 }
