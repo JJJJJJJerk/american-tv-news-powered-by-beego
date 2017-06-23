@@ -12,7 +12,7 @@ type Vote struct {
 	ShowId        uint16
 	MovieId       uint16
 	Visit         uint16
-	Score         uint16
+	Score         float32
 	VoteCount     uint16
 	FavorateCount uint16
 }

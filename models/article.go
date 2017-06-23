@@ -42,7 +42,7 @@ func (art *Article) AfterFind() (err error) {
 	body := beego.HTML2str(art.Body)
 	art.Excerpt = beego.Substr(body, 0, 120)
 	//转换时间啊
-	art.CreatedDate = beego.Date(art.CreatedAt, "Y-m-d")
+	art.CreatedDate = beego.Date(art.CreatedAt, "m-d")
 	art.CreatedTime = beego.Date(art.CreatedAt, "H:i")
 
 	//param := "?imageView2/1/w/120/h/120"

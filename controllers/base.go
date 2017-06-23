@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"my_go_web/models"
 
 	"github.com/astaxie/beego"
@@ -52,7 +51,7 @@ func (this *BaseController) Prepare() {
 	//fmt.Println(quotes)
 	this.Data["Quotes"] = quotes
 	this.Data["Imgs"] = models.Fetch5RandomQuoteImageCached()
-	fmt.Println(models.Fetch5RandomQuoteImageCached())
+	//fmt.Println(models.Fetch5RandomQuoteImageCached())
 
 	//在这里可以把他填充到模板里面
 }

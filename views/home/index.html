@@ -29,20 +29,22 @@
                         <!--Title-->
                         <p class="card-text">{{ $value.Excerpt }}</p>
 
-                        <ul class="list-inline text-green">
+                        <ul class="list-inline d-flex justify-content-between mb-0">
                                 <li class="list-inline-item">
-                                        <strong><span class="fa fa-calendar" title="发布日期"></strong> {{$value.CreatedDate}}
-                                </li>
-
-                                <li class="list-inline-item">
-                                        <strong><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>                                        {{$value.CreatedTime}}
-
+                                        <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-danger">{{$value.CreatedDate}}</span>
                                 </li>
                                 <li class="list-inline-item">
-                                        <strong><span class="glyphicon glyphicon-eye-open" title="阅读数量 read count"></strong>                                        {{$value.Vote.Visit}}
+                                        <strong class="mr-1"><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>  <span class="text-danger"> {{$value.CreatedTime}}</span>
                                 </li>
                                 <li class="list-inline-item">
-                                        <strong><span class="ion-heart" title="收藏数量 favarate count"></strong> {{$value.Vote.FavorateCount}}
+                                        <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong><span class="text-danger"> {{$value.Vote.Visit}}</span>
+                                </li>
+                                
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-fireball" title="评分 review score"></strong><span class="text-danger"> {{$value.Vote.Score}}</span>
+                                </li>
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-heart" title="收藏数量 favarate count"></strong><span class="text-danger"> {{$value.Vote.FavorateCount}}</span>
                                 </li>
                         </ul>
 
