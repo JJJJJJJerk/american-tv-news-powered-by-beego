@@ -30,9 +30,6 @@ type Crumb struct {
 
 func (this *BaseController) Prepare() {
 	this.Data["Xsrf"] = this.XSRFToken() //防止跨域
-	this.Data["GlobalName"] = beego.AppConfig.String("appname")
-	this.Data["GlobalKeyword"] = beego.AppConfig.String("keyword")
-	this.Data["GlobalDescription"] = beego.AppConfig.String("description")
 	// 	//判断用户数是否已近登陆
 	// 	//读取session
 	// 	userLogin := this.GetSession("loginInfo")

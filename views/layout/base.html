@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>资讯资源分享</title>
+    <title>{{.Title}}</title>
+    <meta name="keywords" content="TRY美剧,trytv,看美剧学电影,轻松学习英语,{{.Keyword}}">
+    <meta name="description" content="{{.Description}}}">
+
     <link href="//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +27,7 @@
     <div class="container pt-1">
         <div class="row">
             <!--正文-->
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <!--面包屑-->
                 {{template "layout/_breadcrumb.html" .}}
                 <!--面包屑-->
@@ -36,7 +39,10 @@
             <!--正文-->
 
             <!-- 侧边栏-->
-            <div class="col-md-4">
+            <div class="col-md-3 pl-sm-1 pl-xs-2">
+                <div class="card mb-1">
+                    {{template "layout/_audiobook.html" .}}
+                </div>
                 <div class="card">
 
                     <ul class="list-group">
@@ -54,6 +60,8 @@
                 {{end}}
             </div>
             <!-- 侧边栏-->
+
+
 
         </div>
 

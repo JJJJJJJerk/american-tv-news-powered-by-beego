@@ -87,3 +87,10 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
     position: absolute;
     right: 15px;
 }
+
+/*   设置container width   */
+@media (min-width: 1200px) {
+  .container {
+    width: 1350px;
+  }
+}
