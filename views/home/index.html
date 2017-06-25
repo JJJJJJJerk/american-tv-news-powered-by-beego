@@ -6,18 +6,14 @@
         <div class="card mb-1">
 
                 <!--Card image-->
-                <div class="view overlay hm-white-slight">
-                        <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-fluid">
-
-                        <div class="series-card-details mx-auto d-flex align-items-center">
-
-
-                                <h4 class="text-center"><a class="text-white" href="/article/{{$value.ID}}"> {{$value.Title}}</a></h4>
-
+                <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
+                <div class="view overlay hm-white-slight show-cursor">
+                        <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-fluid"> 
+                        <div class="series-card-details d-flex align-items-center">
+                                <h4 class="text-center">{{$value.Title}}</h4>
                         </div>
-                        <div class="mask waves-effect waves-light"></div>
-
                 </div>
+                </a>
                 <!--/.Card image-->
 
 
@@ -28,13 +24,13 @@
                         <p class="card-text">{{ $value.Excerpt }}</p>
 
                         <ul class="list-inline d-flex justify-content-between mb-0">
-
-                                <li class="list-inline-item">
-                                        <strong class="mr-1"><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>                                        <span class="text-danger"> {{$value.CreatedTime}}</span>
-                                </li>
                                 <li class="list-inline-item">
                                         <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-danger">{{$value.CreatedDate}}</span>
                                 </li>
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>                                        <span class="text-danger"> {{$value.CreatedTime}}</span>
+                                </li>
+
                                 <li class="list-inline-item">
                                         <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong>
                                         <span

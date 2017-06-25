@@ -18,6 +18,6 @@ func (c *HomeController) Get() {
 	c.Data["Title"] = "娱乐学习英语"
 	c.Data["Keyword"] = "轻松学英语,欧美,搞笑gif动图短片,"
 	c.Data["Description"] = ""
-	c.Layout = "layout/base.html"
+	c.Layout = "layout/base_index.html"
 	c.TplName = "home/index.html"
 }

@@ -45,7 +45,7 @@ func (c *ArticlesController) Detail() {
 	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
 
-	c.Layout = "layout/base.html"
+	c.Layout = "layout/base_view.html"
 	c.TplName = "article/detail.html"
 }
 
