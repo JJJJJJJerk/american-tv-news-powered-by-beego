@@ -261,3 +261,71 @@
 2017/06/25 18:20:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  804.20499ms|   match|[46m POST    [0m /auth/register   r:/auth/register
 2017/06/25 18:21:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.613649ms|   match|[44m GET     [0m /auth/register   r:/auth/register
 2017/06/25 18:21:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.043938ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:17:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 815.964013ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:17:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.085423ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:17:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.570146ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:18:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.635129ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:19:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.825312ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:20:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 777.162829ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:20:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 756.266273ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:20:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 943.050564ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:22:24 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:22:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 877.465441ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:22:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.37164ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:22:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.483463ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:22:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    548.957µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:23:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.786913ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:23:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     513.77µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:23:56 [W] [authController.go:33] 用户已近存在 
+2017/06/25 20:23:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 751.239537ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:26:57 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:27:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  824.84445ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:27:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.29858ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] the request url is  /auth/register
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/25 20:27:41 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/25 20:28:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.771209ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:28:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    519.487µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:28:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 11.04260079s|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:28:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.971003ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:28:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.058407ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:33:35 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:33:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  981.54426ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:33:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.722683ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:33:56 [W] [authController.go:32] 用户已近存在 
+2017/06/25 20:33:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 9.033946828s|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:34:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 9.755141631s|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:35:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|29.741588914s|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:35:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.717545ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:35:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.118911ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:37:29 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:37:44 [W] [authController.go:32] 用户已近存在 
+2017/06/25 20:38:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|30.258684481s|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:39:16 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] the request url is  /auth/register
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/25 20:39:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/25 20:39:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.179992ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 20:39:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.413194ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 20:39:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    364.577µs|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:40:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.416143ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 20:40:27 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:41:09 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 20:41:51 [W] [authController.go:34] 用户已近存在 
+2017/06/25 20:41:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|41.666339954s|   match|[46m POST    [0m /auth/register   r:/auth/register

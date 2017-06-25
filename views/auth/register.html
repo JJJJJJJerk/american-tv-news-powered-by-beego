@@ -9,42 +9,41 @@
             用户注册
           </div>
           <div class="card-block">
-            <form action="/auth/register" method="post">
-              {{ .xsrfdata }}
+            <form action="/auth/register" method="post" class="px-4">
               <!--user name validation-->
-              <div class="md-form">
+              <div class="md-form mb-2">
                 <i class="fa fa-user-circle-o prefix"></i>
                 <input type="text" name="name" id="form1" class="form-control validate">
                 <label for="form1" data-error="wrong" data-success="right">姓名 Full name</label>
               </div>
 
               <!--Email validation-->
-              <div class="md-form">
+              <div class="md-form mb-2">
                 <i class="fa fa-envelope prefix"></i>
-                <input type="email" id="form2" class="form-control validate">
+                <input type="email" id="form2" class="form-control validate" name="email">
                 <label for="form2" data-error="wrong" data-success="right">邮箱 Email</label>
               </div>
 
               <!--Password validation-->
-              <div class="md-form">
+              <div class="md-form mb-2">
                 <i class="fa fa-lock prefix"></i>
-                <input type="password" id="form3" class="form-control validate">
+                <input type="password" id="form3" class="form-control validate" name="password">
                 <label for="form3" data-error="wrong" data-success="right">密码 Password</label>
               </div>
 
               <!--Password validation-->
-              <div class="md-form">
+              <div class="md-form mb-2">
                 <i class="fa fa-lock prefix"></i>
-                <input type="password" id="form4" class="form-control validate">
+                <input type="password" id="form4" class="form-control validate" name="password_confirmed">
                 <label for="form4" data-error="wrong" data-success="right">确认密码 Comfirm Password</label>
               </div>
 
-              <fieldset class="form-group">
+              <fieldset class="form-group mb-2">
                 <input type="checkbox" id="checkbox1" checked="checked" class="ml-5">
                 <a href="#" target="_blank" class="ml-1">网站注册条款</a>
               </fieldset>
               <!-- /.col -->
-              <div class="md-form form-group">
+              <div class="md-form form-group mb-2">
                 <a id="submit" class="btn btn-primary btn-lg waves-effect waves-light btn-block">注册</a>
               </div>
             </form>

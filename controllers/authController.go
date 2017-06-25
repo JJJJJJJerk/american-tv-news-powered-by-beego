@@ -15,23 +15,25 @@ type AuthController struct {
 
 //sign up
 func (c *AuthController) GetRegister() {
-	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
 	c.TplName = "auth/register.html"
 }
 
 func (c *AuthController) PostRegister() {
 	password := c.GetString("password")
-	password_comfirmed := c.GetString("password_comfirmed")
-	if password == password_comfirmed {
-		c.JsonRetrun("error", "两次输入的密码不相同", nil)
+	passwordConfirmed := c.GetString("password_confirmed")
+	if password == "" || passwordConfirmed == "" || (password != passwordConfirmed) {
+		c.JsonRetrun("error", "两次输入的密码不相同,或者密码为空", nil)
+		return
+
 	}
 
 	email := c.GetString("email")
 	isExistUser := models.User{}
 	models.Gorm.Where("email = ?", email).First(&isExistUser)
-	if isExistUser == (models.User{}) {
+	if isExistUser.ID > 0 {
 		beego.Warning("用户已近存在")
 		c.JsonRetrun("error", "email已经注册", nil)
+		return
 	}
 
 	//hash password
@@ -41,12 +43,18 @@ func (c *AuthController) PostRegister() {
 	//TODO:需要搞清楚 go语言的 pointer * &的用法
 	isExistUser.Email = email
 	isExistUser.Password = string(hashedPassword)
+	isExistUser.Name = c.GetString("name")
 	models.Gorm.Create(&isExistUser)
 	if isExistUser.ID < 1 {
 		beego.Critical("用户注册数据库添加失败")
 		c.JsonRetrun("error", "添加新用户失败", nil)
+		return
+
 	} else {
+		c.SetSession("loginInfo", isExistUser)
 		c.JsonRetrun("success", "添加新用户成功", nil)
+		return
+
 	}
 }
 
