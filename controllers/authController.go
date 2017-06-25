@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"html/template"
 	"my_go_web/models"
 
 	"github.com/astaxie/beego"
@@ -14,7 +15,7 @@ type AuthController struct {
 
 //sign up
 func (c *AuthController) GetRegister() {
-	c.Layout = "layout/base_index.html"
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
 	c.TplName = "auth/register.html"
 }
 
@@ -22,7 +23,7 @@ func (c *AuthController) PostRegister() {
 	password := c.GetString("password")
 	password_comfirmed := c.GetString("password_comfirmed")
 	if password == password_comfirmed {
-		c.JsonRetrun("success", "两次输入的密码不相同", nil)
+		c.JsonRetrun("error", "两次输入的密码不相同", nil)
 	}
 
 	email := c.GetString("email")
@@ -49,8 +50,10 @@ func (c *AuthController) PostRegister() {
 	}
 }
 
-// //sign in
+//sign in
 func (c *AuthController) GetLogin() {
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
+
 	c.Layout = "layout/base_index.html"
 	c.TplName = "auth/login.html"
 }

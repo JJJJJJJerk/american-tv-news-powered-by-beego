@@ -31,7 +31,6 @@
 <script>
     var rateScore = {{.Vote.Score }};
     var articleId = {{.Article.ID }};
-    var token = {{.Xsrf}};
     var voteCount = {{.Vote.VoteCount}};
     $(function () {
         $('#raty').raty(
@@ -44,7 +43,7 @@
                 numberMax: 5,
                 score: rateScore,
                 click: function (score, evt) {
-                    $.post("/article/vote",{articleId:articleId,score:score,_xsrf:token}, function (data, status) {
+                    $.post("/article/vote",{articleId:articleId,score:score}, function (data, status) {
                         $("#score").text(data.data.Score);
                         $("#vote-count").text(data.data.VoteCount);
                         $('#raty').raty('score', data.data.Score);

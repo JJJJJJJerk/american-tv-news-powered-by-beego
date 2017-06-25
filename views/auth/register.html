@@ -1,69 +1,112 @@
+{{template "layout/_head.html" .}}
 
-  <div class="register-box">
-    <div class="register-logo">
-      <a href="/l"><b>Admin</b>LTE</a>
-    </div>
-
-    <div class="register-box-body">
-      <p class="login-box-msg">注册会员</p>
-
-      <form action="/auth/register" method="post">
-        {{ .xsrfdata }}
-
-        <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="姓名|Full name">
-          <span class="glyphicon glyphicon-user form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="邮箱|Email">
-          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="密码|Password">
-          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        </div>
-        <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="确认密码|Retype password">
-          <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-        </div>
-        <div class="row">
-          <div class="col-xs-8">
-            <div class="checkbox icheck">
-              <label>
-              <input type="checkbox">  我同意<a href="#">网站条款</a>
-            </label>
-            </div>
+<body>
+  <div class="container">
+    <div class="row mt-4">
+      <div class="offset-sm-3 col-sm-6">
+        <div class="card">
+          <div class="card-header text-center">
+            用户注册
           </div>
-          <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-success btn-block btn-flat">注册</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
+          <div class="card-block">
+            <form action="/auth/register" method="post">
+              {{ .xsrfdata }}
+              <!--user name validation-->
+              <div class="md-form">
+                <i class="fa fa-user-circle-o prefix"></i>
+                <input type="text" name="name" id="form1" class="form-control validate">
+                <label for="form1" data-error="wrong" data-success="right">姓名 Full name</label>
+              </div>
 
-      <div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="/auth/loginWechat" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-wechat"></i>微信登陆</a>
-        <a href="/auth/loginWeibo" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-weibo"></i>微博登陆</a>
-        <a href="/auth/loginQQ" class="btn btn-block btn-social btn-twitter btn-flat"><i class="fa fa-qq"></i>QQ登陆</a>
+              <!--Email validation-->
+              <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <input type="email" id="form2" class="form-control validate">
+                <label for="form2" data-error="wrong" data-success="right">邮箱 Email</label>
+              </div>
+
+              <!--Password validation-->
+              <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <input type="password" id="form3" class="form-control validate">
+                <label for="form3" data-error="wrong" data-success="right">密码 Password</label>
+              </div>
+
+              <!--Password validation-->
+              <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <input type="password" id="form4" class="form-control validate">
+                <label for="form4" data-error="wrong" data-success="right">确认密码 Comfirm Password</label>
+              </div>
+
+              <fieldset class="form-group">
+                <input type="checkbox" id="checkbox1" checked="checked" class="ml-5">
+                <a href="#" target="_blank" class="ml-1">网站注册条款</a>
+              </fieldset>
+              <!-- /.col -->
+              <div class="md-form form-group">
+                <a id="submit" class="btn btn-primary btn-lg waves-effect waves-light btn-block">注册</a>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+
+
+
       </div>
-
-      <a href="/auth/login" class="text-center">我已有账号</a>
     </div>
-    <!-- /.form-box -->
+  </div>
 
-    <!-- /.login-box -->
+  </div>
 
-    <!-- jQuery 2.2.3 -->
-    <script src="/static/js/all-package.min.js"></script>
+<!--弹出窗-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title"></h5>
+      </div>
+      <div class="modal-body" id="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <script>
-      $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' // optional
+
+
+
+
+  <!-- Bootstrap tooltips -->
+  <script src="//cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script src="//cdn.bootcss.com/mdbootstrap/4.3.2/js/mdb.min.js"></script>
+
+  <script>
+    $("#submit").click(function () {
+      // this.event.preventDefault();
+      $.post("/auth/register",$('form').serialize() ,function (data, status) {
+          $('#myModal').modal('toggle')
+          if(data.status == 'success'){
+            //注册成功
+            $("#modal-title").text("注册成功") ;
+            $("#modal-body").text(data.message);
+            location.href = "/";
+          }else {
+            //注册失败
+            $("#modal-title").text("注册错误") ;
+            $("#modal-body").text(data.message);
+          }
         });
-      });
-    </script>
+    });
+  </script>
+
+</body>

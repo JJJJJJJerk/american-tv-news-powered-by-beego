@@ -1,0 +1,263 @@
+2017/06/25 14:19:02 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 14:19:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.456725867s|   match|[44m GET     [0m /     r:/
+2017/06/25 14:19:19 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.093501ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:19:22 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    368.053µs| nomatch|[44m GET     [0m /favicon.ico
+2017/06/25 14:19:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 572.483534ms|   match|[44m GET     [0m /article/2279   r:/article/:id([0-9]+)
+2017/06/25 14:19:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 663.912444ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:20:42 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 14:20:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.416095815s|   match|[44m GET     [0m /article/2279   r:/article/:id([0-9]+)
+2017/06/25 14:20:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.316387ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:20:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    437.208µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 14:20:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 626.029606ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  620.65379ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 686.859982ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 709.514655ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 663.283948ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 615.297553ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  682.52263ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/25 14:22:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 542.315831ms|   match|[44m GET     [0m /article/2279   r:/article/:id([0-9]+)
+2017/06/25 14:22:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.021358ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:22:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    115.118µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 14:23:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 610.224516ms|   match|[44m GET     [0m /article/2279   r:/article/:id([0-9]+)
+2017/06/25 14:23:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    501.622µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:23:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    108.951µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 14:23:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 602.969141ms|   match|[44m GET     [0m /article/2279   r:/article/:id([0-9]+)
+2017/06/25 14:23:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    817.613µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:23:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    147.613µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 14:24:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    6.29817ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:24:19 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|   1.416044ms| nomatch|[44m GET     [0m /static/js/all-package.min.js
+2017/06/25 14:24:19 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    258.875µs| nomatch|[44m GET     [0m /static/js/all-package.min.js
+2017/06/25 14:28:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 815.783564ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:28:18 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    206.953µs| nomatch|[44m GET     [0m /static/js/all-package.min.js
+2017/06/25 14:28:18 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|     274.65µs| nomatch|[44m GET     [0m /static/js/all-package.min.js
+2017/06/25 14:34:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 876.992279ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:36:21 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 14:36:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 818.043889ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:36:50 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 14:36:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 796.769947ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:42:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 869.513915ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:42:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.450997ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:44:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.941833ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:44:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.20026ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:44:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.99868ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:44:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    708.182µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:45:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.141323ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:45:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    480.744µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 14:46:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.190674ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 14:46:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    683.447µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:19:50 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   5.315607ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:19:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 814.024386ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:19:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    641.708µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:21:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.77604ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:21:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    525.846µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:21:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.501844ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:21:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     464.45µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:25:32 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 16:25:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 893.955946ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:25:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.433005ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:25:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.332647ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:33:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  813.79376ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:33:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.220671ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:35:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.207254ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:35:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    663.337µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:38:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.039296ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:38:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    618.259µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:40:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  838.33786ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:40:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    555.408µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:41:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.926406ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:41:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    539.717µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:42:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.327917ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:42:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    776.469µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:42:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.023716ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:42:38 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.086994ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:43:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.230494ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:43:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     480.62µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:43:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.497931ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:43:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    605.912µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:44:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.371691ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:44:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    490.817µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:45:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.116764ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:45:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    669.471µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:45:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 824.458206ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:45:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    438.154µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:46:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.047411ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:46:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     508.39µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:46:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.414496ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:46:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     591.25µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:47:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.656918ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:47:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    539.512µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:47:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.288012ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:47:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.203733ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:48:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.444103ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:48:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    431.063µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:50:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.468433ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:50:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    914.067µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:50:20 [W] [authController.go:34] 用户已近存在 
+2017/06/25 16:50:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 793.073816ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 16:50:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.571846ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:50:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    613.992µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:51:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.490926321s|   match|[44m GET     [0m /article/2279   r:/article/:id([0-9]+)
+2017/06/25 16:51:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.198499ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:51:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    499.941µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 16:51:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.721622ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:51:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    448.394µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:51:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 768.285807ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] the request url is  /auth/register
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/25 16:54:25 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/25 16:54:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.057181ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:54:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    914.716µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:54:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.543166ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:54:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     580.06µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:55:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.664543ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:55:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    582.007µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:55:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.491088ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:55:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    592.393µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:57:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 829.886699ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:57:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    855.853µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:57:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   6.713242ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:57:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.213448ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 16:59:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.196595ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 16:59:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    793.124µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:03:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 875.054704ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:03:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.022126ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:06:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.801295ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:06:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.525196ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:07:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.835704ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:08:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 855.916131ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:09:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  11.735868ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:09:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.300604ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:09:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.365836ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:10:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.094034ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:11:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    9.18736ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:11:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    975.705µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:11:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.223199ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:11:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    585.537µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:11:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.739716ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:11:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    698.457µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:14:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 863.469195ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:14:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     839.55µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:15:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.039939ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:15:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    844.991µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:15:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.030737ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:15:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     782.56µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:16:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.812942ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:16:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    685.564µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 840.481366ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    719.143µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:23:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.425165ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:23:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     746.92µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:24:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.769458ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:24:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    933.857µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:28:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 837.718126ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:29:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.071919ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:31:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  12.650062ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:32:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.15988ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:35:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 881.908649ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:36:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.918866ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:37:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.314189ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:38:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.232423ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] the request url is  /auth/register
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/25 17:42:47 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] the request url is  /auth/register
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/25 17:42:53 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/25 17:42:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    9.60354ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:42:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.761301ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:48:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 793.075908ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:48:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.020791ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:48:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.822248ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:49:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.097502ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:49:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    817.112µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:51:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.260413ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:51:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    8.68596ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:52:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.095514ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:52:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    648.151µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:52:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    2.05803ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:52:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    846.904µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:54:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 807.606751ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:54:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    938.464µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:57:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.047057ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:57:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.400279ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:58:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  10.445616ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 17:58:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    792.363µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 17:58:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 722.224415ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:08:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 853.719664ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:08:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     1.4532ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:08:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 804.035728ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:08:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.654665603s|   match|[44m GET     [0m /     r:/
+2017/06/25 18:08:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     991.62µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:09:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    135.222µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 18:09:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 750.189943ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:09:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.116503ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:09:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.573869ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:09:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.795008ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:09:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    574.694µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:09:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.162336ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:09:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     741.81µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:10:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 793.697961ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:10:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  2.39683823s|   match|[44m GET     [0m /     r:/
+2017/06/25 18:10:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    849.923µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:10:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    109.991µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 18:11:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   6.228188ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:11:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     869.27µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:11:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 812.169855ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:12:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.303470031s|   match|[44m GET     [0m /     r:/
+2017/06/25 18:12:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    832.077µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:12:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    141.394µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 18:12:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.875036ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:12:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    580.389µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:13:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 769.299506ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:14:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  831.23502ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:14:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.201630503s|   match|[44m GET     [0m /     r:/
+2017/06/25 18:14:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.10453ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:14:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    109.967µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 18:14:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.514577ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:14:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.03065ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:14:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 734.183275ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:14:53 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 18:15:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.211631999s|   match|[44m GET     [0m /     r:/
+2017/06/25 18:15:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    662.396µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:15:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    400.167µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/25 18:15:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.932683ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:15:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    577.703µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:15:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.090859ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:15:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    728.448µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:15:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 777.185461ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:16:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  16.744023ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:16:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.51736ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:16:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  820.05943ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:17:57 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/25 18:18:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 850.829874ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:18:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.321754ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:18:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 768.092748ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:20:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.915755ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:20:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.097948ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/25 18:20:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  804.20499ms|   match|[46m POST    [0m /auth/register   r:/auth/register
+2017/06/25 18:21:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.613649ms|   match|[44m GET     [0m /auth/register   r:/auth/register
+2017/06/25 18:21:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.043938ms|   match|[44m GET     [0m /static/css/my.css
