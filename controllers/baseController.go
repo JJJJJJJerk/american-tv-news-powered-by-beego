@@ -56,4 +56,5 @@ func (this *BaseController) Prepare() {
 func (this *BaseController) JsonRetrun(status string, message string, data interface{}) {
 	this.Data["json"] = map[string]interface{}{"status": status, "message": message, "data": data}
 	this.ServeJSON()
+	return 
 }
