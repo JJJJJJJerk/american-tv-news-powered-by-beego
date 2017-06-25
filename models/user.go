@@ -11,3 +11,12 @@ type User struct {
 	Password    string
 	AvatarImage string
 }
+
+func AddUser(User *user) (User *u, error *err) {
+	u := User{}
+	Gorm.Where("email = ?", user.Email).Find(&u)
+	if u == nil {
+
+	}
+
+}
