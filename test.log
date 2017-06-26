@@ -363,3 +363,12 @@
 2017/06/26 10:48:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    121.218µs|   match|[44m GET     [0m /static/img/logo56x56.png
 2017/06/26 11:21:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.038583725s|   match|[44m GET     [0m /     r:/
 2017/06/26 11:21:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 590.844841ms|   match|[44m GET     [0m /article/2264   r:/article/:id([0-9]+)
+2017/06/26 17:43:07 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/26 17:43:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  4.09639931s|   match|[44m GET     [0m /     r:/
+2017/06/26 17:43:30 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    778.381µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/26 17:43:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 612.812558ms|   match|[44m GET     [0m /article/2286   r:/article/:id([0-9]+)
+2017/06/26 17:52:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  5.52568541s|   match|[44m GET     [0m /     r:/
+2017/06/26 17:52:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 609.040155ms|   match|[44m GET     [0m /article/2266   r:/article/:id([0-9]+)
+2017/06/26 18:09:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 8.586411529s|   match|[44m GET     [0m /     r:/
+2017/06/26 18:09:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.136551425s|   match|[44m GET     [0m /article/2285   r:/article/:id([0-9]+)
+2017/06/26 20:08:26 [I] [asm_amd64.s:2197] http server Running on http://:9999

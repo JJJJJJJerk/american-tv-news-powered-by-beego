@@ -32,8 +32,8 @@
 
 <script>
     //aritcle 图片样式修改 w-100 
-    $('article img').attr('style', '');
-    $('article img').addClass('img-fluid img-thumbnail w-100');
+    $('article img').removeProp('style')
+    $('article img').addClass('img-thumbnail w-100');
     var rateScore = {{.Vote.Score }};
     var articleId = {{.Article.ID }};
     var voteCount = {{.Vote.VoteCount }};
