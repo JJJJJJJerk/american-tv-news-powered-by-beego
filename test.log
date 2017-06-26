@@ -361,3 +361,5 @@
 2017/06/26 10:48:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 619.335315ms|   match|[44m GET     [0m /article/2285   r:/article/:id([0-9]+)
 2017/06/26 10:48:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.267599ms|   match|[44m GET     [0m /static/css/my.css
 2017/06/26 10:48:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    121.218µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/26 11:21:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.038583725s|   match|[44m GET     [0m /     r:/
+2017/06/26 11:21:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 590.844841ms|   match|[44m GET     [0m /article/2264   r:/article/:id([0-9]+)

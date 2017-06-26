@@ -32,8 +32,8 @@
 
 <script>
     //aritcle 图片样式修改 w-100 
-    $('article img').addClass('img-fluid img-thumbnail w-100');
     $('article img').attr('style', '');
+    $('article img').addClass('img-fluid img-thumbnail w-100');
     var rateScore = {{.Vote.Score }};
     var articleId = {{.Article.ID }};
     var voteCount = {{.Vote.VoteCount }};
@@ -58,5 +58,4 @@
         ).before("<span style='font-size: 15px!important;position: absolute;right: 172px;top: 19px; '><i id='vote-count' class='text-info'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>");
 
     })
-
 </script>
