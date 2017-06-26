@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"html/template"
 	"my_go_web/models"
 
 	"github.com/astaxie/beego"
@@ -58,13 +57,6 @@ func (c *AuthController) PostRegister() {
 	}
 }
 
-//sign in
-func (c *AuthController) GetLogin() {
-	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
-
-	c.Layout = "layout/base_index.html"
-	c.TplName = "auth/login.html"
-}
 func (c *AuthController) PostLogin() {
 	email := c.GetString("email")
 	user := models.User{}
@@ -86,7 +78,9 @@ func (c *AuthController) PostLogin() {
 		if err == nil { // nil means it is a match
 			//设置登陆session info
 			c.SetSession("loginInfo", user)
-			c.JsonRetrun("success", "用户登陆成功", nil)
+			c.JsonRetrun("success", "用户登陆成功", user)
+		} else {
+			c.JsonRetrun("error", "密码错误", nil)
 		}
 	}
 }

@@ -52,6 +52,63 @@
       <form class="form-inline waves-effect waves-light">
         <input class="form-control" type="text" placeholder="Search">
       </form>
+
+      <ul class="navbar-nav mr-auto pull-right">
+        <li class="nav-item ">
+          <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link waves-effect waves-light">
+            <i class="fa fa-sign-in"></i>
+            <span class="hidden-sm-down">登陆</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body m-4 mt-4 m">
+
+        <div class="md-form  my-3">
+          <i class="fa fa-envelope prefix"></i>
+          <input type="email" id="input-email" class="form-control validate" name="email">
+          <label for="form2" data-error="wrong" data-success="right">邮箱 Email</label>
+        </div>
+        <div class="md-form  my-3">
+          <i class="fa fa-lock prefix"></i>
+          <input type="password" id="input-password" class="form-control validate" name="password">
+          <label for="form3" data-error="wrong" data-success="right">密码 Password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <button type="button" id='submit' class="btn btn-primary">登陆</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#submit').click(function () {
+    var formData = { email: $('#input-email').val(), password: $('#input-password').val() };
+    $.post('/auth/login', formData, function (data, status) {
+      if (data.status == 'success') {
+        //登陆成功
+        $('#exampleModalLong > div > div').empty().addClass('py-4').html('<h2 class="text-success text-center align-items-center lead">登陆成功</h1>')
+        $('#myModal').modal('toggle');
+        setTimeout(function () {
+          location.reload()
+
+        }, 200)
+      } else {
+        alert(data.message)
+      }
+    });
+  })
+
+</script>

@@ -20,7 +20,6 @@ func init() {
 	beego.Router("/article/vote", &controllers.ArticlesController{}, "post:VoteScore")
 	//登陆
 	beego.Router("/auth/login", &controllers.AuthController{}, "post:PostLogin")
-	beego.Router("/auth/login", &controllers.AuthController{}, "get:GetLogin")
 	beego.Router("/auth/register", &controllers.AuthController{}, "get:GetRegister")
 	beego.Router("/auth/register", &controllers.AuthController{}, "post:PostRegister")
 
