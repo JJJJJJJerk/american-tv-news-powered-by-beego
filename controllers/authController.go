@@ -77,7 +77,7 @@ func (c *AuthController) PostLogin() {
 		err := bcrypt.CompareHashAndPassword(db_hashed_password, password)
 		if err == nil { // nil means it is a match
 			//设置登陆session info
-			c.SetSession("loginInfo", user)
+			c.SetSession(AuthSessionName, user)
 			c.JsonRetrun("success", "用户登陆成功", user)
 		} else {
 			c.JsonRetrun("error", "密码错误", nil)

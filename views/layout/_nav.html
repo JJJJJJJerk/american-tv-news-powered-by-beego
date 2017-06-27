@@ -54,12 +54,23 @@
       </form>
 
       <ul class="navbar-nav mr-auto pull-right">
-        <li class="nav-item ">
-          <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link waves-effect waves-light">
-            <i class="fa fa-sign-in"></i>
-            <span class="hidden-sm-down">登陆</span>
-          </a>
-        </li>
+
+
+        {{if .User }}
+            <li class="nav-item ">
+              <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link waves-effect waves-light p-0 ml-4">
+                    <img src="{{ .User.WeiboAvatar}}" width="35" height="35">
+              </a>
+            </li>
+        {{else}}
+                    <li class="nav-item ">
+              <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link waves-effect waves-light ml-4">
+                <i class="fa fa-sign-in"></i>
+                <span class="hidden-sm-down">登陆</span>
+              </a>
+            </li>
+
+        {{end}}
       </ul>
     </div>
   </div>

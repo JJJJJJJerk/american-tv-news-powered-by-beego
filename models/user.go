@@ -10,4 +10,5 @@ type User struct {
 	Email       string `gorm:"size:255"`
 	Password    string
 	AvatarImage string
+	WeiboAvatar string
 }

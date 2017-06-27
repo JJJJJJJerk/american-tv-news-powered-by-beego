@@ -7,9 +7,10 @@ import (
 )
 
 const (
-	FlashSuccess = "flash_success"
-	FlashInfo    = "flash_info"
-	FlashError   = "flash_Error"
+	FlashSuccess    = "flash_success"
+	FlashInfo       = "flash_info"
+	FlashError      = "flash_Error"
+	AuthSessionName = "authed_user_session_name"
 )
 
 type BaseController struct {
@@ -29,7 +30,24 @@ type Crumb struct {
 // }
 
 func (this *BaseController) Prepare() {
-	this.Data["Xsrf"] = this.XSRFToken() //防止跨域
+
+	sessionUser := this.GetSession(AuthSessionName)
+	if sessionUser == nil {
+		this.Data["User"] = nil
+
+		this.Data["Uid"] = 0
+	} else {
+		user := this.GetSession(AuthSessionName).(models.User)
+		this.Data["User"] = user
+		this.Data["Uid"] = user.ID
+	}
+	if this.Ctx.Request.Method == "GET" {
+		this.Data["Xsrf"] = this.XSRFToken() //防止跨域
+		quotes := models.Get3RandomQuote()
+		//fmt.Println(quotes)
+		this.Data["Quotes"] = quotes
+		this.Data["Imgs"] = models.Fetch5RandomQuoteImageCached()
+	}
 	// 	//判断用户数是否已近登陆
 	// 	//读取session
 	// 	userLogin := this.GetSession("loginInfo")
@@ -44,10 +62,7 @@ func (this *BaseController) Prepare() {
 	// 	//做一些权限判断
 
 	//为每一个view 赋值侧边栏
-	quotes := models.Get3RandomQuote()
-	//fmt.Println(quotes)
-	this.Data["Quotes"] = quotes
-	this.Data["Imgs"] = models.Fetch5RandomQuoteImageCached()
+
 	//fmt.Println(models.Fetch5RandomQuoteImageCached())
 
 	//在这里可以把他填充到模板里面
@@ -56,5 +71,5 @@ func (this *BaseController) Prepare() {
 func (this *BaseController) JsonRetrun(status string, message string, data interface{}) {
 	this.Data["json"] = map[string]interface{}{"status": status, "message": message, "data": data}
 	this.ServeJSON()
-	return 
+	return
 }

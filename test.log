@@ -554,3 +554,124 @@
 2017/06/26 21:57:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.760884345s|   match|[44m GET     [0m /     r:/
 2017/06/26 21:57:46 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   8.333652ms|   match|[44m GET     [0m /static/css/my.css
 2017/06/26 21:57:46 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     51.783µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 21:09:32 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:09:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.927657812s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:09:45 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   2.076879ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 21:10:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 416.446904ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 21:10:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.047277691s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:10:29 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.451397ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 21:10:29 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    431.763µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 21:17:16 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] the request url is  /
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] Handler crashed with error interface conversion: interface {} is nil, not models.User
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/iface.go:172
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/my_go_web/controllers/baseController.go:34
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:775
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/27 21:17:29 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/27 21:19:16 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:19:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.786650493s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:19:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 374.137866ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 21:19:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.009420991s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:19:41 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    1.23805ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 21:19:41 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    337.691µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 21:19:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  3.96193657s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:20:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.959580983s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:20:22 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:36:17 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:36:27 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:37:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|42.595788358s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:37:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|13.822533414s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:38:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.4330207s|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 21:38:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|58.785196975s|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 21:49:54 [D] [template.go:171] parse template err: layout/_nav.html template: layout/_nav.html:59: function "User" not defined
+2017/06/27 21:49:54 [D] [template.go:171] parse template err: layout/base_index.html template: layout/_nav.html:59: function "User" not defined
+2017/06/27 21:49:54 [D] [template.go:171] parse template err: layout/base_view.html template: layout/_nav.html:59: function "User" not defined
+2017/06/27 21:49:54 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:50:19 [D] [template.go:171] parse template err: layout/_nav.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:50:19 [D] [template.go:171] parse template err: layout/base_index.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:50:19 [D] [template.go:171] parse template err: layout/base_view.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:50:19 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:50:41 [D] [template.go:171] parse template err: layout/_nav.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:50:41 [D] [template.go:171] parse template err: layout/base_index.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:50:41 [D] [template.go:171] parse template err: layout/base_view.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:50:41 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:51:21 [D] [controller.go:252] parse template err: layout/base_index.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] the request url is  /
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/layout/base_index.html
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:226
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/27 21:51:21 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/27 21:51:23 [D] [controller.go:252] parse template err: layout/base_index.html template: layout/_nav.html:69: function "User" not defined
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] the request url is  /
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/layout/base_index.html
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:226
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/06/27 21:51:23 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/06/27 21:51:52 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:52:00 [D] [controller.go:226] template Execute err: template: layout/_nav.html:59:13: executing "layout/_nav.html" at <.User>: User is not a method but has arguments
+2017/06/27 21:52:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  4.84591599s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:52:19 [D] [controller.go:226] template Execute err: template: layout/_nav.html:59:13: executing "layout/_nav.html" at <.User>: User is not a method but has arguments
+2017/06/27 21:52:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.004273273s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:52:43 [D] [controller.go:226] template Execute err: template: layout/_nav.html:59:13: executing "layout/_nav.html" at <.User>: User is not a method but has arguments
+2017/06/27 21:52:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.014457696s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:53:42 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:54:08 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:54:35 [D] [controller.go:226] template Execute err: template: layout/_nav.html:59:13: executing "layout/_nav.html" at <.User>: User is not a method but has arguments
+2017/06/27 21:54:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  19.4879558s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:57:18 [D] [controller.go:226] template Execute err: template: layout/_nav.html:59:13: executing "layout/_nav.html" at <eq .User nil>: error calling eq: invalid type for comparison
+2017/06/27 21:57:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 8.700990467s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:57:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  38.882708ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 21:57:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    447.634µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 21:57:28 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 21:58:22 [D] [controller.go:226] template Execute err: template: layout/_nav.html:59:13: executing "layout/_nav.html" at <eq .User nil>: error calling eq: invalid type for comparison
+2017/06/27 21:58:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.859591571s|   match|[44m GET     [0m /     r:/
+2017/06/27 21:58:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     732.57µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 21:58:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    176.961µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 21:59:51 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 22:00:00 [D] [controller.go:226] template Execute err: template: layout/_nav.html:69:38: executing "layout/_nav.html" at <.User.WeiboAvatar>: can't evaluate field WeiboAvatar in type interface {}
+2017/06/27 22:00:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.857478757s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:00:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.522753ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:00:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    173.753µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 22:01:00 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 22:01:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.948542409s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:01:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    790.074µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:01:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    183.661µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 22:01:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 386.270803ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 22:01:27 [D] [controller.go:226] template Execute err: template: layout/_nav.html:62:38: executing "layout/_nav.html" at <.User.WeiboAvatar>: can't evaluate field WeiboAvatar in type interface {}
+2017/06/27 22:01:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.110741486s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:01:27 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    649.952µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:01:27 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     65.061µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 22:01:54 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 22:02:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 7.821582151s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:02:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.098655502s|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 22:02:56 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/27 22:03:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 7.282313844s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:03:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.843208486s|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/27 22:03:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.983895275s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:03:21 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.568986ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:03:21 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    413.017µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 22:05:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|10.178417387s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:05:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    3.76739ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:05:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    109.184µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 22:06:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.959741583s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:06:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    597.723µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:06:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    110.442µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/27 22:08:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.028104484s|   match|[44m GET     [0m /     r:/
+2017/06/27 22:08:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    698.218µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/27 22:08:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     97.086µs|   match|[44m GET     [0m /static/img/logo56x56.png
