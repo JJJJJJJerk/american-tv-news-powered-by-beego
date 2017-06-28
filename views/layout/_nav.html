@@ -44,7 +44,7 @@
           <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">短片</a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <a class="dropdown-item">美文</a>
-            <a class="dropdown-item">去玩</a>
+            <a class="dropdown-item">趣玩</a>
             <a class="dropdown-item">创意</a>
           </div>
         </li>
@@ -57,14 +57,16 @@
 
 
         {{if .User }}
-            <li class="nav-item ">
-              <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link waves-effect waves-light p-0 ml-4">
-                    <img src="{{ .User.WeiboAvatar}}" width="35" height="35">
-              </a>
+            <li class="nav-item btn-group">
+              <a class="nav-link dropdown-toggle nav-link waves-effect waves-light p-0 ml-4" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ .User.WeiboAvatar}}" width="35" height="35"></a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <a class="dropdown-item">{{.User.Email}}</a>
+                <a class="dropdown-item">注销</a>
+              </div>
             </li>
         {{else}}
                     <li class="nav-item ">
-              <a data-toggle="modal" data-target="#exampleModalLong" class="nav-link waves-effect waves-light ml-4">
+              <a data-toggle="modal" data-target="#modal-login" class="nav-link waves-effect waves-light ml-4">
                 <i class="fa fa-sign-in"></i>
                 <span class="hidden-sm-down">登陆</span>
               </a>
@@ -76,11 +78,8 @@
   </div>
 </nav>
 
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<!-- Modal login -->
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body m-4 mt-4 m">
