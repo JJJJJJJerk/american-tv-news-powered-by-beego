@@ -1,3 +1,5 @@
 my_go_web
 debug
 .*
+main
+test.log
