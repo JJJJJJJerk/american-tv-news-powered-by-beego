@@ -9,7 +9,8 @@ import (
 )
 
 type AuthController struct {
-	BaseController
+	beego.Controller //集成beego controller
+
 }
 
 //sign up
@@ -21,7 +22,8 @@ func (c *AuthController) PostRegister() {
 	password := c.GetString("password")
 	passwordConfirmed := c.GetString("password_confirmed")
 	if password == "" || passwordConfirmed == "" || (password != passwordConfirmed) {
-		c.JsonRetrun("error", "两次输入的密码不相同,或者密码为空", nil)
+		c.Data["json"] = map[string]interface{}{"status": "error", "message": "两次输入的密码不相同,或者密码为空", "data": nil}
+		c.ServeJSON()
 		return
 
 	}
@@ -31,7 +33,8 @@ func (c *AuthController) PostRegister() {
 	models.Gorm.Where("email = ?", email).First(&isExistUser)
 	if isExistUser.ID > 0 {
 		beego.Warning("用户已近存在")
-		c.JsonRetrun("error", "email已经注册", nil)
+		c.Data["json"] = map[string]interface{}{"status": "error", "message": "email已经注册", "data": nil}
+		c.ServeJSON()
 		return
 	}
 
@@ -46,12 +49,14 @@ func (c *AuthController) PostRegister() {
 	models.Gorm.Create(&isExistUser)
 	if isExistUser.ID < 1 {
 		beego.Critical("用户注册数据库添加失败")
-		c.JsonRetrun("error", "添加新用户失败", nil)
+		c.Data["json"] = map[string]interface{}{"status": "error", "message": "添加新用户失败", "data": nil}
+		c.ServeJSON()
 		return
 
 	} else {
 		c.SetSession("loginInfo", isExistUser)
-		c.JsonRetrun("success", "添加新用户成功", nil)
+		c.Data["json"] = map[string]interface{}{"status": "success", "message": "添加新用户成功", "data": nil}
+		c.ServeJSON()
 		return
 
 	}
@@ -63,7 +68,9 @@ func (c *AuthController) PostLogin() {
 	models.Gorm.Where("email = ?", email).First(&user)
 
 	if user.ID < 1 {
-		c.JsonRetrun("error", "用户不存在", nil)
+		c.Data["json"] = map[string]interface{}{"status": "error", "message": "用户不存在", "data": nil}
+		c.ServeJSON()
+		return
 	} else {
 		//比较密码
 		//string to []byte
@@ -78,9 +85,13 @@ func (c *AuthController) PostLogin() {
 		if err == nil { // nil means it is a match
 			//设置登陆session info
 			c.SetSession(AuthSessionName, user)
-			c.JsonRetrun("success", "用户登陆成功", user)
+			c.Data["json"] = map[string]interface{}{"status": "success", "message": "用户登陆成功", "data": nil}
+			c.ServeJSON()
+			return
 		} else {
-			c.JsonRetrun("error", "密码错误", nil)
+			c.Data["json"] = map[string]interface{}{"status": "error", "message": "密码错误", "data": nil}
+			c.ServeJSON()
+			return
 		}
 	}
 }
@@ -95,10 +106,10 @@ func (c *AuthController) PostResetPassword() {
 }
 
 // //注销
-func (c *AuthController) GetLogout() {
+func (c *AuthController) PostLogout() {
 	session := c.GetSession("loginInfo")
 	if session != nil {
-		c.DelSession("loginInfo")
+		c.DelSession(AuthSessionName)
 	}
 	c.Redirect("/", 302)
 }

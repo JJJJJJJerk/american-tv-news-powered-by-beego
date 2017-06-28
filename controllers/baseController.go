@@ -34,11 +34,12 @@ func (this *BaseController) Prepare() {
 	sessionUser := this.GetSession(AuthSessionName)
 	if sessionUser == nil {
 		this.Data["User"] = nil
-
+		Uid = 0
 		this.Data["Uid"] = 0
 	} else {
 		user := this.GetSession(AuthSessionName).(models.User)
 		this.Data["User"] = user
+		this.Uid = user.ID
 		this.Data["Uid"] = user.ID
 	}
 	if this.Ctx.Request.Method == "GET" {

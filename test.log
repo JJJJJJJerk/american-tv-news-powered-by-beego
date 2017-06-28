@@ -694,3 +694,21 @@
 2017/06/28 10:54:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.140761ms|   match|[44m GET     [0m /static/css/my.css
 2017/06/28 10:54:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    113.127µs|   match|[44m GET     [0m /static/img/logo56x56.png
 2017/06/28 10:54:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 649.034298ms|   match|[44m GET     [0m /article/2272   r:/article/:id([0-9]+)
+2017/06/28 11:09:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.160965494s|   match|[44m GET     [0m /     r:/
+2017/06/28 11:09:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.258685349s|   match|[44m GET     [0m /     r:/
+2017/06/28 11:09:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.664148ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 11:09:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    112.471µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 11:10:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.253460928s|   match|[44m GET     [0m /     r:/
+2017/06/28 11:10:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.919418ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 11:10:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     125.27µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 11:10:30 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/28 11:10:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.261330285s|   match|[44m GET     [0m /     r:/
+2017/06/28 11:10:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.745527ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 11:10:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    461.801µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 11:10:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 389.948397ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/28 11:11:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.228829863s|   match|[44m GET     [0m /     r:/
+2017/06/28 11:11:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.719788ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 11:11:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    108.901µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 11:12:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 6.051446417s|   match|[44m GET     [0m /     r:/
+2017/06/28 11:12:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    787.596µs|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 11:12:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    155.547µs|   match|[44m GET     [0m /static/img/logo56x56.png
