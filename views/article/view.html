@@ -4,7 +4,9 @@
 
 <div class="card p-sm-3 mb-1 p-xs-1">
     <h1 class="text-center text-danger lead">{{.Article.Title}}</h1>
-
+    {{if .IsAdmin  }}
+        <a href="http://www.trytv.org/article/{{.Article.ID}}/edit" target="_blank">编辑</a>
+    {{end}}
     <ul class="list-inline d-flex flex-row-reverse mt-2">
         <li class="list-inline-item mr-3">
             <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-grey">{{.Article.CreatedDate}}</span>
@@ -25,6 +27,11 @@
     </ul>
     <!--str2html 显示输出html代码-->
     <article id="content">{{str2html .Article.Body}}</article>
+
+    {{if .Article.VideoCode}}
+        <hr>
+        <div id="card">{{str2html .Article.VideoCode}}</div>
+    {{end}}
 </div>
 
 

@@ -5,11 +5,11 @@ import (
 	"my_go_web/models"
 )
 
-type ArticleController struct {
+type TagController struct {
 	BaseController
 }
 
-func (c *ArticleController) Index() {
+func (c *TagController) Index() {
 
 	articles := []models.Article{}
 	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
@@ -24,7 +24,7 @@ func (c *ArticleController) Index() {
 	c.TplName = "article/index.html"
 }
 
-func (c *ArticleController) Detail() {
+func (c *TagController) View() {
 	articleID, _ := c.GetInt(":id")
 	//浏览计数
 	vote := models.Vote{}
@@ -46,10 +46,10 @@ func (c *ArticleController) Detail() {
 	c.Data["Title"] = article.Title
 
 	c.Layout = "layout/base_view.html"
-	c.TplName = "article/detail.html"
+	c.TplName = "article/view.html"
 }
 
-func (c *ArticleController) LoadMore() {
+func (c *TagController) LoadMore() {
 	offset, _ := c.GetInt("offset")
 	limit := 3
 	articles := []models.Article{}
@@ -58,7 +58,7 @@ func (c *ArticleController) LoadMore() {
 }
 
 //评分ajax
-func (c *ArticleController) VoteScore() {
+func (c *TagController) VoteScore() {
 	articleId, _ := c.GetInt("articleId")
 	score, _ := c.GetFloat("score")
 	vote := models.Vote{}

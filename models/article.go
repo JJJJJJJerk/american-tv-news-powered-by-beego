@@ -17,11 +17,9 @@ type Article struct {
 	Body        string `orm:"column(body)"`
 	UrlVideo    string
 	UrlProvider string
-	UrlFlash    string
-	HtmlCode    string
+	VideoCode   string
 	IsShow      uint
 	KeyWord     string
-	MobileCode  string
 	Discription string
 	CoverageId  uint32
 	Coverage    *Image `gorm:"ForeignKey:CoverageId"`

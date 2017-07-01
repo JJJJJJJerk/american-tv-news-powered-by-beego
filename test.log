@@ -712,3 +712,267 @@
 2017/06/28 11:12:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 6.051446417s|   match|[44m GET     [0m /     r:/
 2017/06/28 11:12:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    787.596µs|   match|[44m GET     [0m /static/css/my.css
 2017/06/28 11:12:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    155.547µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 21:54:18 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/28 21:54:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.967820449s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:54:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    2.40754ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 21:54:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    515.447µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 21:54:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  378.62444ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/06/28 21:54:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.363846104s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:54:42 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    1.57699ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/28 21:54:42 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     65.982µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/28 21:54:45 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|     78.903µs|   match|[44m GET     [0m /auth/logout   r:/auth/logout
+2017/06/28 21:54:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.269787984s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:54:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.322221386s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:55:19 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|     96.996µs|   match|[44m GET     [0m /auth/logout   r:/auth/logout
+2017/06/28 21:55:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.396237052s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:55:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.381860337s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:55:46 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|     91.587µs|   match|[44m GET     [0m /auth/logout   r:/auth/logout
+2017/06/28 21:55:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.363235383s|   match|[44m GET     [0m /     r:/
+2017/06/28 21:56:03 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/28 21:56:50 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|30.996495328s|   match|[44m GET     [0m /auth/logout   r:/auth/logout
+2017/06/28 21:56:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.196789986s|   match|[44m GET     [0m /     r:/
+2017/06/28 22:04:04 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/28 22:04:23 [D] [server.go:2568] |      127.0.0.1|[47m 302 [0m|    586.793µs|   match|[44m GET     [0m /auth/logout   r:/auth/logout
+2017/06/28 22:04:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.267113043s|   match|[44m GET     [0m /     r:/
+2017/06/28 22:04:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 562.346491ms|   match|[44m GET     [0m /article/2285   r:/article/:id([0-9]+)
+2017/06/30 21:52:11 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/30 21:55:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.671981704s|   match|[44m GET     [0m /     r:/
+2017/06/30 21:55:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.79589ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/30 21:55:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     493.67µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/30 21:55:42 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|   1.515921ms| nomatch|[44m GET     [0m /favicon.ico
+2017/06/30 21:56:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 589.618867ms|   match|[44m GET     [0m /article/2287   r:/article/:id([0-9]+)
+2017/06/30 21:57:20 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/06/30 21:57:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.497748922s|   match|[44m GET     [0m /article/2287   r:/article/:id([0-9]+)
+2017/06/30 21:57:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.42717ms|   match|[44m GET     [0m /static/css/my.css
+2017/06/30 21:57:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    475.297µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/06/30 21:57:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 776.356535ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/06/30 21:57:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 640.873861ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/07/01 09:33:40 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 09:33:53 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    903.987µs| nomatch|[44m GET     [0m /article
+2017/07/01 09:33:53 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    480.394µs| nomatch|[44m GET     [0m /favicon.ico
+2017/07/01 09:33:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  4.23395415s|   match|[44m GET     [0m /     r:/
+2017/07/01 09:33:59 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   7.544209ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 09:34:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 613.646548ms|   match|[44m GET     [0m /article/12   r:/article/:id([0-9]+)
+2017/07/01 09:35:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 763.860901ms|   match|[44m GET     [0m /article/34   r:/article/:id([0-9]+)
+2017/07/01 09:35:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 645.890646ms|   match|[44m GET     [0m /article/31   r:/article/:id([0-9]+)
+2017/07/01 09:35:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  548.48204ms|   match|[44m GET     [0m /article/31   r:/article/:id([0-9]+)
+2017/07/01 10:34:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.661499812s|   match|[44m GET     [0m /     r:/
+2017/07/01 10:34:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 579.344031ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:35:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 713.820598ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/07/01 10:35:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 644.040145ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/07/01 10:35:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 639.597221ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/07/01 10:38:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.811940486s|   match|[44m GET     [0m /     r:/
+2017/07/01 10:38:11 [D] [controller.go:252] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:38:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 645.788188ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:38:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 406.486223ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 10:38:18 [D] [controller.go:252] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:38:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 592.984194ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:38:18 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   7.573025ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 10:38:18 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    877.483µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 10:38:23 [D] [controller.go:252] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:38:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 599.072021ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:38:53 [D] [controller.go:252] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:38:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 623.879081ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:39:02 [D] [template.go:171] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:39:02 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 10:39:12 [D] [controller.go:252] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/detail.html
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:39:12 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:39:27 [D] [controller.go:252] parse template err: article/detail.html template: article/detail.html:7: function "eg" not defined
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/detail.html
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:39:27 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:40:41 [D] [template.go:171] parse template err: article/view.html template: article/view.html:7: function "eg" not defined
+2017/07/01 10:40:41 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 10:41:02 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "eg" not defined
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:41:02 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:41:05 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "eg" not defined
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:41:05 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "eg" not defined
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:41:05 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:42:46 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 10:42:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.398975767s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:42:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 431.173205ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 10:43:04 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq .Uid 1>: error calling eq: incompatible types for comparison
+2017/07/01 10:43:04 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq .Uid 1>: error calling eq: incompatible types for comparison
+2017/07/01 10:43:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  5.15960222s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:43:11 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq .Uid 1>: error calling eq: incompatible types for comparison
+2017/07/01 10:43:11 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq .Uid 1>: error calling eq: incompatible types for comparison
+2017/07/01 10:43:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.588345686s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:43:52 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq .Uid 1>: error calling eq: incompatible types for comparison
+2017/07/01 10:43:52 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq .Uid 1>: error calling eq: incompatible types for comparison
+2017/07/01 10:43:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 583.462659ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:48:26 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq .Uid +1>: error calling eq: incompatible types for comparison
+2017/07/01 10:48:26 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq .Uid +1>: error calling eq: incompatible types for comparison
+2017/07/01 10:48:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.513205402s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:50:48 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "unint" not defined
+2017/07/01 10:50:48 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq .Uid +1>: error calling eq: incompatible types for comparison
+2017/07/01 10:50:48 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq .Uid +1>: error calling eq: incompatible types for comparison
+2017/07/01 10:50:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 616.593226ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:51:06 [D] [template.go:171] parse template err: article/view.html template: article/view.html:7: function "unint" not defined
+2017/07/01 10:51:06 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 10:51:13 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "uint" not defined
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:51:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:52:13 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "uint" not defined
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:52:13 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:52:17 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "uint" not defined
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:52:17 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:54:51 [D] [controller.go:252] parse template err: article/view.html template: article/view.html:7: function "uint" not defined
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] the request url is  /article/2314
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/article/view.html
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 10:54:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 10:56:46 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 10:56:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.388212336s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:57:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  414.31446ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 10:57:04 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:57:04 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:57:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  580.22138ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:57:08 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:57:08 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:57:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 575.085859ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:57:10 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:57:10 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:57:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 619.963479ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:59:11 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 10:59:16 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq "1" .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:59:16 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq "1" .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:59:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.470438856s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:59:19 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq "1" .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:59:19 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq "1" .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:59:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 663.807578ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:59:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 594.561604ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 10:59:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 425.713131ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 10:59:53 [D] [controller.go:254] template Execute err: template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:59:53 [E] [server.go:2568] template: article/view.html:7:9: executing "article/view.html" at <eq 1 .Uid>: error calling eq: incompatible types for comparison
+2017/07/01 10:59:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 606.259962ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:05:53 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 11:06:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.711064559s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:06:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 372.738317ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 11:06:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 622.072459ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:06:05 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.293893ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:06:05 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    394.827µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:06:46 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 11:06:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.423728026s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:06:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 371.205521ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 11:06:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 650.057985ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:06:57 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   8.559993ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:06:57 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    493.161µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:07:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  577.29887ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:07:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    2.12178ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:07:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    112.783µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:07:34 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 11:08:03 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 11:08:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 8.402587816s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:08:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.820808ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:08:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    378.001µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:08:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 610.334127ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:08:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.147955ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:08:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    124.084µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:08:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 581.691075ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:08:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    478.288µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:08:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    107.449µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:08:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 429.631966ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 11:08:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 588.285353ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:08:25 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.929622ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:08:25 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     60.708µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 11:12:10 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 11:12:20 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 11:12:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.486915212s|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:12:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 412.957909ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/01 11:12:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 572.077475ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
+2017/07/01 11:12:33 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   8.446297ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/01 11:12:33 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    388.406µs|   match|[44m GET     [0m /static/img/logo56x56.png

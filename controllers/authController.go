@@ -106,10 +106,7 @@ func (c *AuthController) PostResetPassword() {
 }
 
 // //注销
-func (c *AuthController) PostLogout() {
-	session := c.GetSession("loginInfo")
-	if session != nil {
-		c.DelSession(AuthSessionName)
-	}
+func (c *AuthController) GetLogout() {
+	c.DelSession(AuthSessionName)
 	c.Redirect("/", 302)
 }
