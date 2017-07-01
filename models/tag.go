@@ -11,7 +11,7 @@ type Tag struct {
 	Name        string
 	Description string
 	KeyWord     string
-	Image       *Article
+	Image       *Image
 	ImageId     uint
 	NameEn      string
 	Articles    []Article `gorm:"many2many:article_tag;"`

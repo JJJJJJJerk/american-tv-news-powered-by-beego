@@ -976,3 +976,31 @@
 2017/07/01 11:12:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 572.077475ms|   match|[44m GET     [0m /article/2314   r:/article/:id([0-9]+)
 2017/07/01 11:12:33 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   8.446297ms|   match|[44m GET     [0m /static/css/my.css
 2017/07/01 11:12:33 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    388.406µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/01 12:21:38 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] the request url is  /tag/2
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/tag/view.html
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 12:21:51 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 12:23:26 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] the request url is  /tag/2
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/tag/view.html
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/01 12:23:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/01 12:23:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 284.547087ms|   match|[44m GET     [0m /tag/2   r:/tag/:id([0-9]+)
+2017/07/01 12:23:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 257.267953ms|   match|[44m GET     [0m /tag/5   r:/tag/:id([0-9]+)

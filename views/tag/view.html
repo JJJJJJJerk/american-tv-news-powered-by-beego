@@ -1,0 +1,58 @@
+<div class="card-columns">
+
+        {{range $index, $value := .Tag.Articles}}
+
+        <!--Card-->
+        <div class="card mb-1">
+
+                <!--Card image-->
+                <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
+                <div class="view overlay hm-white-slight show-cursor">
+                        <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-fluid"> 
+                        <div class="series-card-details d-flex align-items-center">
+                                <h4 class="text-center w-100">{{$value.Title}}</h4>
+                        </div>
+                </div>
+                </a>
+                <!--/.Card image-->
+
+
+
+                <!--Card content-->
+                <div class="card-block">
+                        <!--Title-->
+                        <p class="card-text">{{ $value.Excerpt }}</p>
+
+                        <ul class="list-inline d-flex justify-content-between mb-0">
+                                <li class="list-inline-item">
+                                        <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-danger">{{$value.CreatedDate}}</span>
+                                </li>
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>                                        <span class="text-danger"> {{$value.CreatedTime}}</span>
+                                </li>
+
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong>
+                                        <span
+                                                class="text-danger"> {{$value.Vote.Visit}}</span>
+                                </li>
+
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-star" title="评分 review score"></strong>
+                                        <span
+                                                class="text-danger"> {{$value.Vote.Score}}</span>
+                                </li>
+                                <li class="list-inline-item">
+                                        <strong class="mr-1"><span class="ion-heart" title="收藏数量 favarate count"></strong>
+                                        <span
+                                                class="text-danger"> {{$value.Vote.FavorateCount}}</span>
+                                </li>
+                        </ul>
+
+                </div>
+                <!--/.Card content-->
+        </div>
+        <!--/.Card-->
+
+        {{end}}
+</div>

@@ -25,47 +25,22 @@ func (c *TagController) Index() {
 }
 
 func (c *TagController) View() {
-	articleID, _ := c.GetInt(":id")
+	tagId, _ := c.GetInt(":id")
 	//浏览计数
-	vote := models.Vote{}
-	models.Gorm.Where("article_id = ?", articleID).Find(&vote)
-	vote.Visit++
-	models.Gorm.Model(&vote).Update("visit")
-
-	article := models.Article{}
-	models.Gorm.First(&article, articleID)
+	tag := models.Tag{}
+	models.Gorm.Preload("articles").First(&tag, tagId)
 
 	//设置head seo参数
 	//设置breadcrumb
 	//设置side bar
 	//设置head navigation bar
-	url := fmt.Sprintf("/article/%d", articleID)
-	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}, {url, "fa fa-graduation-cap", article.Title}}
-	c.Data["Article"] = article
-	c.Data["Vote"] = vote
-	c.Data["Title"] = article.Title
+	url := fmt.Sprintf("/tag/%d", tagId)
+	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {url, "fa fa-navicon", tag.Name}}
+	c.Data["Tag"] = tag
+	c.Data["Title"] = tag.Name
+	c.Data["Keyword"] = tag.KeyWord
+	c.Data["Description"] = tag.Description
 
-	c.Layout = "layout/base_view.html"
-	c.TplName = "article/view.html"
-}
-
-func (c *TagController) LoadMore() {
-	offset, _ := c.GetInt("offset")
-	limit := 3
-	articles := []models.Article{}
-	models.Gorm.Offset(offset).Limit(limit).Order("created_at DESC").Preload("Tags").Preload("Coverage").Preload("Images").Find(&articles)
-	c.JsonRetrun("success", "you are awesome!!!", articles)
-}
-
-//评分ajax
-func (c *TagController) VoteScore() {
-	articleId, _ := c.GetInt("articleId")
-	score, _ := c.GetFloat("score")
-	vote := models.Vote{}
-	models.Gorm.Where("article_id = ? ", articleId).Find(&vote)
-	count := float32(vote.VoteCount)
-	vote.Score = (vote.Score*count + float32(score)) / (count + 1)
-	vote.VoteCount++
-	models.Gorm.Model(&vote).Update("vote_count", "score")
-	c.JsonRetrun("success", "rate score successed", vote)
+	c.Layout = "layout/base_index.html"
+	c.TplName = "tag/view.html"
 }

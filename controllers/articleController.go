@@ -24,7 +24,7 @@ func (c *ArticleController) Index() {
 	c.TplName = "article/index.html"
 }
 
-func (c *ArticleController) Detail() {
+func (c *ArticleController) View() {
 	articleID, _ := c.GetInt(":id")
 	//浏览计数
 	vote := models.Vote{}
