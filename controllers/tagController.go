@@ -29,9 +29,10 @@ func (c *TagController) View() {
 	//浏览计数
 	tag := models.Tag{}
 	var articles []models.Article
-	//models.Gorm.First(&tag, tagId)
+	models.Gorm.First(&tag, tagId)
 
-	models.Gorm.First(&tag, tagId).Order("articles.created_at desc").Limit(90).Related(&articles, "Articles")
+	//models.Gorm.Related("Tags", "article_tag.tag_id = ?", tag.ID).Preload("Images").Limit(90).Find(&articles)
+	models.Gorm.Model(&tag).Order("articles.created_at desc").Limit(90).Preload("Images").Preload("Vote").Related(&articles, "Articles")
 
 	//设置head seo参数
 	//设置breadcrumb

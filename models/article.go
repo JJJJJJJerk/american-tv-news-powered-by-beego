@@ -24,7 +24,8 @@ type Article struct {
 	CoverageId  uint32
 	Coverage    *Image `gorm:"ForeignKey:CoverageId"`
 	Images      []Image
-	ReadCount   uint16
+	Tags        []Tag `gorm:"many2many:article_tag;"`
+	Vote        *Vote
 
 	FirstTagName   string `gorm:"_"`
 	FirstTagNameEn string `gorm:"_"`
@@ -33,8 +34,6 @@ type Article struct {
 	CoverageURL    string `gorm:"-"`
 	CreatedDate    string `gorm:"-"`
 	CreatedTime    string `gorm:"-"`
-	Tags           []Tag  `gorm:"many2many:article_tag;"`
-	Vote           *Vote
 }
 
 //做一些计算
@@ -49,10 +48,12 @@ func (art *Article) AfterFind() (err error) {
 	//param := "?imageView2/1/w/120/h/120"
 	param := "?imageView2/1/w/480/h/270"
 
-	firstTag := art.Tags[0]
-	art.FirstTagID = firstTag.ID
-	art.FirstTagName = firstTag.Name
-	art.FirstTagNameEn = firstTag.NameEn
+	if len(art.Tags) > 0 {
+		firstTag := art.Tags[0]
+		art.FirstTagID = firstTag.ID
+		art.FirstTagName = firstTag.Name
+		art.FirstTagNameEn = firstTag.NameEn
+	}
 
 	if art.Coverage != nil {
 		art.CoverageURL = art.Coverage.GetImageURL(param)
@@ -63,7 +64,7 @@ func (art *Article) AfterFind() (err error) {
 		return
 
 	}
-	defaultImage := Image{Key: "1461329417"}
+	defaultImage := Image{Key: "article-placeholder"}
 	art.CoverageURL = defaultImage.GetImageURL(param)
 	return
 }
