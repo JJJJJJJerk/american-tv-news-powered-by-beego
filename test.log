@@ -1046,3 +1046,6 @@
 2017/07/02 11:17:57 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
 2017/07/02 11:17:57 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
 2017/07/02 11:18:50 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 11:18:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.374988132s|   match|[44m GET     [0m /article/39   r:/article/:id([0-9]+)
+2017/07/02 11:19:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 670.280872ms|   match|[46m POST    [0m /article/vote   r:/article/vote
+2017/07/02 11:19:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.360810681s|   match|[44m GET     [0m /     r:/
