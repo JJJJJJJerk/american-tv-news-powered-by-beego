@@ -8,10 +8,10 @@ import (
 
 type ArticleTag struct {
 	gorm.Model
-	ArticleId uint
 	TagId     uint
+	ArticleId uint
 }
 
-func (ArticleTag) TableName() string {
+func (User) TableName() string {
 	return "article_tag"
 }

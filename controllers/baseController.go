@@ -11,6 +11,7 @@ const (
 	FlashInfo       = "flash_info"
 	FlashError      = "flash_Error"
 	AuthSessionName = "authed_user_session_name"
+	PageSize        = 90
 )
 
 type BaseController struct {

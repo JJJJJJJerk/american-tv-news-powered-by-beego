@@ -46,7 +46,7 @@ func (c *ArticleController) View() {
 	c.Data["Title"] = article.Title
 
 	c.Layout = "layout/base_view.html"
-	c.TplName = "article/detail.html"
+	c.TplName = "article/view.html"
 }
 
 func (c *ArticleController) LoadMore() {

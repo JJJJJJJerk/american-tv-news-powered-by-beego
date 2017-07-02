@@ -28,7 +28,10 @@ func (c *TagController) View() {
 	tagId, _ := c.GetInt(":id")
 	//浏览计数
 	tag := models.Tag{}
-	models.Gorm.Preload("articles").First(&tag, tagId)
+	var articles []models.Article
+	//models.Gorm.First(&tag, tagId)
+
+	models.Gorm.First(&tag, tagId).Order("articles.created_at desc").Limit(90).Related(&articles, "Articles")
 
 	//设置head seo参数
 	//设置breadcrumb
@@ -37,6 +40,7 @@ func (c *TagController) View() {
 	url := fmt.Sprintf("/tag/%d", tagId)
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {url, "fa fa-navicon", tag.Name}}
 	c.Data["Tag"] = tag
+	c.Data["Articles"] = articles
 	c.Data["Title"] = tag.Name
 	c.Data["Keyword"] = tag.KeyWord
 	c.Data["Description"] = tag.Description
