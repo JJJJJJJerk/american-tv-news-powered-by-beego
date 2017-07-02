@@ -65,7 +65,7 @@ func (c *AuthController) PostRegister() {
 func (c *AuthController) PostLogin() {
 	email := c.GetString("email")
 	user := models.User{}
-	models.Gorm.Where("email = ?", email).First(&user)
+	models.Gorm.Table("users").Where("email = ?", email).First(&user)
 
 	if user.ID < 1 {
 		c.Data["json"] = map[string]interface{}{"status": "error", "message": "用户不存在", "data": nil}

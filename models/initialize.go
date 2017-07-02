@@ -35,6 +35,6 @@ func init() {
 	db.DB().SetMaxIdleConns(16)
 	//https://github.com/jinzhu/gorm/issues/1053
 	Gorm = db
-	Gorm.LogMode(false)
+	Gorm.LogMode(true)
 	PageSize, _ = beego.AppConfig.Int("pagesize")
 }

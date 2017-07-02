@@ -8,6 +8,10 @@
                 <!--Card image-->
                 <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
                 <div class="view overlay hm-white-slight show-cursor">
+                        <a href="/tag/{{$value.FirstTagID}}" title="{{$value.FirstTagNameEn}}">
+                                <span class="badge badge-success">{{$value.FirstTagName}}</span>
+                        </a>
+
                         <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-fluid"> 
                         <div class="series-card-details d-flex align-items-center">
                                 <h4 class="text-center w-100">{{$value.Title}}</h4>

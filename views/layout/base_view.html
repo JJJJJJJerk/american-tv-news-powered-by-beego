@@ -8,7 +8,7 @@
     <div class="container pt-1">
         <div class="row">
             <!--正文-->
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <!--面包屑-->
                 {{template "layout/_breadcrumb.html" .}}
                 <!--面包屑-->
@@ -20,9 +20,9 @@
             <!--正文-->
 
             <!-- 侧边栏-->
-            <div class="col-md-5 pl-sm-1 pl-xs-2">
-                {{template "layout/_audiobook.html" .}} {{range $key, $img := .Imgs}}
-                <div class="card p-2 mt-1">
+            <div class="col-md-4 pl-sm-1 pl-xs-2">
+                 {{range $key, $img := .Imgs}}
+                <div class="card p-2 mb-1">
                     <img class="img-thunmbnail" src="{{$img.Src}}">
                 </div>
                 {{end}}

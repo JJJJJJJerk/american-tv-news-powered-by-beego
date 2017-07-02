@@ -26,12 +26,15 @@ type Article struct {
 	Images      []Image
 	ReadCount   uint16
 
-	Excerpt     string `gorm:"-"` //计算出文章摘要
-	CoverageUrl string `gorm:"-"` //文章封面
-	CreatedDate string `gorm:"-"`
-	CreatedTime string `gorm:"-"`
-	Tags        []Tag  `gorm:"many2many:article_tag;"`
-	Vote        Vote
+	Excerpt        string `gorm:"-"` //计算出文章摘要
+	CoverageUrl    string `gorm:"-"` //文章封面
+	CreatedDate    string `gorm:"-"`
+	CreatedTime    string `gorm:"-"`
+	Tags           []Tag  `gorm:"many2many:article_tag;"`
+	Vote           Vote
+	FirstTagName   string `gorm:"_";` //第一个标签的名称
+	FirstTagNameEn string `gorm:"_";` //第一个标签的名称
+	FirstTagID     uint   `gorm:"_";` //第一个标签的名称
 }
 
 //做一些计算
@@ -58,6 +61,10 @@ func (art *Article) AfterFind() (err error) {
 	}
 	defaultImage := Image{Key: "1461329417"}
 	art.CoverageUrl = defaultImage.GetImageUrl(param)
+
+	art.FirstTagName = art.Tags[0].Name
+	art.FirstTagNameEn = art.Tags[0].NameEn
+	art.FirstTagID = art.Tags[0].ID
 	return
 }
 

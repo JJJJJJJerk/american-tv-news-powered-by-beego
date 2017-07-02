@@ -33,14 +33,16 @@ func (c *ArticleController) View() {
 	models.Gorm.Model(&vote).Update("visit")
 
 	article := models.Article{}
-	models.Gorm.First(&article, articleID)
+	models.Gorm.Preload("Tags").First(&article, articleID)
 
 	//设置head seo参数
 	//设置breadcrumb
 	//设置side bar
 	//设置head navigation bar
 	url := fmt.Sprintf("/article/%d", articleID)
-	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "glyphicon glyphicon-list-alt", "资讯"}, {url, "fa fa-graduation-cap", article.Title}}
+	tagUrl := fmt.Sprint("/tag/%d", article.Tags[0].ID)
+	tagName := article.Tags[0].Name
+	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {tagUrl, "fa fa-book", tagName}, {url, "fa fa-cloud", article.Title}}
 	c.Data["Article"] = article
 	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
