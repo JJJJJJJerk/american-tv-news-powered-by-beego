@@ -7,16 +7,14 @@
 
                 <!--Card image-->
                 <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
-                <div class="view overlay hm-white-slight show-cursor">
-                        <a href="/tag/{{$value.FirstTagID}}" title="{{$value.FirstTagNameEn}}">
-                                <span class="badge badge-success">{{$value.FirstTagName}}</span>
-                        </a>
+                        <div class="view overlay hm-white-slight show-cursor">
+                                <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="img-fluid"> 
 
-                        <img src="{{$value.CoverageUrl}}" alt="{{$value.Title}}" class="img-fluid"> 
-                        <div class="series-card-details d-flex align-items-center">
-                                <h4 class="text-center w-100">{{$value.Title}}</h4>
+                                <div class="series-card-details d-flex align-items-center">
+                                        <span class="badge badge-danger mt-1 ml-1 tag-name-link"> {{$value.FirstTagName}}</span>
+                                        <h4 class="text-center w-100">{{$value.Title}}</h4>
+                                </div>
                         </div>
-                </div>
                 </a>
                 <!--/.Card image-->
 

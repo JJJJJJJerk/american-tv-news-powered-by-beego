@@ -1,1 +1,99 @@
 2017/07/02 15:29:04 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:08:04 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:10:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|1m33.125616948s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:10:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   5.339668ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:10:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    526.862µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:14:17 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:14:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.274706459s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:15:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.372603559s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:16:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.326392665s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:17:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.482022487s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:17:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.208037ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:17:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    490.958µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:18:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.395382716s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:18:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.034463ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:18:30 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    117.436µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:22:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.319589359s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:26:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  2.69141253s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:26:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.661404ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:26:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    120.425µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:31:16 [D] [controller.go:252] parse template err: home/index.html template: home/index.html:14: undefined variable "$vlaue"
+2017/07/02 16:31:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.243716601s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:31:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    963.638µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:31:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     147.41µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:31:55 [D] [template.go:171] parse template err: home/index.html template: home/index.html:14: undefined variable "$vlaue"
+2017/07/02 16:31:55 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:32:29 [D] [template.go:171] parse template err: home/index.html template: home/index.html:14: undefined variable "$vlaue"
+2017/07/02 16:32:29 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:32:36 [D] [controller.go:252] parse template err: home/index.html template: home/index.html:14: undefined variable "$vlaue"
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] the request url is  /
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/home/index.html
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/02 16:32:36 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/02 16:33:59 [D] [template.go:171] parse template err: home/index.html template: home/index.html:14: undefined variable "$vlaue"
+2017/07/02 16:33:59 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:34:08 [D] [controller.go:252] parse template err: home/index.html template: home/index.html:14: undefined variable "$vlaue"
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] the request url is  /
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] Handler crashed with error can't find templatefile in the path:views/home/index.html
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/template.go:73
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:254
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:205
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:185
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:816
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/02 16:34:08 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/02 16:34:28 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:34:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.216048604s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:34:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    937.706µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:34:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     440.22µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:34:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 435.496785ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/02 16:34:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.385959737s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:34:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.193394ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:34:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    106.289µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:35:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.444552577s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:36:58 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:37:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.289282999s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:37:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.741685ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:37:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     456.13µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:38:50 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:38:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  3.53079671s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:38:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.233008ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:38:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     472.19µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:38:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 845.580566ms|   match|[44m GET     [0m /article/2319   r:/article/:id([0-9]+)
+2017/07/02 16:38:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.364067ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:38:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    158.683µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:39:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 394.627143ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/02 16:39:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     837.07ms|   match|[44m GET     [0m /article/2319   r:/article/:id([0-9]+)
+2017/07/02 16:39:04 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    625.612µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:39:04 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     61.956µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/02 16:40:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  2.43709447s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:42:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 898.536168ms|   match|[44m GET     [0m /article/2319   r:/article/:id([0-9]+)
+2017/07/02 16:42:19 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   3.094435ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:42:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.452635828s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:42:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 959.454511ms|   match|[44m GET     [0m /article/2310   r:/article/:id([0-9]+)
+2017/07/02 16:46:41 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:46:52 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.258179148s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:46:52 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    879.835µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 16:47:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  2.40006927s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:47:25 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:52:27 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:52:46 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 16:53:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|46.466799476s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:53:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|45.627925838s|   match|[44m GET     [0m /     r:/
+2017/07/02 16:53:36 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.309464ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 17:00:51 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/02 17:00:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.325270168s|   match|[44m GET     [0m /     r:/
+2017/07/02 17:00:59 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.299964ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/02 17:01:17 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    181.835µs| nomatch|[44m GET     [0m /article
+2017/07/02 17:01:22 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.415416844s|   match|[44m GET     [0m /     r:/

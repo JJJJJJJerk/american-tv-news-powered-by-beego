@@ -26,15 +26,15 @@ type Article struct {
 	Images      []Image
 	ReadCount   uint16
 
-	Excerpt        string `gorm:"-"` //计算出文章摘要
-	CoverageUrl    string `gorm:"-"` //文章封面
+	FirstTagName   string `gorm:"_"`
+	FirstTagNameEn string `gorm:"_"`
+	FirstTagID     uint   `gorm:"_"`
+	Excerpt        string `gorm:"-"`
+	CoverageURL    string `gorm:"-"`
 	CreatedDate    string `gorm:"-"`
 	CreatedTime    string `gorm:"-"`
 	Tags           []Tag  `gorm:"many2many:article_tag;"`
-	Vote           Vote
-	FirstTagName   string `gorm:"_";` //第一个标签的名称
-	FirstTagNameEn string `gorm:"_";` //第一个标签的名称
-	FirstTagID     uint   `gorm:"_";` //第一个标签的名称
+	Vote           *Vote
 }
 
 //做一些计算
@@ -49,22 +49,22 @@ func (art *Article) AfterFind() (err error) {
 	//param := "?imageView2/1/w/120/h/120"
 	param := "?imageView2/1/w/480/h/270"
 
-	if art.Coverage != nil {
-		art.CoverageUrl = art.Coverage.GetImageUrl(param)
-		return
+	firstTag := art.Tags[0]
+	art.FirstTagID = firstTag.ID
+	art.FirstTagName = firstTag.Name
+	art.FirstTagNameEn = firstTag.NameEn
 
+	if art.Coverage != nil {
+		art.CoverageURL = art.Coverage.GetImageURL(param)
+		return
 	}
 	if len(art.Images) > 0 {
-		art.CoverageUrl = art.Images[0].GetImageUrl(param)
+		art.CoverageURL = art.Images[0].GetImageURL(param)
 		return
 
 	}
 	defaultImage := Image{Key: "1461329417"}
-	art.CoverageUrl = defaultImage.GetImageUrl(param)
-
-	art.FirstTagName = art.Tags[0].Name
-	art.FirstTagNameEn = art.Tags[0].NameEn
-	art.FirstTagID = art.Tags[0].ID
+	art.CoverageURL = defaultImage.GetImageURL(param)
 	return
 }
 

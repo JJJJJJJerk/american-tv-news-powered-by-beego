@@ -35,13 +35,13 @@ func init() {
 }
 
 //七牛图片地址转会
-func (img *Image) GetImageUrl(qiniu string) (url string) {
+func (img *Image) GetImageURL(qiniu string) (url string) {
 	url = fmt.Sprintf("%s%s%s", CdnHost, img.Key, qiniu)
 	return
 }
 
 //quote 图片
-func (img *Image) GetQuoteImgUrl() (url string) {
+func (img *Image) GetQuoteImgURL() (url string) {
 	qiniu := "?imageMogr2/gravity/NorthWest/crop/620x350/interlace/1"
 	url = fmt.Sprintf("%s%s%s", CdnHost, img.Key, qiniu)
 	return
