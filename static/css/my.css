@@ -102,3 +102,8 @@ cursor: pointer; cursor: hand;
   position: absolute;
   top:0;
 }
+.tag-week-day{
+  position: absolute;
+  top:0;
+  right: 0;
+}

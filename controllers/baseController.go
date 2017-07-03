@@ -51,9 +51,8 @@ func (this *BaseController) Prepare() {
 	}
 	if this.Ctx.Request.Method == "GET" {
 		this.Data["Xsrf"] = this.XSRFToken() //防止跨域
-		quotes := models.Get3RandomQuote()
 		//fmt.Println(quotes)
-		this.Data["Quotes"] = quotes
+		//this.Data["Quotes"] = models.Get3RandomQuote()
 		this.Data["Imgs"] = models.Fetch5RandomQuoteImageCached()
 	}
 	// 	//判断用户数是否已近登陆

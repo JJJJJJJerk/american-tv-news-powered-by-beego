@@ -34,6 +34,7 @@ type Article struct {
 	CoverageURL    string `gorm:"-"`
 	CreatedDate    string `gorm:"-"`
 	CreatedTime    string `gorm:"-"`
+	CreatedWeekday string `gorm:"-"`
 }
 
 //做一些计算
@@ -44,7 +45,7 @@ func (art *Article) AfterFind() (err error) {
 	//转换时间啊
 	art.CreatedDate = beego.Date(art.CreatedAt, "m-d")
 	art.CreatedTime = beego.Date(art.CreatedAt, "H:i")
-
+	art.CreatedWeekday = art.CreatedAt.Format("Mon 15:04")
 	//param := "?imageView2/1/w/120/h/120"
 	param := "?imageView2/1/w/480/h/270"
 
