@@ -1,11 +1,11 @@
 <nav class="navbar navbar-toggleable-sm navbar-dark bg-primary">
   <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapseEx12" aria-controls="collapseEx2"
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1"
       aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
     <a class="navbar-brand" href="/"><img src="/static/img/logo56x56.png"  width="35" height="35" alt="trytv.org logo"></a>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbarNav1">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="/">最新资讯</a>
@@ -53,24 +53,25 @@
         <input class="form-control" type="text" placeholder="Search">
       </form>
 
+
+
       <ul class="navbar-nav mr-auto pull-right">
-
-
         {{if .User }}
-            <li class="nav-item btn-group">
-              <a class="nav-link dropdown-toggle nav-link waves-effect waves-light p-0 ml-4" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle"  src="{{ .User.WeiboAvatar}}" width="35" height="35"></a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <a class="dropdown-item">{{.User.Email}}</a>
-                <a class="dropdown-item" href="/auth/logout">注销</a>
-              </div>
-            </li>
+        <li class="nav-item btn-group">
+          <a class="nav-link dropdown-toggle waves-effect waves-light p-0 m-0" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><img class="rounded-circle"  src="{{ .User.WeiboAvatar}}" width="35" height="35"></a>
+          <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <a class="dropdown-item waves-effect waves-light">{{.User.Email}}</a>
+            <a class="dropdown-item waves-effect waves-light" href="/auth/logout">注销</a>
+          </div>
+        </li>
         {{else}}
-                    <li class="nav-item ">
-              <a data-toggle="modal" data-target="#modal-login" class="nav-link waves-effect waves-light ml-4">
+        <li class="nav-item ">
+          <a data-toggle="modal" data-target="#modal-login" class="nav-link waves-effect waves-light ml-4">
                 <i class="fa fa-sign-in"></i>
                 <span class="hidden-sm-down">登陆</span>
               </a>
-            </li>
+        </li>
 
         {{end}}
       </ul>
