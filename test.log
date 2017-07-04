@@ -428,3 +428,7 @@
 2017/07/04 21:23:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    2.96598ms|   match|[44m GET     [0m /static/css/my.css
 2017/07/04 21:23:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    124.764µs|   match|[44m GET     [0m /static/img/logo56x56.png
 2017/07/04 21:23:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.429409076s|   match|[46m POST    [0m /article/load-more   r:/article/load-more
+2017/07/04 21:29:13 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/04 21:29:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.113031177s|   match|[44m GET     [0m /     r:/
+2017/07/04 21:29:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.719946ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/04 21:29:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    442.977µs|   match|[44m GET     [0m /static/img/logo56x56.png
