@@ -14,7 +14,9 @@ import (
 
 //这个是查血的初始
 var Gorm *gorm.DB
-var PageSize int
+
+const PageSize = 30
+
 var CacheManager *cache.Cache
 
 func init() {
@@ -36,5 +38,4 @@ func init() {
 	//https://github.com/jinzhu/gorm/issues/1053
 	Gorm = db
 	Gorm.LogMode(true)
-	PageSize, _ = beego.AppConfig.Int("pagesize")
 }

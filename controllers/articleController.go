@@ -12,7 +12,7 @@ type ArticleController struct {
 func (c *ArticleController) Index() {
 
 	articles := []models.Article{}
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
+	models.Gorm.Limit(models.PageSize).Order("update_at DESC").Preload("Coverage").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
 
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "fa fa-home", "资讯"}}
 	c.Data["Articles"] = articles
@@ -53,10 +53,10 @@ func (c *ArticleController) View() {
 
 func (c *ArticleController) LoadMore() {
 	offset, _ := c.GetInt("offset")
-	limit := 3
+	size, _ := c.GetInt("size")
 	articles := []models.Article{}
-	models.Gorm.Offset(offset).Limit(limit).Order("created_at DESC").Preload("Tags").Preload("Coverage").Preload("Images").Find(&articles)
-	c.JsonRetrun("success", "you are awesome!!!", articles)
+	models.Gorm.Offset(offset).Limit(size).Order("updated_at DESC").Preload("Tags").Preload("Vote").Preload("Coverage").Preload("Images").Find(&articles)
+	c.JsonRetrun("success", "欢迎访问我们的小站", articles)
 }
 
 //评分ajax

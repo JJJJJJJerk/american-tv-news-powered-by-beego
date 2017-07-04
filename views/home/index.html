@@ -1,61 +1,100 @@
-<div class="card-columns">
+<div class="row no-gutters">
 
         {{range $index, $value := .Articles}}
 
         <!--Card-->
-        <div class="card mb-1">
+        <div class="col-md-4 col-sm-6 col-xs-12 pl-md-3 pl-sm-2 pl-xs-0 pb-1 demo">
+                <div class="card">
+                        <!--Card image-->
+                        <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
+                                <div class="view overlay hm-white-slight show-cursor">
+                                        <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="w-100">
 
-                <!--Card image-->
-                <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
-                        <div class="view overlay hm-white-slight show-cursor">
-                                <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="img-fluid"> 
-
-                                <div class="series-card-details d-flex align-items-center">
-                                        <span class="badge badge-danger  tag-name-link mt-1 "> {{$value.FirstTagName}}</span>
-                                        <span class="badge badge-primary tag-week-day mt-1 mr-3">{{$value.CreatedWeekday}}</span>
-                                        <h4 class="text-center w-100">{{$value.Title}}</h4>
+                                        <div class="series-card-details d-flex align-items-center">
+                                                <span class="badge badge-danger  tag-name-link mt-1 "> {{$value.FirstTagName}}</span>
+                                                <span class="badge badge-primary tag-week-day mt-1 mr-3">{{$value.CreatedWeekday}}</span>
+                                                <h4 class="text-center w-100">{{$value.Title}}</h4>
+                                        </div>
                                 </div>
+                        </a>
+                        <!--/.Card image-->
+
+
+
+                        <!--Card content-->
+                        <div class="card-block">
+                                <!--Title-->
+                                <p class="card-text">{{ $value.Excerpt }}</p>
+
+                                <ul class="list-inline d-flex justify-content-between mb-0">
+                                        <li class="list-inline-item">
+                                                <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-danger date">{{$value.CreatedDate}}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                                <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong>
+                                                <span class="text-danger read"> {{$value.Vote.Visit}}</span>
+                                        </li>
+
+                                        <li class="list-inline-item">
+                                                <strong class="mr-1"><span class="ion-star" title="评分 review score"></strong>
+                                                <span class="text-danger score"> {{$value.Vote.Score}}</span>
+                                        </li>
+                                        <li class="list-inline-item">
+                                                <strong class="mr-1"><span class="ion-heart" title="收藏数量 favarate count"></strong>
+                                                <span class="text-danger favorate"> {{$value.Vote.FavorateCount}}</span>
+                                        </li>
+                                </ul>
+
                         </div>
-                </a>
-                <!--/.Card image-->
-
-
-
-                <!--Card content-->
-                <div class="card-block">
-                        <!--Title-->
-                        <p class="card-text">{{ $value.Excerpt }}</p>
-
-                        <ul class="list-inline d-flex justify-content-between mb-0">
-                                <li class="list-inline-item">
-                                        <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-danger">{{$value.CreatedDate}}</span>
-                                </li>
-                                <li class="list-inline-item">
-                                        <strong class="mr-1"><span class="ion-clock" title="发布时间 publiced time" data-time={{dateformat $value.CreatedAt "2006-01-02 15:04:11"}}></strong>                                        <span class="text-danger"> {{$value.CreatedTime}}</span>
-                                </li>
-
-                                <li class="list-inline-item">
-                                        <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong>
-                                        <span
-                                                class="text-danger"> {{$value.Vote.Visit}}</span>
-                                </li>
-
-                                <li class="list-inline-item">
-                                        <strong class="mr-1"><span class="ion-star" title="评分 review score"></strong>
-                                        <span
-                                                class="text-danger"> {{$value.Vote.Score}}</span>
-                                </li>
-                                <li class="list-inline-item">
-                                        <strong class="mr-1"><span class="ion-heart" title="收藏数量 favarate count"></strong>
-                                        <span
-                                                class="text-danger"> {{$value.Vote.FavorateCount}}</span>
-                                </li>
-                        </ul>
-
+                        <!--/.Card content-->
                 </div>
-                <!--/.Card content-->
+
+                <!--/.Card-->
         </div>
-        <!--/.Card-->
 
         {{end}}
 </div>
+
+<!--加载更多按钮-->
+<button type="button" id="load-more" class="btn btn-warning btn-block waves-effect waves-light mb-3">加载更多</button>
+
+<script>
+        /*初始化*/
+        var offset = 30; /*offset*/
+        var size = 3
+        function fillJsonDataIntoDomeNode(articleItem) {
+                cloneNode = $(' div.row.no-gutters > div.demo:first').clone();
+                var href = '/article/' + articleItem.ID;
+                var title = articleItem.Title;
+                var imgSrc = articleItem.CoverageURL;
+                cloneNode.find('a:first-child').attr('href', href).attr('title', title);
+                cloneNode.find('img').attr('src', imgSrc).attr('title', title);
+                cloneNode.find('span.tag-name-link').text(articleItem.FirstTagName);
+                cloneNode.find('span.tag-week-day').text(articleItem.CreatedWeekday);
+                cloneNode.find('h4').text(title);
+                cloneNode.find('p').text(articleItem.Excerpt);
+                cloneNode.find('span.read').text(articleItem.Vote.Visit);
+                cloneNode.find('span.favorate').text(articleItem.Vote.FavorateCount);
+                cloneNode.find('span.date').text(articleItem.CreatedDate);
+                cloneNode.find('span.score').text(articleItem.Vote.Score);
+                $('body > div.container.pt-1 > div.row.no-gutters').append(cloneNode);
+        }
+        function getData() {
+                $.post('/article/load-more', { offset: offset, size: size }, function (reponse) {
+                        var list = reponse.data;
+                        $(list).each(function (idx, jsonEle) {
+                                offset++;
+                                fillJsonDataIntoDomeNode(jsonEle);
+                        });
+                        /*******************************************/
+                        /*隐藏more按钮*/
+                        $('#load-more').show();
+                });
+        }
+        $('#load-more').click(function () {
+                $(this).hide();
+                getData();
+        });
+
+</script>
