@@ -1,25 +1,8 @@
 
 html {
-  font-size: 14px;
+  font-size: 15px;
 }
 
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 28px;
-  }
-}
 
 
 
@@ -101,3 +84,46 @@ cursor: pointer; cursor: hand;
   top:0;
   right: 0;
 }
+/* Medium devices (tablets, 768px and up) sm */
+
+@media (min-width: 576px) { 
+    .article-card-padding:nth-child(2n) {
+        padding:0rem 0rem 1rem 1rem ;
+    }
+        .article-card-padding:nth-child(2n+1) {
+        padding:0rem 0rem 1rem 0rem ;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) md */
+@media (min-width: 768px) {
+    .article-card-padding:nth-child(3n) {
+        padding:0rem 0rem 1rem 0rem ;
+    }
+    .article-card-padding:nth-child(3n+1) {
+        padding:0rem 1rem 1rem 0rem ;
+    }
+    .article-card-padding:nth-child(3n+2) {
+        padding:0rem 1rem 1rem 0rem ;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) lg */
+@media (min-width: 992px) { 
+    .article-card-padding:nth-child(3n) {
+        padding:0rem 0rem 1rem 0rem ;
+    }
+    .article-card-padding:nth-child(3n+1) {
+        padding:0rem 1rem 1rem 0rem ;
+    }
+    .article-card-padding:nth-child(3n+2) {
+        padding:0rem 1rem 1rem 0rem ;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) xl */
+@media (min-width: 1200px) { 
+
+ }
