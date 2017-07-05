@@ -5,3 +5,4 @@ main
 *.log
 test.log
 test.*.log
+nohup.out
