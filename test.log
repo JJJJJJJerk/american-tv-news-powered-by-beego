@@ -295,3 +295,40 @@
 2017/07/05 17:55:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 928.887865ms|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
 2017/07/05 17:59:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 931.359298ms|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
 2017/07/05 17:59:59 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   3.410192ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/05 18:07:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 898.941097ms|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
+2017/07/05 18:07:26 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    1.84659ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/05 18:07:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 834.574408ms|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
+2017/07/05 18:07:46 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  2.83975335s|   match|[44m GET     [0m /     r:/
+2017/07/05 20:34:57 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/05 20:35:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 4.122977955s|   match|[44m GET     [0m /     r:/
+2017/07/05 20:35:07 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.430975ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/05 20:35:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.186596984s|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] the request url is  /auth/login
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/05 21:02:30 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] the request url is  /auth/login
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/05 21:02:58 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/05 21:03:11 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/05 21:03:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 5.058644876s|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
+2017/07/05 21:03:20 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    1.37993ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/05 21:03:26 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 439.765601ms|   match|[46m POST    [0m /auth/login   r:/auth/login
+2017/07/05 21:03:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 872.144336ms|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
+2017/07/05 21:03:27 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   2.369578ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/05 21:03:27 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    392.591µs|   match|[44m GET     [0m /static/img/logo56x56.png
