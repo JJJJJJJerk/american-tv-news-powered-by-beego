@@ -46,6 +46,7 @@ func (c *ArticleController) View() {
 	c.Data["Article"] = article
 	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
+	c.Data["Tags"] = models.FetchAllTagsCached()
 
 	c.Layout = "layout/base_view.html"
 	c.TplName = "article/view.html"
@@ -54,6 +55,7 @@ func (c *ArticleController) View() {
 func (c *ArticleController) LoadMore() {
 	offset, _ := c.GetInt("offset")
 	size, _ := c.GetInt("size")
+	//tagId, _ := c.GetInt("tagId")
 	articles := []models.Article{}
 	models.Gorm.Offset(offset).Limit(size).Order("updated_at DESC").Preload("Tags").Preload("Vote").Preload("Coverage").Preload("Images").Find(&articles)
 	c.JsonRetrun("success", "欢迎访问我们的小站", articles)

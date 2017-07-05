@@ -59,7 +59,8 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
 .excerpt {
     overflow: hidden;
     text-overflow: ellipsis!important;
-    height: 132px;
+    height: 108;
+    margin-bottom: 10px!important;
 }
 .series-card-details:hover {
     opacity:0
@@ -125,4 +126,12 @@ cursor: pointer; cursor: hand;
 /* Extra large devices (large desktops, 1200px and up) xl */
 @media (min-width: 1200px) { 
 
+ }
+
+ .input-search-btn {
+    background-color: transparent;
+    color: white;
+    border: aliceblue;
+    border-width: 0px;
+    cursor: pointer;
  }

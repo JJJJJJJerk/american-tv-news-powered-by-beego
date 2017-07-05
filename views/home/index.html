@@ -6,7 +6,7 @@
                         <!--Card image-->
                         <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
                                 <div class="view overlay hm-white-slight show-cursor">
-                                        <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="w-100">
+                                        <img data-original="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="img-fluid w-100 lazy">
 
                                         <div class="series-card-details d-flex align-items-center">
                                                 <span class="badge badge-danger  tag-name-link mt-1 "> {{$value.FirstTagName}}</span>
@@ -16,8 +16,6 @@
                                 </div>
                         </a>
                         <!--/.Card image-->
-
-
 
                         <!--Card content-->
                         <div class="card-block">

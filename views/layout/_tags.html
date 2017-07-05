@@ -1,9 +1,5 @@
-<div class="row" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
-  <div class="col-md-12">
-    <div class="jumbotron mb-1 p-1">
-              {{range $index, $value := .Tags}}
-                <a href="/tag/{{$value.ID}}" class="btn btn-success p-1">{{$value.Name}}</a>
-              {{end}}
-    </div>
-  </div>
+<div class="jumbotron p-2 mb-1">
+    {{range $index, $value := .Tags}}
+    <a href="/tag/{{$value.ID}}" class="btn btn-success p-1">{{$value.Name}}</a> 
+    {{end}}
 </div>

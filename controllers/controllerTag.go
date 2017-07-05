@@ -32,7 +32,7 @@ func (c *TagController) View() {
 	models.Gorm.First(&tag, tagId)
 
 	//models.Gorm.Related("Tags", "article_tag.tag_id = ?", tag.ID).Preload("Images").Limit(90).Find(&articles)
-	models.Gorm.Model(&tag).Order("articles.created_at desc").Limit(90).Preload("Images").Preload("Vote").Related(&articles, "Articles")
+	models.Gorm.Model(&tag).Order("articles.updated_at desc").Limit(models.PageSize).Preload("Coverage").Preload("Images").Preload("Vote").Related(&articles, "Articles")
 
 	//设置head seo参数
 	//设置breadcrumb
@@ -48,4 +48,15 @@ func (c *TagController) View() {
 
 	c.Layout = "layout/base_index.html"
 	c.TplName = "tag/view.html"
+}
+
+func (c *TagController) LoadMore() {
+	offset, _ := c.GetInt("offset")
+	size, _ := c.GetInt("size")
+	tagId, _ := c.GetInt("tagId")
+	tag := models.Tag{}
+	tag.ID = uint(tagId)
+	articles := []models.Article{}
+	models.Gorm.Model(&tag).Offset(offset).Limit(size).Order("articles.updated_at DESC").Preload("Coverage").Preload("Images").Preload("Tags").Preload("Vote").Related(&articles, "Articles")
+	c.JsonRetrun("success", "欢迎访问我们的小站", articles)
 }

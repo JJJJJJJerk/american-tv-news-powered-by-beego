@@ -11,7 +11,6 @@ const (
 	FlashInfo       = "flash_info"
 	FlashError      = "flash_Error"
 	AuthSessionName = "authed_user_session_name"
-	PageSize        = 90
 )
 
 type BaseController struct {
@@ -54,7 +53,6 @@ func (this *BaseController) Prepare() {
 		//fmt.Println(quotes)
 		//this.Data["Quotes"] = models.Get3RandomQuote()
 		this.Data["Imgs"] = models.Fetch5RandomQuoteImageCached()
-		this.Data["Tags"] = models.FetchAllTagsCached()
 	}
 	// 	//判断用户数是否已近登陆
 	// 	//读取session
