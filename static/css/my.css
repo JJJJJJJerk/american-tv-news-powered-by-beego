@@ -1,7 +1,5 @@
 
-html {
-  font-size: 15px;
-}
+
 
 
 
@@ -50,8 +48,8 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
     -ms-flex-pack: justify;
     justify-content: space-between;
     background: rgba(0,0,0,.7);
-    -webkit-transition: opacity .7s;
-    transition: opacity .7s;
+    -webkit-transition: opacity .6s;
+    transition: opacity .6s;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal
 }
@@ -87,6 +85,9 @@ cursor: pointer; cursor: hand;
 /* Medium devices (tablets, 768px and up) sm */
 
 @media (min-width: 576px) { 
+    html {
+    font-size: 11px!important;
+    }
     .article-card-padding:nth-child(2n) {
         padding:0rem 0rem 1rem 1rem ;
     }
@@ -98,6 +99,9 @@ cursor: pointer; cursor: hand;
 
 /* Medium devices (tablets, 768px and up) md */
 @media (min-width: 768px) {
+    html {
+    font-size: 13px!important;
+    }
     .article-card-padding:nth-child(3n) {
         padding:0rem 0rem 1rem 0rem ;
     }
@@ -112,6 +116,9 @@ cursor: pointer; cursor: hand;
 
 /* Large devices (desktops, 992px and up) lg */
 @media (min-width: 992px) { 
+    html {
+    font-size: 15px!important;
+    }
     .article-card-padding:nth-child(3n) {
         padding:0rem 0rem 1rem 0rem ;
     }
@@ -125,7 +132,9 @@ cursor: pointer; cursor: hand;
 
 /* Extra large devices (large desktops, 1200px and up) xl */
 @media (min-width: 1200px) { 
-
+    html {
+    font-size: 16px!important;
+    }
  }
 
  .input-search-btn {

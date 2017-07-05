@@ -1,5 +1,11 @@
-<div class="jumbotron p-2 mb-1">
+<div class="jumbotron p-2 mb-1" id="tags">
     {{range $index, $value := .Tags}}
-    <a href="/tag/{{$value.ID}}" class="btn btn-success p-1">{{$value.Name}}</a> 
+    <a href="/tag/{{$value.ID}}" class="badge" >{{$value.Name}}</a>
     {{end}}
 </div>
+<script>
+  $('#tags > a.badge').each(function(idx,ele){
+    var colorBadges = ['badge-default','badge-primary','badge-success','badge-info','badge-warning','badge-danger'][idx%6];
+    $(ele).addClass(colorBadges);
+  });
+</script>
