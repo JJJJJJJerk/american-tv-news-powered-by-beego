@@ -8,12 +8,9 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/jinzhu/gorm"
-	cache "github.com/patrickmn/go-cache"
 )
 
 var CdnHost string
-
-const CK_IMG_5_RANDOM = "CacheKey.5random.image.quotes"
 
 type Image struct {
 	gorm.Model
@@ -63,7 +60,7 @@ func Fetch5RandomQuoteImageCached() (images []Image) {
 	} else {
 		images = Fetch5RandomQuoteImage()
 		data, _ := json.Marshal(images)
-		CacheManager.Set(CK_IMG_5_RANDOM, string(data), cache.DefaultExpiration)
+		CacheManager.Set(CK_IMG_5_RANDOM, string(data), C_EXPIRE_TIME_HOUR_01)
 	}
 	return
 }

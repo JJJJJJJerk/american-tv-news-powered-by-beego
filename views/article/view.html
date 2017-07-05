@@ -33,8 +33,9 @@
     <article id="content">{{str2html .Article.Body}}</article>
 
     {{if .Article.VideoCode}}
-    <hr>
-    <div id="card">{{str2html .Article.VideoCode}}</div>
+    <div id="video" class='embed-responsive embed-responsive-16by9'>
+        {{str2html .Article.VideoCode}}
+    </div>
     {{end}}
 </div>
 
@@ -44,6 +45,8 @@
 <script>
     //aritcle 图片样式修改 w-100 
     $('article img').removeProp('style')
+    $('iframe embed video object').removeProp('style').removeClass().addClass('embed-responsive-item');
+
     $('article img').addClass('img-thumbnail w-100');
     var rateScore = {{.Vote.Score }};
     var articleId = {{.Article.ID }};

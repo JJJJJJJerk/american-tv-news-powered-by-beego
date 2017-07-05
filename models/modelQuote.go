@@ -8,10 +8,7 @@ import (
 	"strconv"
 
 	"github.com/jinzhu/gorm"
-	cache "github.com/patrickmn/go-cache"
 )
-
-const CK_QUOTE = "CacheKey.3randomQuotes"
 
 type Quote struct {
 	gorm.Model
@@ -31,7 +28,7 @@ func Get3RandomQuote() (quotes []Quote) {
 	} else {
 		quotes = QuoteRandom3()
 		data, _ := json.Marshal(quotes)
-		CacheManager.Set(CK_QUOTE, string(data), cache.DefaultExpiration)
+		CacheManager.Set(CK_QUOTE, string(data), C_EXPIRE_TIME_FOREVER)
 	}
 	return
 }
