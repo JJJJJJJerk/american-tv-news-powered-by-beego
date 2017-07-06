@@ -1,0 +1,16 @@
+<!--正文部分-->
+
+<div class="row no-gutters">
+    {{range $index, $value := .Subtitles}}
+    <div class="col-sm-12 col-md-6 col-lg-4 pb-1 pl-1 subtitle-container">
+        <div class="card">
+            <h6 class="text-center bg-primary text-white align-middle subtitle-title">{{$value.Name}}</h6>
+            <p class="text-center mb-1">
+                <span class="fa fa-calendar" title="发布时间 publiced time"></span>
+                <small> {{dateformat $value.CreatedAt "2006-01-02 15:04"}}</small>
+            </p>
+            </div>
+
+        </div>
+    {{end}}
+</div>
