@@ -191,13 +191,13 @@ cursor: pointer; cursor: hand;
     top: 0;
     left: 0;
     height: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
     width: 100%;
     color: #fff;
     opacity: 0;
     z-index: 10;
-    background: rgba(0,0,0,.7);
-    -webkit-transition: opacity .6s;
+    background: rgba(0,0,0,.8);
+    -webkit-transition: opacity .7s;
     transition: opacity .6s;
 
 }

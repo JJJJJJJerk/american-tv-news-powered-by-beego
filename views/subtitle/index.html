@@ -42,7 +42,7 @@
 
 
     $('div.row.no-gutters > div.subtitle-container >div.card >div.text-white.text-center').each(function(idx,item){
-        var colorBadges = ['badge-default','badge-primary','badge-success','badge-info','badge-warning','badge-danger'][idx%6];
+        var colorBadges = ['danger-color','orange','primary-color','success-color','info-color','warning-color','default-color'][idx%7];
         $(item).addClass(colorBadges);
     });
 
