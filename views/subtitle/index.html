@@ -4,13 +4,28 @@
     {{range $index, $value := .Subtitles}}
     <div class="col-sm-12 col-md-6 col-lg-4 pb-1 pl-1 subtitle-container">
         <div class="card">
-            <h6 class="text-center bg-primary text-white align-middle subtitle-title">{{$value.Name}}</h6>
-            <p class="text-center mb-1">
-                <span class="fa fa-calendar" title="发布时间 publiced time"></span>
-                <small> {{dateformat $value.CreatedAt "2006-01-02 15:04"}}</small>
-            </p>
+            <div class=" bg-primary align-middle ">
+                <p class="text-center text-white m-2 subtitle-title">{{$value.Name}}</p>
             </div>
-
+            <div class="subtitle-item text-center ">
+                <p>
+                    <span class="fa fa-calendar" title="发布时间 publiced time"></span>
+                    <small> {{dateformat $value.CreatedAt "2006-01-02 15:04"}}</small>
+                </p>
+                <a class="subtitle" data-href="{{$value.Url}}">
+                    <span class="fa fa-download"></span>
+                </a>
+            </div>
         </div>
+    </div>
     {{end}}
 </div>
+
+
+<script>
+    $('a.subtitle').click(function(){
+        Object.defineProperty(document, "referrer", {get : function(){ return "assrt.net"; }});
+        url = 'http://file0.assrt.net' + $(this).data('href');
+        window.open('http://www.smkproduction.eu5.org','_blank');
+    });
+</script>

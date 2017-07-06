@@ -170,8 +170,33 @@ cursor: pointer; cursor: hand;
 
  .subtitle-title {
      height: 6rem;
-     padding: 1rem;
-     text-overflow: ellipsis!important;
      overflow: hidden;
-
+     text-overflow: ellipsis;
  }
+
+
+
+ /*  card图片动画效果  */
+.subtitle-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem;
+    width: 100%;
+    color: #fff;
+    opacity: 0;
+    z-index: 10;
+    background: rgba(0,0,0,.7);
+    -webkit-transition: opacity .6s;
+    transition: opacity .6s;
+
+}
+
+.subtitle-item:hover {
+    opacity:1;
+}
+a.subtitle {
+    font-size: 2rem;
+    color: white;
+}

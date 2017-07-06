@@ -551,3 +551,141 @@
 2017/07/06 16:06:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 268.995276ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
 2017/07/06 16:06:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    714.568µs|   match|[44m GET     [0m /static/css/my.css
 2017/07/06 16:06:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    131.376µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:08:02 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.258576ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:09:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 637.559235ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:09:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.682304ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:09:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    444.462µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:09:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 279.950779ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:09:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    709.461µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:09:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    107.683µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:10:20 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 288.118151ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:10:20 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    1.33973ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:49:53 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   5.368425ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:51:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 289.945795ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:51:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.390935ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:51:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    220.632µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:52:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  286.35288ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:52:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.375812ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:52:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    168.753µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:53:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 274.625916ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:53:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   4.858797ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:53:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    131.388µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:53:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 302.621713ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:53:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    855.381µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:53:17 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    104.136µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:55:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 321.244431ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:55:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.821598ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:55:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    149.053µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:57:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 316.420906ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:57:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  23.895044ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:57:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    227.224µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:58:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 285.413445ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:58:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.009955ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:58:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    121.928µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:58:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 309.392122ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:58:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     704.53µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:58:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    111.116µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:59:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 270.365128ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:59:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.969744ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:59:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    101.313µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 16:59:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 300.320833ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 16:59:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    747.431µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 16:59:49 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    105.484µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:00:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 241.080008ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:00:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    650.899µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:00:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    135.702µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:02:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  283.71443ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:02:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.619312ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:02:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    106.317µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:04:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 268.427238ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:04:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    937.998µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:04:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    115.756µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:15:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.179783308s|   match|[44m GET     [0m /     r:/
+2017/07/06 17:15:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.77247ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:17:18 [D] [controller.go:254] template Execute err: template: subtitle/index.html:12:79: executing "subtitle/index.html" at <$value.FirstTagName>: can't evaluate field FirstTagName in type models.Subtitle
+2017/07/06 17:17:18 [E] [server.go:2568] template: subtitle/index.html:12:79: executing "subtitle/index.html" at <$value.FirstTagName>: can't evaluate field FirstTagName in type models.Subtitle
+2017/07/06 17:17:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 244.373128ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:17:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 237.057242ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:17:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.142065ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:17:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    124.417µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:19:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 290.044483ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:19:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     754.43µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:19:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    103.528µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:21:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 274.381446ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:21:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   7.789967ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:21:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     125.18µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:23:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 234.021474ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:23:01 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    752.528µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:23:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    111.982µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:23:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 266.795323ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:23:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    964.255µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:23:29 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    109.347µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:23:57 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 239.191444ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:23:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.76723ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:23:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    115.419µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:25:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 238.941965ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:25:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    726.887µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:25:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    104.434µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:26:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  258.19353ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:26:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.021733ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:26:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    117.893µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:26:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 253.581859ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:26:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.456849ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:26:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     124.83µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:27:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 253.517132ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:27:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.965878ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:27:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    112.979µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:27:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 237.117571ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:27:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    807.592µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:27:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    145.728µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:39:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 266.320628ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:39:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.904537ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:39:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    153.842µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:42:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 274.570986ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:42:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.73355ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:42:34 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    141.232µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:44:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 270.178713ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:44:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   8.731548ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:44:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    179.447µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:46:53 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 239.248998ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:46:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.844865ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:46:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    172.773µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:48:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 284.090902ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:48:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.024684ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:48:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    186.941µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:49:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 253.493596ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:49:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    939.088µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:49:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    107.748µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:50:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 238.311332ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:50:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    5.93313ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:50:12 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    111.992µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:51:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 241.791423ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:51:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.48603ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:51:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.042416ms|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:51:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 367.463182ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:51:32 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    742.654µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:51:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     173.71µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:53:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 279.708668ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:53:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.794045ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:53:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    175.074µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:54:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 273.220621ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:54:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.310576ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:54:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    192.128µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:54:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 283.805915ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:54:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    965.331µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:54:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    140.495µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 17:57:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 271.369194ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 17:57:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.496005ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 17:57:45 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    155.681µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 18:32:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 602.211597ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 18:32:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.608275ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 18:32:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.08863ms|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 18:36:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 252.309271ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 18:36:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.842443ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 18:36:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.149877ms|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 18:39:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  245.81455ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 18:39:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.768693ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 18:39:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    178.851µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 18:41:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 266.359051ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/06 18:41:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.718168ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 18:41:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     147.85µs|   match|[44m GET     [0m /static/img/logo56x56.png
