@@ -168,11 +168,20 @@ cursor: pointer; cursor: hand;
     cursor: pointer;
  }
 
- .subtitle-title {
-     height: 6rem;
+ .subtitle-title-zh{
+     margin-top: 1rem!important;
+     height: 3rem;
      overflow: hidden;
      text-overflow: ellipsis;
  }
+ .subtitle-title-en{
+     height: 2rem;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     font-size: 0.8rem;
+     margin-bottom: 0.5rem!important;
+ }
+
 
 
 

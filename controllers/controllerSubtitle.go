@@ -11,7 +11,7 @@ type SubtitleController struct {
 func (c *SubtitleController) Index() {
 
 	var subtitles []models.Subtitle
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Find(&subtitles)
+	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Find(&subtitles, "`uri` <> ''")
 
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/subtitle/index", "fa fa-home", "资讯"}}
 	c.Data["Subtitles"] = subtitles
