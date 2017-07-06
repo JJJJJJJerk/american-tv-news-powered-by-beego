@@ -56,3 +56,12 @@
 2017/07/07 00:32:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    722.208µs|   match|[44m GET     [0m /static/css/my.css
 2017/07/07 00:32:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    109.818µs|   match|[44m GET     [0m /static/img/logo56x56.png
 2017/07/07 00:32:39 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    270.774µs| nomatch|[44m GET     [0m /favicon.ico
+2017/07/07 00:34:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 284.122527ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:34:55 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    979.714µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:43:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 252.515653ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:43:03 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   2.057352ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:43:31 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  265.49405ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:43:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 274.265418ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:44:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 267.906195ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:44:36 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    856.754µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:45:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 270.130024ms|   match|[44m GET     [0m /subtitle   r:/subtitle

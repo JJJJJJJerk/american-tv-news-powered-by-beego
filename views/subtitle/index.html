@@ -17,12 +17,16 @@
                             <small class="align-middle"> {{dateformat $value.CreatedAt "06-01-02 15:04"}}</small>
                         </li>
                         <li>
-                            <span class="fa fa-language align-middle" title="发布时间 publiced time"></span>
+                            <span class="fa fa-language align-middle" title="subtitle language 字幕语言"></span>
                             <small class="align-middle"> {{$value.Lang}}</small>
                         </li>
                         <li>
-                            <span class="fa fa-map-o align-middle" title="发布时间 publiced time"></span>
+                            <span class="fa fa-map-o align-middle" title="format 字幕格式"></span>
                             <small class="align-middle"> {{$value.Format}}</small>
+                        </li>
+                        <li class="text-truncate">
+                            <span class="fa fa-file-video-o align-middle" title="fit video file name 字幕对应的文件名称"></span>
+                            <small class="align-middle "> {{$value.FileName}}</small>
                         </li>
                     </ul>
                     <div class="col-3 text-center">
