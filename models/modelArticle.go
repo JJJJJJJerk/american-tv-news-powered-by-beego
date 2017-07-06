@@ -21,8 +21,7 @@ type Article struct {
 	IsShow      uint
 	KeyWord     string
 	Discription string
-	CoverageId  uint32
-	Coverage    *Image `gorm:"ForeignKey:CoverageId"`
+	CoverageUri string
 	Images      []Image
 	Tags        []Tag `gorm:"many2many:article_tag;"`
 	Vote        *Vote
@@ -55,18 +54,12 @@ func (art *Article) AfterFind() (err error) {
 		art.FirstTagName = firstTag.Name
 		art.FirstTagNameEn = firstTag.NameEn
 	}
-
-	if art.Coverage != nil {
-		art.CoverageURL = art.Coverage.GetImageURL(param)
-		return
+	imageModel := Image{Key: "article-placeholder"}
+	if art.CoverageUri != "" {
+		imageModel.Key = art.CoverageUri
 	}
-	if len(art.Images) > 0 {
-		art.CoverageURL = art.Images[0].GetImageURL(param)
-		return
 
-	}
-	defaultImage := Image{Key: "article-placeholder"}
-	art.CoverageURL = defaultImage.GetImageURL(param)
+	art.CoverageURL = imageModel.GetImageURL(param)
 	return
 }
 

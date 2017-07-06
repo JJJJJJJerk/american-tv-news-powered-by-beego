@@ -332,3 +332,46 @@
 2017/07/05 21:03:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 872.144336ms|   match|[44m GET     [0m /article/2328   r:/article/:id([0-9]+)
 2017/07/05 21:03:27 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   2.369578ms|   match|[44m GET     [0m /static/css/my.css
 2017/07/05 21:03:27 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    392.591µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 10:53:52 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:00:01 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:00:28 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:00:42 [D] [controller.go:254] template Execute err: template: home/index.html:32:88: executing "home/index.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:00:42 [E] [server.go:2568] template: home/index.html:32:88: executing "home/index.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:00:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.611387116s|   match|[44m GET     [0m /     r:/
+2017/07/06 11:00:42 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    362.144µs| nomatch|[44m GET     [0m /favicon.ico
+2017/07/06 11:00:54 [D] [controller.go:254] template Execute err: template: home/index.html:32:88: executing "home/index.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:00:54 [E] [server.go:2568] template: home/index.html:32:88: executing "home/index.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:00:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.845877119s|   match|[44m GET     [0m /     r:/
+2017/07/06 11:00:54 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    257.325µs| nomatch|[44m GET     [0m /favicon.ico
+2017/07/06 11:01:19 [D] [controller.go:254] template Execute err: template: home/index.html:32:88: executing "home/index.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:01:19 [E] [server.go:2568] template: home/index.html:32:88: executing "home/index.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:01:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.208137449s|   match|[44m GET     [0m /     r:/
+2017/07/06 11:02:26 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:02:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  3.24396576s|   match|[44m GET     [0m /     r:/
+2017/07/06 11:02:33 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   6.899683ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:02:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    455.013µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 11:02:41 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  1.09191826s|   match|[44m GET     [0m /article/2329   r:/article/:id([0-9]+)
+2017/07/06 11:03:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 888.077361ms|   match|[44m GET     [0m /article/2326   r:/article/:id([0-9]+)
+2017/07/06 11:03:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    854.784µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:03:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    141.941µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 11:05:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.757056975s|   match|[44m GET     [0m /     r:/
+2017/07/06 11:05:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    955.173µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:05:19 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    134.706µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 11:06:18 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:07:59 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:08:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.226401181s|   match|[44m GET     [0m /     r:/
+2017/07/06 11:08:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.428586ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:08:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    478.571µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 11:08:16 [D] [controller.go:254] template Execute err: template: tag/view.html:32:88: executing "tag/view.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:08:16 [E] [server.go:2568] template: tag/view.html:32:88: executing "tag/view.html" at <$value.Vote.Visit>: can't evaluate field Visit in type *models.Vote
+2017/07/06 11:08:16 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 635.186143ms|   match|[44m GET     [0m /tag/2   r:/tag/:id([0-9]+)
+2017/07/06 11:09:03 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/06 11:09:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  1.47933507s|   match|[44m GET     [0m /tag/2   r:/tag/:id([0-9]+)
+2017/07/06 11:09:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.443202ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:09:11 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    520.416µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 11:09:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  1.09707293s|   match|[44m GET     [0m /article/512   r:/article/:id([0-9]+)
+2017/07/06 11:09:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    630.161µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:09:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    165.183µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/06 11:09:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.233442s|   match|[44m GET     [0m /tag/2   r:/tag/:id([0-9]+)
+2017/07/06 11:09:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    922.556µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/06 11:09:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|        104µs|   match|[44m GET     [0m /static/img/logo56x56.png

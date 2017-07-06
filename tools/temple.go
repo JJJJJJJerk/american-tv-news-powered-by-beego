@@ -20,18 +20,10 @@ func init() {
 	imageCdnHost = beego.AppConfig.String("imageCdnHost")
 
 	//注册template function
-	beego.AddFuncMap("hi", hello)
 	beego.AddFuncMap("cdnSrc", cdnSrc) //拼接cdn资源
 
 	beego.AddFuncMap("cdnImageSrc", cdnImageSrc) //拼接cdn资源
 
-	beego.AddFuncMap("articleCoverageSrc", articleCoverageSrc) //获取文章的封面图片
-
-}
-
-func hello(in string) (out string) {
-	out = in + "world"
-	return
 }
 
 func cdnImageSrc(image *models.Image, param string) (out string) {
@@ -41,24 +33,4 @@ func cdnImageSrc(image *models.Image, param string) (out string) {
 func cdnSrc(in string) (out string) {
 	out = fmt.Sprintf("%s%s", cdn, in)
 	return
-}
-
-func articleCoverageSrc(article *models.Article) (src string) {
-	var key string
-	if article.Coverage == nil {
-		if len(article.Images) == 0 {
-			key = "1461329417"
-		} else {
-			key = article.Images[0].Key
-		}
-	} else {
-		key = article.Coverage.Key
-	}
-	param := "?imageView2/1/w/120/h/120"
-	src = fmt.Sprintf("%s%s%s", imageCdnHost, key, param)
-	return
-}
-
-func articleExcerpt(article *models.Article) (text string) {
-	return ""
 }

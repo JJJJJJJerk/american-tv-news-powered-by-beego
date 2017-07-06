@@ -12,7 +12,7 @@ type TagController struct {
 func (c *TagController) Index() {
 
 	articles := []models.Article{}
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Coverage").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
+	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
 
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "fa fa-home", "资讯"}}
 	c.Data["Articles"] = articles
@@ -32,7 +32,7 @@ func (c *TagController) View() {
 	models.Gorm.First(&tag, tagId)
 
 	//models.Gorm.Related("Tags", "article_tag.tag_id = ?", tag.ID).Preload("Images").Limit(90).Find(&articles)
-	models.Gorm.Model(&tag).Order("articles.updated_at desc").Limit(models.PageSize).Preload("Coverage").Preload("Images").Preload("Vote").Related(&articles, "Articles")
+	models.Gorm.Model(&tag).Order("articles.updated_at desc").Limit(models.PageSize).Preload("Images").Preload("Vote").Related(&articles, "Articles")
 
 	//设置head seo参数
 	//设置breadcrumb
@@ -57,6 +57,6 @@ func (c *TagController) LoadMore() {
 	tag := models.Tag{}
 	tag.ID = uint(tagId)
 	articles := []models.Article{}
-	models.Gorm.Model(&tag).Offset(offset).Limit(size).Order("articles.updated_at DESC").Preload("Coverage").Preload("Images").Preload("Tags").Preload("Vote").Related(&articles, "Articles")
+	models.Gorm.Model(&tag).Offset(offset).Limit(size).Order("articles.updated_at DESC").Preload("Images").Preload("Tags").Preload("Vote").Related(&articles, "Articles")
 	c.JsonRetrun("success", "欢迎访问我们的小站", articles)
 }
