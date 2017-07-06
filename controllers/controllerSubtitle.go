@@ -9,6 +9,7 @@ type SubtitleController struct {
 }
 
 func (c *SubtitleController) Index() {
+	c.Data["Tags"] = models.FetchAllTagsCached()
 
 	var subtitles []models.Subtitle
 	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Find(&subtitles, "`uri` <> ''")

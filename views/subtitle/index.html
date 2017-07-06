@@ -4,7 +4,7 @@
     {{range $index, $value := .Subtitles}}
     <div class="col-sm-12 col-md-6 col-lg-4 pb-1 pl-1 subtitle-container">
         <div class="card">
-            <div class=" bg-primary align-middle text-white text-center">
+            <div class="text-white text-center">
                 <p class="subtitle-title-zh m-1">{{$value.NameZh}}</p>
                 <p class="subtitle-title-en mx-1 mb-1">{{$value.NameEn}}</p>
             </div>
@@ -39,5 +39,11 @@
 
 
 <script>
+
+
+    $('div.row.no-gutters > div.subtitle-container >div.card >div.text-white.text-center').each(function(idx,item){
+        var colorBadges = ['badge-default','badge-primary','badge-success','badge-info','badge-warning','badge-danger'][idx%6];
+        $(item).addClass(colorBadges);
+    });
 
 </script>

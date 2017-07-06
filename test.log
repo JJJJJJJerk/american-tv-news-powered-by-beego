@@ -10,3 +10,15 @@
 2017/07/07 00:03:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 285.620428ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
 2017/07/07 00:03:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|      938.2µs|   match|[44m GET     [0m /static/css/my.css
 2017/07/07 00:03:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    109.432µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 00:04:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 262.989771ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/07 00:04:04 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    658.618µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:07:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  289.93326ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/07 00:07:43 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.916295ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:09:42 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  286.69608ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/07 00:09:42 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.602214ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:10:56 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 245.495883ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/07 00:10:56 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    1.55464ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:11:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  250.22145ms|   match|[44m GET     [0m /subtitle/index   r:/subtitle/index
+2017/07/07 00:11:19 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/07 00:11:21 [D] [server.go:2568] |      127.0.0.1|[43m 404 [0m|    1.33768ms| nomatch|[44m GET     [0m /subtitle/index
+2017/07/07 00:11:27 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 774.335009ms|   match|[44m GET     [0m /subtitle   r:/subtitle
