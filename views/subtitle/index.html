@@ -73,15 +73,19 @@
     }
     function getData() {
         $.post('/subtitle/load-more', { offset: offset, size: size }, function (reponse,textStatus) {
-            var list = reponse.data;
-            $(list).each(function (idx, jsonEle) {
-                offset++;
-                fillJsonDataIntoDomeNode(jsonEle);
-            });
-            /*******************************************/
-            setSubtilteWithColor();
-            /*隐藏more按钮*/
-            $('#load-more').show();
+            if (textStatus == 'success'){
+                var list = reponse.data;
+                $(list).each(function (idx, jsonEle) {
+                    offset++;
+                    fillJsonDataIntoDomeNode(jsonEle);
+                });
+                /*******************************************/
+                setSubtilteWithColor();
+                /*隐藏more按钮*/
+                $('#load-more').show();
+            }else {
+                alert('验证过期,请重刷新,页面在点击加载更多');
+            }
         });
     }
     $('#load-more').click(function () {

@@ -145,3 +145,5 @@
 2017/07/07 10:21:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 267.268816ms|   match|[44m GET     [0m /subtitle   r:/subtitle
 2017/07/07 10:21:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    2.17827ms|   match|[44m GET     [0m /static/css/my.css
 2017/07/07 10:21:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     132.04µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 10:25:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 239.360566ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:25:14 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.140056ms|   match|[44m GET     [0m /static/css/my.css
