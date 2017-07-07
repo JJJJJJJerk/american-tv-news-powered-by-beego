@@ -65,3 +65,71 @@
 2017/07/07 00:44:36 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 267.906195ms|   match|[44m GET     [0m /subtitle   r:/subtitle
 2017/07/07 00:44:36 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|    856.754µs|   match|[44m GET     [0m /static/css/my.css
 2017/07/07 00:45:33 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 270.130024ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:48:33 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/07 00:48:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.984211379s|   match|[44m GET     [0m /     r:/
+2017/07/07 00:48:43 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.000713ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 00:49:05 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 545.904062ms|   match|[44m GET     [0m /tag/9   r:/tag/:id([0-9]+)
+2017/07/07 00:49:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  1.72300078s|   match|[44m GET     [0m /tag/8   r:/tag/:id([0-9]+)
+2017/07/07 00:49:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 513.176597ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 00:49:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.161540132s|   match|[44m GET     [0m /tag/23   r:/tag/:id([0-9]+)
+2017/07/07 00:49:47 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 852.901392ms|   match|[44m GET     [0m /article/631   r:/article/:id([0-9]+)
+2017/07/07 09:47:58 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/07 09:48:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 814.376742ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:48:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.166742ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:48:37 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    556.374µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:48:44 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 244.285013ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 09:49:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 244.221631ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:49:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.900268ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:49:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    104.336µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:49:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 279.127223ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 09:50:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 223.180466ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 09:50:55 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/07 09:51:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 917.782096ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:51:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.428648ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:51:00 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    456.764µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:51:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 265.191528ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 09:52:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 241.680798ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:52:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.213883ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:52:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    119.988µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:52:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 247.726568ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:52:39 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    771.657µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:52:40 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     136.47µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:52:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 239.487414ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 09:56:55 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/07 09:57:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 791.375555ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:57:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.564994ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:57:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.086513ms|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:57:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  249.22905ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 09:57:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   3.184747ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 09:57:13 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    138.284µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 09:58:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  219.32018ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] the request url is  /subtitle/load-more
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] Handler crashed with error XSRF cookie does not match POST argument
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:514
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/panic.go:489
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:80
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/context/context.go:168
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/controller.go:640
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /Users/ericzhou/go/src/github.com/astaxie/beego/router.go:782
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:2568
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/net/http/server.go:1825
+2017/07/07 10:00:35 [C] [asm_amd64.s:514] /usr/local/Cellar/go/1.8.3/libexec/src/runtime/asm_amd64.s:2197
+2017/07/07 10:00:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 244.810137ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:00:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.27376ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:00:48 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    111.632µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 10:00:51 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 242.858906ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:01:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 253.247636ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:01:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 267.266328ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:01:18 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 235.310511ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:04:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  251.41489ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:04:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.491116ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:04:10 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    111.114µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 10:06:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  222.51503ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:07:21 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|  378.54365ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:17:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 251.382881ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:17:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.852236ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:17:07 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    157.678µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 10:18:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 271.146864ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:18:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.82314ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:18:02 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    138.927µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/07 10:18:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 257.075992ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more

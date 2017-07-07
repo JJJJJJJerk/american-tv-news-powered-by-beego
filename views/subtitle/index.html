@@ -14,7 +14,7 @@
                     <ul class="col-9 mb-0">
                         <li>
                             <span class="fa fa-calendar align-middle" title="发布时间 publiced time"></span>
-                            <small class="align-middle"> {{dateformat $value.CreatedAt "06-01-02 15:04"}}</small>
+                            <small class="align-middle"> {{$value.HumamTime}}</small>
                         </li>
                         <li>
                             <span class="fa fa-language align-middle" title="subtitle language 字幕语言"></span>
@@ -41,13 +41,52 @@
     {{end}}
 </div>
 
-
+<!--加载更多按钮-->
+<button type="button" id="load-more" class="btn btn-warning btn-block waves-effect waves-light mb-3">加载更多</button>
 <script>
+    function setSubtilteWithColor(){
+        var colorClasses = ['danger-color', 'orange', 'primary-color', 'success-color', 'info-color', 'warning-color', 'default-color'];
+        var count = colorClasses.length;
+        $('div.row.no-gutters > div.subtitle-container >div.card >div.text-white.text-center').removeClass(colorClasses[0]).addClass(function (idx, classString) {
+            return colorClasses[idx%count];
+        });
+    }
+    setSubtilteWithColor();
 
 
-    $('div.row.no-gutters > div.subtitle-container >div.card >div.text-white.text-center').each(function(idx,item){
-        var colorBadges = ['danger-color','orange','primary-color','success-color','info-color','warning-color','default-color'][idx%7];
-        $(item).addClass(colorBadges);
+
+    /*初始化*/
+    var offset = 30; /*offset*/
+    var size = 18;
+    function fillJsonDataIntoDomeNode(subObj) {
+        cloneNode = $(' div.row.no-gutters > div.subtitle-container:first').clone();
+
+        cloneNode.find('p.subtitle-title-zh').text(subObj.Name_Zh);
+        cloneNode.find('p.subtitle-title-en').text(subObj.Name_En);
+        cloneNode.find('ul.col-9 > li:nth-child(1) > small').text(subObj.HumamTime)
+        cloneNode.find('ul.col-9 > li:nth-child(2) > small').text(subObj.Lang)
+        cloneNode.find('ul.col-9 > li:nth-child(3) > small').text(subObj.Format)
+        cloneNode.find('ul.col-9 > li:nth-child(4) > small').text(subObj.FileName)
+        cloneNode.find('a.subtitle').attr('href',subObj.OssUrl).attr('download',subObj.FileName)
+
+        $('div.row.no-gutters').append(cloneNode);
+    }
+    function getData() {
+        $.post('/subtitle/load-more', { offset: offset, size: size }, function (reponse,textStatus) {
+            var list = reponse.data;
+            $(list).each(function (idx, jsonEle) {
+                offset++;
+                fillJsonDataIntoDomeNode(jsonEle);
+            });
+            /*******************************************/
+            setSubtilteWithColor();
+            /*隐藏more按钮*/
+            $('#load-more').show();
+        });
+    }
+    $('#load-more').click(function () {
+        $(this).hide();
+        getData();
     });
 
 </script>

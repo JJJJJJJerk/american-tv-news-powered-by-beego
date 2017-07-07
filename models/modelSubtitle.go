@@ -20,9 +20,11 @@ type Subtitle struct {
 	Uri       string
 	Url       string
 	OssUrl    string `gorm:"-"`
+	HumamTime string `gorm:"_"`
 }
 
 func (sub *Subtitle) AfterFind()(err error) {
 	sub.OssUrl = fmt.Sprintf("%s%s", CdnHost, sub.Uri)
+	sub.HumamTime = sub.CreatedAt.Format("06-01-02 15:04")
 	return
 }
