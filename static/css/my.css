@@ -170,7 +170,7 @@ cursor: pointer; cursor: hand;
 
  .subtitle-title-zh{
      margin-top: 1rem!important;
-     height: 4rem;
+     height: 3rem;
      overflow: hidden;
      text-overflow: ellipsis;
  }
