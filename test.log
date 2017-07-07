@@ -147,3 +147,13 @@
 2017/07/07 10:21:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     132.04µs|   match|[44m GET     [0m /static/img/logo56x56.png
 2017/07/07 10:25:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 239.360566ms|   match|[44m GET     [0m /subtitle   r:/subtitle
 2017/07/07 10:25:14 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.140056ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:26:06 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.054871882s|   match|[44m GET     [0m /     r:/
+2017/07/07 10:26:06 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.036897ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:26:50 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 530.543297ms|   match|[44m GET     [0m /tag/9   r:/tag/:id([0-9]+)
+2017/07/07 10:26:50 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   2.297452ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:26:54 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.622682348s|   match|[44m GET     [0m /tag/8   r:/tag/:id([0-9]+)
+2017/07/07 10:26:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 277.210553ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:29:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 267.529931ms|   match|[44m GET     [0m /subtitle   r:/subtitle
+2017/07/07 10:29:15 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|     2.2047ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/07 10:29:55 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 232.735715ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
+2017/07/07 10:29:58 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 219.166255ms|   match|[46m POST    [0m /subtitle/load-more   r:/subtitle/load-more
