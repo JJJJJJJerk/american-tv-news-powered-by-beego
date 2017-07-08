@@ -78,6 +78,9 @@ cursor: pointer; cursor: hand;
 }
 /* Medium devices (tablets, 768px and up) sm */
 
+
+
+
 @media (min-width: 576px) { 
     html {
     font-size: 11px!important;

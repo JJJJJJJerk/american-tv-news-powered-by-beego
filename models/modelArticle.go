@@ -46,7 +46,8 @@ func (art *Article) AfterFind() (err error) {
 	art.CreatedTime = beego.Date(art.CreatedAt, "H:i")
 	art.CreatedWeekday = art.CreatedAt.Format("Mon 15:04")
 	//param := "?imageView2/1/w/120/h/120"
-	param := "?imageView2/1/w/480/h/270"
+	//param := "?imageView2/1/w/480/h/270"
+	param := "?imageMogr2/auto-orient/thumbnail/!480x270r/gravity/NorthWest/crop/480x270/format/png/blur/1x0/quality/100|imageslim"
 	if len(art.Tags) > 0 {
 		firstTag := art.Tags[0]
 		art.FirstTagID = firstTag.ID

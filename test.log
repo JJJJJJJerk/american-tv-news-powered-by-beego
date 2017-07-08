@@ -250,3 +250,18 @@
 2017/07/08 17:12:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 1.307294731s|   match|[44m GET     [0m /article/2470   r:/article/:id([0-9]+)
 2017/07/08 17:12:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   2.369081ms|   match|[44m GET     [0m /static/css/my.css
 2017/07/08 17:12:43 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    297.794µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:11:14 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/08 19:11:28 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.173759907s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:11:28 [D] [server.go:2568] |      127.0.0.1|[47m 304 [0m|   1.585595ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:15:03 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/08 19:15:38 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/08 19:16:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.968579313s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:16:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.007775ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:16:04 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    456.315µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:18:14 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/08 19:18:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.299071833s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:18:24 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.495457ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:18:25 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    472.621µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.612829107s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    987.953µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    288.196µs|   match|[44m GET     [0m /static/img/logo56x56.png
