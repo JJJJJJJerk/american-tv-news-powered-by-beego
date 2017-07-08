@@ -265,3 +265,24 @@
 2017/07/08 19:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.612829107s|   match|[44m GET     [0m /     r:/
 2017/07/08 19:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    987.953µs|   match|[44m GET     [0m /static/css/my.css
 2017/07/08 19:20:09 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    288.196µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:30:09 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/08 19:30:14 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.208682153s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:30:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   1.032854ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:30:15 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    426.821µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:31:04 [I] [asm_amd64.s:2197] http server Running on http://:9999
+2017/07/08 19:31:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.276441413s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:31:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|   9.918067ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:31:08 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    381.847µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:32:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.167777294s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:32:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    1.39943ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:32:03 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    115.415µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:32:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 3.048970318s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:32:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     834.04µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:32:35 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    115.766µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:32:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.629963809s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:32:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    861.715µs|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:32:59 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     99.253µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:34:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m| 2.653502693s|   match|[44m GET     [0m /     r:/
+2017/07/08 19:34:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|    2.76898ms|   match|[44m GET     [0m /static/css/my.css
+2017/07/08 19:34:23 [D] [server.go:2568] |      127.0.0.1|[42m 200 [0m|     108.92µs|   match|[44m GET     [0m /static/img/logo56x56.png
+2017/07/08 19:35:07 [I] [asm_amd64.s:2197] http server Running on http://:9999

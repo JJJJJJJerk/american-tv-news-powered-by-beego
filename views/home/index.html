@@ -1,12 +1,12 @@
 <div class="row no-gutters">
         {{range $index, $value := .Articles}}
         <!--Card-->
-        <div class="col-md-4 col-sm-6 col-xs-12 pb-1 article-card-padding">
+        <div class="col-md-4 col-sm-6 col-xs-12 article-card-padding">
                 <div class="card">
                         <!--Card image-->
                         <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
                                 <div class="view overlay hm-white-slight show-cursor">
-                                        <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="img-fluid">
+                                        <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="img-fluid w-100">
 
                                         <div class="series-card-details d-flex align-items-center">
                                                 <span class="badge badge-danger  tag-name-link mt-1 "> {{$value.FirstTagName}}</span>

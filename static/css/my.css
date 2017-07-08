@@ -79,17 +79,13 @@ cursor: pointer; cursor: hand;
 /* Medium devices (tablets, 768px and up) sm */
 
 
-
+.article-card-padding {
+    padding:0rem 0.5rem 1rem 0.5rem !important;
+}
 
 @media (min-width: 576px) { 
     html {
     font-size: 11px!important;
-    }
-    .article-card-padding:nth-child(2n) {
-        padding:0rem 0rem 1rem 1rem ;
-    }
-    .article-card-padding:nth-child(2n+1) {
-        padding:0rem 0rem 1rem 0rem ;
     }
 
     .subtitle-container {
@@ -103,15 +99,7 @@ cursor: pointer; cursor: hand;
     html {
     font-size: 13px!important;
     }
-    .article-card-padding:nth-child(3n) {
-        padding:0rem 0rem 1rem 0rem ;
-    }
-    .article-card-padding:nth-child(3n+1) {
-        padding:0rem 1rem 1rem 0rem ;
-    }
-    .article-card-padding:nth-child(3n+2) {
-        padding:0rem 1rem 1rem 0rem ;
-    }
+
 
     .subtitle-container:nth-child(2n+1) {
         padding-left: 0rem!important;
@@ -129,15 +117,7 @@ cursor: pointer; cursor: hand;
     html {
     font-size: 15px!important;
     }
-    .article-card-padding:nth-child(3n) {
-        padding:0rem 0rem 1rem 0rem ;
-    }
-    .article-card-padding:nth-child(3n+1) {
-        padding:0rem 1rem 1rem 0rem ;
-    }
-    .article-card-padding:nth-child(3n+2) {
-        padding:0rem 1rem 1rem 0rem ;
-    }
+
     .subtitle-container:nth-child(3n+1) {
         padding-left: 0rem!important;
     }
