@@ -63,12 +63,6 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
 .series-card-details:hover {
     opacity:0
 }
-/*打分组件*/
-#raty {
-    position: absolute;
-    right: 15px;
-}
-
 
 .show-cursor {
 cursor: pointer; cursor: hand;

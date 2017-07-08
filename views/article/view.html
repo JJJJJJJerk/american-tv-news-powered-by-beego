@@ -72,13 +72,15 @@
                 score: rateScore,
                 click: function (score, evt) {
                     $.post("/article/vote", { articleId: articleId, score: score }, function (data, status) {
-                        $("#score").text(data.data.Score);
-                        $("#vote-count").text(data.data.VoteCount);
+                        $("strong#score").text(data.data.Score);
+                        $("i#vote-count").text(data.data.VoteCount);
                         $('#raty').raty('score', data.data.Score);
                     });
                 }
             }
-        ).before("<span style='font-size: 15px!important;position: absolute;right: 172px;top: 19px; '><i id='vote-count' class='text-info'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>");
+        );
+
+        $("#rate-info").append("<span class='float-right'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>")
 
     })
 
