@@ -43,14 +43,23 @@
 
 
 <script>
-    //aritcle 图片样式修改 w-100 
-    $('article img').removeProp('style')
+    //aritcle 图片样式修改 w-100
+    //这个地方图片加载两次
+    var jsonImages = JSON.parse('{{.JsonImages}}');
+    $('article img').each(function(idx,ele){
+        $(ele).addClass('img-thumbnail w-100').removeProp('style');
+        $(jsonImages).each(function(idex,obj){
+            if(obj.Fname == $(ele).attr('src')){
+                $(ele).attr('src',obj.OriginWithWaterMark)
+            }
+        });
+    });
+
     $('iframe embed video object').removeProp('style').removeClass().addClass('embed-responsive-item');
 
-    $('article img').addClass('img-thumbnail w-100');
-    var rateScore = {{.Vote.Score }};
-    var articleId = {{.Article.ID }};
-    var voteCount = {{.Vote.VoteCount }};
+    var rateScore = parseFloat('{{.Vote.Score }}');
+    var articleId = parseInt('{{.Vote.ID }}');
+    var voteCount = parseInt('{{.Vote.VoteCount }}');
     $(function () {
         $('#raty').raty(
             {

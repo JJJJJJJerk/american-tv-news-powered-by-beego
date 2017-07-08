@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"fmt"
 	"my_go_web/models"
 )
@@ -33,7 +34,7 @@ func (c *ArticleController) View() {
 	models.Gorm.Model(&vote).Update("visit")
 
 	article := models.Article{}
-	models.Gorm.Preload("Tags").First(&article, articleID)
+	models.Gorm.Preload("Tags").Preload("Images").First(&article, articleID)
 
 	//设置head seo参数
 	//设置breadcrumb
@@ -47,6 +48,13 @@ func (c *ArticleController) View() {
 	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
 	c.Data["Tags"] = models.FetchAllTagsCached()
+
+	if json, err := json.Marshal(article.Images); err == nil {
+		strrrr := string(json)
+		c.Data["JsonImages"] = strrrr
+	} else {
+		c.Data["JsonImages"] = ""
+	}
 
 	c.Layout = "layout/base_view.html"
 	c.TplName = "article/view.html"

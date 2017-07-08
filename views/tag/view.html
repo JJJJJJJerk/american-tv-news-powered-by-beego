@@ -59,7 +59,7 @@
         /*初始化*/
         var offset = 30; /*offset*/
         var size = 3;
-        var tag_id = {{.Tag.ID}};
+        var tag_id = parseInt('{{.Tag.ID}}') ;
         function fillJsonDataIntoDomeNode(articleItem) {
                 cloneNode = $(' div.row.no-gutters > div.article-card-padding:first').clone();
                 var href = '/article/' + articleItem.ID;

@@ -14,17 +14,18 @@ var CdnHost string
 
 type Image struct {
 	gorm.Model
-	Key         string
-	Description string
-	ArticleId   uint
-	Article     *Article
-	Bucket      string
-	Fname       string
-	Fsize       string
-	Width       uint
-	Height      uint
-	Format      string
-	Src         string `gorm:"-"`
+	Key                 string
+	Description         string
+	ArticleId           uint
+	Article             *Article
+	Bucket              string
+	Fname               string
+	Fsize               string
+	Width               uint
+	Height              uint
+	Format              string
+	Src                 string `gorm:"-"`
+	OriginWithWaterMark string `gorm:"-"`
 }
 
 func init() {
@@ -69,5 +70,7 @@ func (image *Image) AfterFind() (err error) {
 	//装换excerpt
 	qiniu := "?imageMogr2/gravity/NorthWest/crop/620x350/interlace/1"
 	image.Src = fmt.Sprintf("%s%s%s", CdnHost, image.Key, qiniu)
+	withLogoWaterMark := "?watermark/2/text/VFJZ576O5Ymn/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0ZDRkJGQg==/dissolve/100/gravity/NorthWest/dx/5/dy/5"
+	image.OriginWithWaterMark = fmt.Sprintf("%s%s%s", CdnHost, image.Key, withLogoWaterMark)
 	return
 }

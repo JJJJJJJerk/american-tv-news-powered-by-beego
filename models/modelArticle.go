@@ -47,7 +47,6 @@ func (art *Article) AfterFind() (err error) {
 	art.CreatedWeekday = art.CreatedAt.Format("Mon 15:04")
 	//param := "?imageView2/1/w/120/h/120"
 	param := "?imageView2/1/w/480/h/270"
-
 	if len(art.Tags) > 0 {
 		firstTag := art.Tags[0]
 		art.FirstTagID = firstTag.ID
