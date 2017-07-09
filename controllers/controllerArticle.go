@@ -71,13 +71,13 @@ func (c *ArticleController) LoadMore() {
 
 //评分ajax
 func (c *ArticleController) VoteScore() {
-	articleId, _ := c.GetInt("articleId")
+	voteID, _ := c.GetInt("voteID")
 	score, _ := c.GetFloat("score")
-	vote := models.Vote{}
-	models.Gorm.Where("article_id = ? ", articleId).Find(&vote)
+	var vote models.Vote
+	models.Gorm.First(&vote, voteID)
 	count := float32(vote.VoteCount)
 	vote.Score = (vote.Score*count + float32(score)) / (count + 1)
-	vote.VoteCount++
+	vote.VoteCount = vote.VoteCount + 1
 	models.Gorm.Model(&vote).Update("vote_count", "score")
 	c.JsonRetrun("success", "rate score successed", vote)
 }

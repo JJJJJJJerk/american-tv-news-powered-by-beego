@@ -58,7 +58,7 @@
     $('iframe embed video object').removeProp('style').removeClass().addClass('embed-responsive-item');
 
     var rateScore = parseFloat('{{.Vote.Score }}');
-    var articleId = parseInt('{{.Vote.ID }}');
+    var voteID = parseInt('{{.Vote.ID }}');
     var voteCount = parseInt('{{.Vote.VoteCount }}');
     $(function () {
         $('#raty').raty(
@@ -71,16 +71,16 @@
                 numberMax: 5,
                 score: rateScore,
                 click: function (score, evt) {
-                    $.post("/article/vote", { articleId: articleId, score: score }, function (data, status) {
+                    $.post("/article/vote", { voteID: voteID, score: score }, function (data, status) {
                         $("strong#score").text(data.data.Score);
-                        $("i#vote-count").text(data.data.VoteCount);
+                        $("#vote-count").text(data.data.VoteCount);
                         $('#raty').raty('score', data.data.Score);
                     });
                 }
             }
         );
 
-        $("#rate-info").append("<span class='float-right'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>")
+        $("#rate-info").append("<span class='float-right'><i id='vote-count' class='mr-2'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>")
 
     })
 
