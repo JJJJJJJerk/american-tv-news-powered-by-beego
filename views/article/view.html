@@ -74,7 +74,7 @@
                     $.post("/article/vote", { voteID: voteID, score: score }, function (data, status) {
                         $("strong#score").text(data.data.Score);
                         $("#vote-count").text(data.data.VoteCount);
-                        $('#raty').raty('score', data.data.Score);
+                        $('#raty').raty('score', data.data.Score).raty('set', { readOnly: true });
                     });
                 }
             }

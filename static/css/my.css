@@ -57,7 +57,7 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
 .excerpt {
     overflow: hidden;
     text-overflow: ellipsis!important;
-    height: 108;
+    height: 98;
     margin-bottom: 10px!important;
 }
 .series-card-details:hover {

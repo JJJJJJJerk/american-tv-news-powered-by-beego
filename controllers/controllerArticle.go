@@ -41,7 +41,7 @@ func (c *ArticleController) View() {
 	//设置side bar
 	//设置head navigation bar
 	url := fmt.Sprintf("/article/%d", articleID)
-	tagUrl := fmt.Sprint("/tag/%d", article.Tags[0].ID)
+	tagUrl := fmt.Sprintf("/tag/%d", article.Tags[0].ID)
 	tagName := article.Tags[0].Name
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {tagUrl, "fa fa-book", tagName}, {url, "fa fa-cloud", article.Title}}
 	c.Data["Article"] = article
