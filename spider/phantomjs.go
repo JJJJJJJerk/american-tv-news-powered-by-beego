@@ -231,3 +231,5 @@ func RunDygodMovieSpider() {
 	// var array = new Array();
 	// var array = $('div.co_content8 > ul > table > tbody > tr:nth-child(2) > td:nth-child(2) > b > a:nth-child(2)').each(function(index,value){var href = $(value).attr('href');var name=$(value).attr('title');array.push({href:href,name:name})});
 }
+
+//爬去优酷视频真实地址
