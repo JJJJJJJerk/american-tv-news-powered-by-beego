@@ -32,22 +32,9 @@
     <!--str2html 显示输出html代码-->
     <article id="content">{{str2html .Article.Body}}</article>
 
-    {{if .Article.VideoCode}}
-    <div id="video" class='embed-responsive embed-responsive-16by9'>
-        {{str2html .Article.VideoCode}}
-    </div>
-    {{end}}
 
-    <hr>
-    <div id="video" class='embed-responsive embed-responsive-16by9'>
-
-<iframe style="width:704px;height:436px;" src="http://cdn.aixifan.com/player/ACFlashPlayer.out.swf?vid=5386069&ref=http://www.acfun.cn/v/ac3832997" id="ACFlashPlayer-re"></iframe>
-    </div>
+    {{template "article/_video.html" .}}
 </div>
-
-
-
-
 <script>
             //aritcle 图片样式修改 w-100
             //这个地方图片加载两次

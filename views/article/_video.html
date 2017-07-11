@@ -1,0 +1,27 @@
+
+
+{{if .Article.VideoCode}}
+<div id="video" class='embed-responsive embed-responsive-16by9'>
+    {{str2html .Article.VideoCode}}
+</div>
+{{end}}
+<link href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css" rel="stylesheet">
+<div id="video" class="embed-responsive embed-responsive-16by9"><video id="jerk" controls autoplay class="video-js vjs-default-skin"></video></div>
+
+<script>
+    var youkuInfo;
+    var videoNode = $('');
+    $.ajax({
+        type: 'get',
+        url: 'https://ups.youku.com/ups/get.json?vid=XMjg3MDU2Mjg5Mg==&ccode=0502&client_ip=0.0.0.0&client_ts=1499760827&utid=g2aAEVoJyn0CAQ4%2Fpk5BVR8P',
+        dataType: 'jsonp',
+        success: function (res) {
+            youkuInfo = res.data;
+            var m3u8_url = res.data.stream[0].m3u8_url;
+            $('video').prepend('<source src="'+m3u8_url+'" type="application/x-mpegURL">')
+        },         
+        error: function () {
+            alert('解析优酷失败');
+        }
+    });
+</script>

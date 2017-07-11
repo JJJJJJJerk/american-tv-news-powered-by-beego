@@ -27,10 +27,6 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
     padding:0.3rem 1.2rem 0.3rem 1.2rem!important;
 }
 
-.article-column-card-text {
-    text-overflow:ellipsis;
-    max-height: 6rem;
-}
 
 /*  card图片动画效果  */
 .series-card-details {
@@ -57,7 +53,7 @@ body > div > div.content-wrapper > section.content > div > div.media-body > ul {
 .excerpt {
     overflow: hidden;
     text-overflow: ellipsis!important;
-    height: 98;
+    height: 98px!important;
     margin-bottom: 10px!important;
 }
 .series-card-details:hover {
@@ -100,14 +96,12 @@ cursor: pointer; cursor: hand;
     font-size: 13px!important;
     }
 
-
     .subtitle-container:nth-child(2n+1) {
         padding-left: 0rem!important;
     }
         .subtitle-container:nth-child(2n) {
         padding-left: 1rem!important;
     }
-
 
 }
 
@@ -117,7 +111,6 @@ cursor: pointer; cursor: hand;
     html {
     font-size: 15px!important;
     }
-
     .subtitle-container:nth-child(3n+1) {
         padding-left: 0rem!important;
     }
@@ -127,7 +120,6 @@ cursor: pointer; cursor: hand;
         .subtitle-container:nth-child(3n+2) {
         padding-left: 1rem!important;
     }
-
 }
 
 /* Extra large devices (large desktops, 1200px and up) xl */
@@ -159,9 +151,6 @@ cursor: pointer; cursor: hand;
      margin-bottom: 0.5rem!important;
  }
 
-
-
-
  /*  card图片动画效果  */
 .subtitle-item {
     position: absolute;
@@ -186,7 +175,6 @@ a.subtitle {
     font-size: 2rem;
     color: white;
 }
-
 .qr-media > canvas {
     padding: .25rem;
     background-color: #fff;
