@@ -1,27 +1,89 @@
-
-
-{{if .Article.VideoCode}}
+ {{if .Article.VideoCode}}
 <div id="video" class='embed-responsive embed-responsive-16by9'>
     {{str2html .Article.VideoCode}}
 </div>
 {{end}}
-<link href="//cdn.bootcss.com/video.js/6.2.1/video-js.min.css" rel="stylesheet">
-<div id="video" class="embed-responsive embed-responsive-16by9"><video id="jerk" controls autoplay class="video-js vjs-default-skin"></video></div>
-
+<div class="embed-responsive embed-responsive-16by9">
+    <video id="jerk" controls data-idx='0' data-idx='9999'></video>
+</div>
+<div id="part"></div>
 <script>
-    var youkuInfo;
-    var videoNode = $('');
+    var mp4Obj = {};
+    //is safari
+    var is_only_safari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Android') == -1;
+    var videoPlayer = document.getElementById('jerk');
+
+    document.getElementById('jerk').onended = function () {
+        var index = $(this).data('idx');
+        if (index < mp4Obj.list.length - 1) {
+            $(this).data('idx', index + 1);
+            videoPlayer.src = mp4Obj.list[index + 1].cdn_url;
+            $('#part > button').removeClass('active');
+
+            var selector = "#part > button:nth-child(" + (index + 2) + ")";
+            $(selector).toggleClass('active');
+            videoPlayer.play();
+
+        } else {
+            $(this).data('idx', 0);
+            videoPlayer.src = mp4Obj.list[0].cdn_url;
+            $('#part > button').removeClass('active');
+            var selector = "#part > button:nth-child(1)";
+            $(selector).toggleClass('active');
+        }
+    }
+    function getMp4Info(response) {
+        var streams = response.data.stream;
+        $(streams).each(function (idx, ele) {
+            var is_mp4 = ele.m3u8_url.indexOf('mp4') > -1;
+            if (is_mp4) {
+                mp4Obj.m3u8_url = ele.m3u8_url;
+                mp4Obj.list = [];
+                $(ele.segs).each(function (idx, vo) {
+                    mp4Obj.list.push(vo);
+                });
+            }
+        });
+    }
+    function partBtnClicked() {
+        videoPlayer.src = $(this).data('src');
+    };
+
+
     $.ajax({
         type: 'get',
         url: 'https://ups.youku.com/ups/get.json?vid=XMjg3MDU2Mjg5Mg==&ccode=0502&client_ip=0.0.0.0&client_ts=1499760827&utid=g2aAEVoJyn0CAQ4%2Fpk5BVR8P',
         dataType: 'jsonp',
         success: function (res) {
-            youkuInfo = res.data;
-            var m3u8_url = res.data.stream[0].m3u8_url;
-            $('video').prepend('<source src="'+m3u8_url+'" type="application/x-mpegURL">')
-        },         
+            getMp4Info(res);
+            if (is_only_safari) {
+                $('#jerk').attr('src', mp4Obj.m3u8_url);
+            } else {
+                $('#jerk').attr('src', mp4Obj.list[0].cdn_url).data('idx', 0);
+            }
+            //添加文件分块按钮
+            $(mp4Obj.list).each(function (idx, vo) {
+                var partBtn = $('<button class="btn btn-outline-primary btn-xs " data-src=""></button>');
+                var mins = Math.floor(vo.total_milliseconds_video / 60000);
+                var secnd = Math.floor(vo.total_milliseconds_video / 1000) % 60;
+                partBtn.text('第' + (idx+1) + '段:' + mins + '分' + secnd + '秒').data('src', vo.cdn_url).data('idx', idx);
+                if(idx == 0){
+                    partBtn.addClass('active');
+                }
+                $('#part').append(partBtn);
+            });
+            $('#part > button').click(function (event) {
+                $('#part > button').removeClass('active');
+                $(event.target).toggleClass('active');
+                videoPlayer.src = $(event.target).data('src');
+                var idx = $(event.target).data('idx');
+                $(videoPlayer).data('idx', idx);
+                videoPlayer.play();
+            });
+        },
         error: function () {
             alert('解析优酷失败');
         }
     });
+
 </script>
