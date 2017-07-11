@@ -53,6 +53,8 @@ func (this *BaseController) Prepare() {
 		//fmt.Println(quotes)
 		//this.Data["Quotes"] = models.Get3RandomQuote()
 		this.Data["Imgs"] = models.Fetch5RandomQuoteImageCached()
+
+		this.Ctx.Output.Header("user-agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1")
 	}
 	// 	//判断用户数是否已近登陆
 	// 	//读取session

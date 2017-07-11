@@ -11,6 +11,8 @@ type VideoController struct {
 
 func (c *VideoController) VideoUrlConvertToMp4Url() {
 	url := c.GetString("url", "")
+	spider.RunQQVideoParser(url)
+
 	var mp4URL string
 	if strings.Contains(url, "youku.com") {
 		mp4URL = spider.RunYoukuVideoParser(url)

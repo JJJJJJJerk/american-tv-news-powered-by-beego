@@ -1,19 +1,23 @@
 package spider
 
 import (
+	"encoding/json"
+	"fmt"
 	"log"
-
-	"strings"
 
 	"github.com/benbjohnson/phantomjs"
 )
 
+type VideoJson struct {
+	code  string
+	video string
+}
+
 //爬去优酷视频真实地址
-func RunYoukuVideoParser(youkuVideoUrl string) (mp4url string) {
+func RunQQVideoParser(youkuVideoUrl string) (mp4url string) {
 	//源地址 http://v.youku.com/v_show/id_XMjY5MjQ3NDQ2NA==.html?spm=a2hfu.20010077.m_210490.5~5!2~5~5!3~5~5!3~5~A&f=29102521&from=y1.3-fun-fun-904-10077.90023-210490.3-4
 	//提换之后的地址 http://m.youku.com/video/id_XMjY5MjQ3NDQ2NA==.html?spm=a2hfu.20010077.m_210490.5~5!2~5~5!3~5~5!3~5~A&f=29102521&from=y1.3-fun-fun-904-10077.90023-210490.3-4
-	youkuVideoUrl = strings.Replace(youkuVideoUrl, "http://v.youku.com/v_show/", "http://player.youku.com/embed/", -1)
-	youkuVideoUrl = strings.Replace(youkuVideoUrl, "https://v.youku.com/v_show/", "http://m.youku.com/video/", -1)
+	youkuVideoUrl = "https://v.qq.com/iframe/player.html?vid=s0521l6pfaf&tiny=1&auto=1"
 
 	if err := phantomjs.DefaultProcess.Open(); err != nil {
 		log.Fatal(err)
@@ -52,14 +56,27 @@ func RunYoukuVideoParser(youkuVideoUrl string) (mp4url string) {
 	}
 	// 不支持 promise phantomjs
 	// Read first link.
-	json, err := page.Evaluate(`function() {
-		document.getElementsByClassName('x-video-button')[0].click();
-  		return document.getElementsByTagName('video')[0].src;
+	if err := page.Render("hackernews.png", "png", 100); err != nil {
+		log.Fatal(err)
+	}
+	page.Evaluate(`function() {
+		document.querySelector('span.tvp_button_play').click();
+	}`)
+	nodes, err := page.Evaluate(`function() {
+		document.querySelector('span.tvp_button_play').click();
+		var videoURL = document.getElementsByTagName('video')[0].src;
+		var html = markup = document.querySelector('div.tvp_video').innerHTML;
+  		return {video:videoURL,code:html};
 	}`)
 	if err != nil {
 		log.Fatal(err)
 	}
-	return json.(string)
+
+	//失败 这里面有加密的地方
+	fmt.Println(nodes)
+	var resss VideoJson
+	json.Unmarshal(nodes.([]byte), &resss)
+	return "data"
 	// var array = new Array();
 	// var array = $('#header > div > div.bd2 > div.bd3 > div.bd3r > div.co_area2 > div.co_content8 > ul > table > tbody > tr:nth-child(2) > td:nth-child(2) > b > a:nth-child(2)').each(function(index,value){var href = $(value).attr('href');var name=$(value).attr('title');array.push({href:href,name:name})});
 }

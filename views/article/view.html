@@ -37,51 +37,56 @@
         {{str2html .Article.VideoCode}}
     </div>
     {{end}}
+
+    <hr>
+    <div id="video" class='embed-responsive embed-responsive-16by9'>
+
+<iframe style="width:704px;height:436px;" src="http://cdn.aixifan.com/player/ACFlashPlayer.out.swf?vid=5386069&ref=http://www.acfun.cn/v/ac3832997" id="ACFlashPlayer-re"></iframe>
+    </div>
 </div>
 
 
 
 
 <script>
-    //aritcle 图片样式修改 w-100
-    //这个地方图片加载两次
-    var jsonImages = JSON.parse('{{.JsonImages}}');
-    $('article img').each(function(idx,ele){
-        $(ele).addClass('img-thumbnail w-100').removeProp('style');
-        $(jsonImages).each(function(idex,obj){
-            if(obj.Fname == $(ele).attr('src')){
-                $(ele).attr('src',obj.OriginWithWaterMark)
-            }
-        });
-    });
+            //aritcle 图片样式修改 w-100
+            //这个地方图片加载两次
+            var jsonImages = JSON.parse('{{.JsonImages}}');
+            $('article img').each(function (idx, ele) {
+                $(ele).addClass('img-thumbnail w-100').removeProp('style');
+                $(jsonImages).each(function (idex, obj) {
+                    if (obj.Fname == $(ele).attr('src')) {
+                        $(ele).attr('src', obj.OriginWithWaterMark)
+                    }
+                });
+            });
 
-    $('iframe embed video object').removeProp('style').removeClass().addClass('embed-responsive-item');
 
-    var rateScore = parseFloat('{{.Vote.Score }}');
-    var voteID = parseInt('{{.Vote.ID }}');
-    var voteCount = parseInt('{{.Vote.VoteCount }}');
-    $(function () {
-        $('#raty').raty(
-            {
-                starType: 'i',
-                half: true,
-                noRatedMsg: 'Not rated yet!',
-                hints: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
-                targetText: '评分',
-                numberMax: 5,
-                score: rateScore,
-                click: function (score, evt) {
-                    $.post("/article/vote", { voteID: voteID, score: score }, function (data, status) {
-                        $("strong#score").text(data.data.Score);
-                        $("#vote-count").text(data.data.VoteCount);
-                        $('#raty').raty('score', data.data.Score).raty('set', { readOnly: true });
-                    });
-                }
-            }
-        );
+            var rateScore = parseFloat('{{.Vote.Score }}');
+            var voteID = parseInt('{{.Vote.ID }}');
+            var voteCount = parseInt('{{.Vote.VoteCount }}');
+            $(function () {
+                $('#raty').raty(
+                    {
+                        starType: 'i',
+                        half: true,
+                        noRatedMsg: 'Not rated yet!',
+                        hints: ['bad', 'poor', 'regular', 'good', 'gorgeous'],
+                        targetText: '评分',
+                        numberMax: 5,
+                        score: rateScore,
+                        click: function (score, evt) {
+                            $.post("/article/vote", { voteID: voteID, score: score }, function (data, status) {
+                                $("strong#score").text(data.data.Score);
+                                $("#vote-count").text(data.data.VoteCount);
+                                $('#raty').raty('score', data.data.Score).raty('set', { readOnly: true });
+                            });
+                        }
+                    }
+                );
 
-        $("#rate-info").append("<span class='float-right'><i id='vote-count' class='mr-2'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>")
+                $("#rate-info").append("<span class='float-right'><i id='vote-count' class='mr-2'>" + voteCount + "</i>次评价:<strong id='score' class='text-primary'>" + rateScore + "</strong>分</span>")
 
-    })
+            })
 
 </script>
