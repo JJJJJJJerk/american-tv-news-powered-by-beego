@@ -4,31 +4,53 @@
     <!--Footer Links-->
     <div class="container-fluid">
         <div class="row">
-
-            <div class="col">
-                <h5 class="title text-center">技术博客</h5>
+            <div class="col-md-2 col-xs-6 text-center">
+                <h5 class="title">技术博客</h5>
                 <ul>
-                    <li class="text-center"><a href="//www.github.com">github</a></li>
-                    <li class="text-center"><a href="//www.stackoverflow.com">stackoverflow</a></li>
+                    <li class="text-center"><a rel="nofollow" href="//www.github.com">github</a></li>
+                    <li class="text-center"><a rel="nofollow" href="//www.stackoverflow.com">stackoverflow</a></li>
+                    <li class="text-center"><a rel="nofollow" href="//wwww.reddit.com">reddit</a></li>
                 </ul>
             </div>
-            <div class="col text-center">
-                <h5 class="title text-center">酷站分享</h5>
+            <div class="col-md-2 col-xs-6 text-center">
+                <h5 class="title">酷站分享</h5>
                 <ul>
-                    <li class="text-center"><a href="//wwww.reddit.com">reddit</a></li>
-                    <li class="text-center"><a href="//wwww.youtube.com">youtube</a></li>
-                </ul>
-            </div>
-            <div class="col">
-                <h5 class="title text-center">友情链接</h5>
-                <ul>
+                    <li class="text-center"><a rel="nofollow" href="//wwww.youtube.com">youtube</a></li>
                     <li class="text-center"><a href="//www.trytv.org">美剧分享网站</a></li>
                     <li class="text-center"><a href="//wwww.cnfluffy.com">技术博客网站</a></li>
                 </ul>
             </div>
+            <div class="col-md-2 hidden-sm-down text-center">
+                <h5 class="title">新浪微博</h5>
+                <div class="qr-media" data-text="http://weibo.com/dejavuzhou"></div>
+            </div>
+            <div class="col-md-2 hidden-sm-down text-center">
+                <h5 class="title">今日头条</h5>
+                <div class="qr-media" data-text="https://www.toutiao.com/c/user/58364068651/#mid=1562467406640130"></div>
+            </div>
+            <div class="col-md-2 hidden-sm-down text-center">
+                <h5 class="title">腾讯视频</h5>
+                <div class="qr-media" data-text="http://v.qq.com/vplus/335d56a2638ff08cf9bb462829b154a5"></div>
+            </div>
+            <div class="col-md-2 hidden-sm-down text-center">
+                <h5 class="title">优酷视频</h5>
+                <div class="qr-media" data-text="http://i.youku.com/trytv666"></div>
+            </div>
         </div>
     </div>
     <!--/.Footer Links-->
+    <script>
+        // 生成二维码
+        $(function () {
+            $('.qr-media').each(function (idx, ele) {
+                var txt = $(ele).data('text');
+                $(ele).qrcode({ width: 90, height: 90, text: txt });
+                $(ele).click(function(){
+                    location.href = txt;
+                });
+            });
+        })
+    </script>
 
     <!--Copyright-->
     <div class="footer-copyright">

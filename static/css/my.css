@@ -186,3 +186,18 @@ a.subtitle {
     font-size: 2rem;
     color: white;
 }
+
+.qr-media > canvas {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    max-width: 100%;
+    height: auto;
+}
+.qr-media {
+    cursor: pointer;
+}
