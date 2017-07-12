@@ -69,7 +69,7 @@ func (art *Article) AfterFind() (err error) {
 	if strings.Contains(art.UrlVideo, "youku.com") {
 		//http://v.youku.com/v_show/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975
 		//http://m.youku.com/video/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975&source=
-		reg := regexp.MustCompile(`(?:id_)(\w+)(?:==\.html)`)
+		reg := regexp.MustCompile(`(?:id_)(\w+)(?:[=]{0,2}\.html)`)
 		ids := reg.FindStringSubmatch(art.UrlVideo)
 		for k, v := range ids {
 			if k == 1 {

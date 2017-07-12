@@ -40,8 +40,19 @@
             var language_zh = ele.audio_lang == 'guoyu';
             var language_en = ele.audio_lang == 'en';
             var language_tw = ele.audio_lang == 'tai';
+            var language_df = ele.audio_lang == 'default';
 
-
+            if (is_mp4 && language_df) {
+                var obj = {};
+                obj.m3u8_url = ele.m3u8_url;
+                obj.list = [];
+                obj.lang = 'default';
+                obj.milliseconds_video = ele.milliseconds_video;
+                $(ele.segs).each(function (idx, vo) {
+                    obj.list.push(vo);
+                });
+                languagePlaylist.push(obj);
+            }
 
             if (is_mp4 && language_zh) {
                 var obj = {};
@@ -107,10 +118,10 @@
                 if(mp4Obj.lang == 'en'){
                     language = '英语';
                 }
-                var total_min = Math.floor(mp4Obj.milliseconds_video / 60000);
-
-                $('#part').append('<h3 class="text-center">'+language+':'+total_min+'分钟'+'</h3>');
-
+                if(languagePlaylist.length > 1){
+                    var total_min = Math.floor(mp4Obj.milliseconds_video / 60000);
+                    $('#part').append('<h3 class="text-center">'+language+':'+total_min+'分钟'+'</h3>');
+                }
                 $(mp4Obj.list).each(function (idx, vo) {
                 var colorClass = colors[idx%(colors.length)];
                 //var colorClass = defaultBtnColor;
