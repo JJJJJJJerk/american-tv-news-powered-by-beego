@@ -5,6 +5,10 @@ package models
 import (
 	"math"
 
+	"strings"
+
+	"regexp"
+
 	"github.com/astaxie/beego"
 	"github.com/jinzhu/gorm"
 )
@@ -34,6 +38,7 @@ type Article struct {
 	CreatedDate    string `gorm:"-"`
 	CreatedTime    string `gorm:"-"`
 	CreatedWeekday string `gorm:"-"`
+	VideoYoukuId   string `gorm:"-"`
 }
 
 //做一些计算
@@ -58,8 +63,21 @@ func (art *Article) AfterFind() (err error) {
 	if art.CoverageUri != "" {
 		imageModel.Key = art.CoverageUri
 	}
-
 	art.CoverageURL = imageModel.GetImageURL(param)
+
+	//解析视频类型的vid
+	if strings.Contains(art.UrlVideo, "youku.com") {
+		//http://v.youku.com/v_show/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975
+		//http://m.youku.com/video/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975&source=
+		reg := regexp.MustCompile(`(?:id_)(\w+)(?:==\.html)`)
+		ids := reg.FindStringSubmatch(art.UrlVideo)
+		for k, v := range ids {
+			if k == 1 {
+				art.VideoYoukuId = v
+			}
+		}
+	}
+
 	return
 }
 

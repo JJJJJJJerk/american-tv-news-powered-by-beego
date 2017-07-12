@@ -1,35 +1,34 @@
- {{if .Article.VideoCode}}
-<div id="video" class='embed-responsive embed-responsive-16by9'>
-    {{str2html .Article.VideoCode}}
-</div>
-{{end}}
+{{if .Article.VideoYoukuId}}
 <div class="embed-responsive embed-responsive-16by9">
     <video id="jerk" controls data-idx='0' data-idx='9999'></video>
 </div>
 <div id="part"></div>
 <script>
     var mp4Obj = {};
-    //is safari
+    var youkuId = "{{.Article.VideoYoukuId}}";
     var is_only_safari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Android') == -1;
     var videoPlayer = document.getElementById('jerk');
-
+    var defaultBtnColor = "btn-secondary";
+    var clickedBtnColor = "btn-unique";
+    var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];
+    var youkuUrl = 'https://ups.youku.com/ups/get.json?vid=' + youkuId + '==&ccode=0502&client_ip=0.0.0.0&client_ts=1499760827&utid=g2aAEVoJyn0CAQ4%2Fpk5BVR8P'
+    
     document.getElementById('jerk').onended = function () {
         var index = $(this).data('idx');
+        $('#part > button').removeClass(clickedBtnColor)
+
         if (index < mp4Obj.list.length - 1) {
             $(this).data('idx', index + 1);
             videoPlayer.src = mp4Obj.list[index + 1].cdn_url;
-            $('#part > button').removeClass('active');
-
             var selector = "#part > button:nth-child(" + (index + 2) + ")";
-            $(selector).toggleClass('active');
+            $(selector).addClass(clickedBtnColor);
             videoPlayer.play();
 
         } else {
             $(this).data('idx', 0);
             videoPlayer.src = mp4Obj.list[0].cdn_url;
-            $('#part > button').removeClass('active');
             var selector = "#part > button:nth-child(1)";
-            $(selector).toggleClass('active');
+            $(selector).addClass(clickedBtnColor);
         }
     }
     function getMp4Info(response) {
@@ -49,10 +48,9 @@
         videoPlayer.src = $(this).data('src');
     };
 
-
     $.ajax({
         type: 'get',
-        url: 'https://ups.youku.com/ups/get.json?vid=XMjg3MDU2Mjg5Mg==&ccode=0502&client_ip=0.0.0.0&client_ts=1499760827&utid=g2aAEVoJyn0CAQ4%2Fpk5BVR8P',
+        url: youkuUrl,
         dataType: 'jsonp',
         success: function (res) {
             getMp4Info(res);
@@ -63,18 +61,20 @@
             }
             //添加文件分块按钮
             $(mp4Obj.list).each(function (idx, vo) {
-                var partBtn = $('<button class="btn btn-outline-primary btn-xs " data-src=""></button>');
+                var colorClass = colors[idx%(colors.length)];
+                //var colorClass = defaultBtnColor;
+                var partBtn = $('<button class="btn btn-' + colorClass + ' btn-sm " data-src=""></button>');
                 var mins = Math.floor(vo.total_milliseconds_video / 60000);
                 var secnd = Math.floor(vo.total_milliseconds_video / 1000) % 60;
-                partBtn.text('第' + (idx+1) + '段:' + mins + '分' + secnd + '秒').data('src', vo.cdn_url).data('idx', idx);
-                if(idx == 0){
-                    partBtn.addClass('active');
+                partBtn.text('第' + (idx + 1) + '段:' + mins + '分' + secnd + '秒').data('src', vo.cdn_url).data('idx', idx);
+                if (idx == 0) {
+                    partBtn.addClass(clickedBtnColor);
                 }
                 $('#part').append(partBtn);
             });
             $('#part > button').click(function (event) {
-                $('#part > button').removeClass('active');
-                $(event.target).toggleClass('active');
+                $('#part > button').removeClass(clickedBtnColor)
+                $(event.target).addClass(clickedBtnColor);
                 videoPlayer.src = $(event.target).data('src');
                 var idx = $(event.target).data('idx');
                 $(videoPlayer).data('idx', idx);
@@ -87,3 +87,4 @@
     });
 
 </script>
+{{end}}
