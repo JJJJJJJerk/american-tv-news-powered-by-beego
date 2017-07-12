@@ -4,7 +4,7 @@
 </div>
 <div id="part" class="my-1"></div>
 <script>
-    var mp4Obj = {};
+    var languagePlaylist = [];
     var youkuId = "{{.Article.VideoYoukuId}}";
     var is_only_safari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Android') == -1;
     var videoPlayer = document.getElementById('jerk');
@@ -35,18 +35,47 @@
         var streams = response.data.stream;
         $(streams).each(function (idx, ele) {
             var is_mp4 = ele.m3u8_url.indexOf('mp4') > -1;
-            if (is_mp4) {
-                mp4Obj.m3u8_url = ele.m3u8_url;
-                mp4Obj.list = [];
+            var language_zh = ele.audio_lang == 'guoyu';
+            var language_en = ele.audio_lang == 'en';
+            var language_tw = ele.audio_lang == 'tai';
+
+
+
+            if (is_mp4 && language_zh) {
+                var obj = {};
+                obj.m3u8_url = ele.m3u8_url;
+                obj.list = [];
+                obj.lang = 'guoyu';
+                obj.milliseconds_video = ele.milliseconds_video;
                 $(ele.segs).each(function (idx, vo) {
-                    mp4Obj.list.push(vo);
+                    obj.list.push(vo);
                 });
+                languagePlaylist.push(obj);
+            }
+            if (is_mp4 && language_en) {
+                var obj = {};
+                obj.m3u8_url = ele.m3u8_url;
+                obj.list = [];
+                obj.lang = 'en';
+                obj.milliseconds_video = ele.milliseconds_video;
+                $(ele.segs).each(function (idx, vo) {
+                    obj.list.push(vo);
+                });
+                languagePlaylist.push(obj);
+            }
+            if (is_mp4 && language_tw) {
+                var obj = {};
+                obj.m3u8_url = ele.m3u8_url;
+                obj.list = [];
+                obj.lang = 'tai';
+                obj.milliseconds_video = ele.milliseconds_video;
+                $(ele.segs).each(function (idx, vo) {
+                    obj.list.push(vo);
+                });
+                languagePlaylist.push(obj);
             }
         });
     }
-    function partBtnClicked() {
-        videoPlayer.src = $(this).data('src');
-    };
 
     $.ajax({
         type: 'get',
@@ -55,12 +84,33 @@
         success: function (res) {
             getMp4Info(res);
             if (is_only_safari) {
-                $('#jerk').attr('src', mp4Obj.m3u8_url);
+                $('#jerk').attr('src', languagePlaylist[0].m3u8_url);
             } else {
-                $('#jerk').attr('src', mp4Obj.list[0].cdn_url).data('idx', 0);
+                $('#jerk').attr('src', languagePlaylist[0].list[0].cdn_url).data('idx', 0);
             }
+                            $('#jerk').attr('src', languagePlaylist[0].m3u8_url);
+
             //添加文件分块按钮
-            $(mp4Obj.list).each(function (idx, vo) {
+            $(languagePlaylist).each(function(k,mp4Obj){
+                //遍历语言
+                var language = '国语';
+                if(mp4Obj.lang == 'gouyu'){
+                    language = '国语';
+                }
+                if(mp4Obj.lang == 'tai'){
+                    language = '台湾';
+                }
+                if(mp4Obj.lang == 'yue'){
+                    language = '粤语';
+                }
+                if(mp4Obj.lang == 'en'){
+                    language = '英语';
+                }
+                var total_min = Math.floor(mp4Obj.milliseconds_video / 60000);
+
+                $('#part').append('<h3 class="text-center">'+language+':'+total_min+'分钟'+'</h3>');
+
+                $(mp4Obj.list).each(function (idx, vo) {
                 var colorClass = colors[idx%(colors.length)];
                 //var colorClass = defaultBtnColor;
                 var partBtn = $('<button class="btn btn-' + colorClass + ' btn-sm " data-src=""></button>');
@@ -72,6 +122,9 @@
                 }
                 $('#part').append(partBtn);
             });
+
+            });
+
             $('#part > button').click(function (event) {
                 $('#part > button').removeClass(clickedBtnColor)
                 $(event.target).addClass(clickedBtnColor);
