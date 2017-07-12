@@ -2,7 +2,7 @@
 <div class="embed-responsive embed-responsive-16by9">
     <video id="jerk" controls data-idx='0' data-idx='9999'></video>
 </div>
-<div id="part"></div>
+<div id="part" class="my-1"></div>
 <script>
     var mp4Obj = {};
     var youkuId = "{{.Article.VideoYoukuId}}";
@@ -85,6 +85,5 @@
             alert('解析优酷失败');
         }
     });
-
 </script>
 {{end}}
