@@ -8,6 +8,8 @@
     var youkuId = "{{.Article.VideoYoukuId}}";
     var is_only_safari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Android') == -1;
     var videoPlayer = document.getElementById('jerk');
+    var is_mobile = navigator.appVersion.indexOf("Mobile")> -1;
+
     var defaultBtnColor = "btn-secondary";
     var clickedBtnColor = "btn-unique";
     var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];
@@ -83,12 +85,11 @@
         dataType: 'jsonp',
         success: function (res) {
             getMp4Info(res);
-            if (is_only_safari) {
+            if (is_only_safari || is_mobile) {
                 $('#jerk').attr('src', languagePlaylist[0].m3u8_url);
             } else {
                 $('#jerk').attr('src', languagePlaylist[0].list[0].cdn_url).data('idx', 0);
             }
-                            $('#jerk').attr('src', languagePlaylist[0].m3u8_url);
 
             //添加文件分块按钮
             $(languagePlaylist).each(function(k,mp4Obj){
