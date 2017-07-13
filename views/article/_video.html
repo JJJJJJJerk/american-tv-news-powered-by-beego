@@ -8,13 +8,13 @@
     var youkuId = "{{.Article.VideoYoukuId}}";
     var is_only_safari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Android') == -1;
     var videoPlayer = document.getElementById('jerk');
-    var is_mobile = navigator.appVersion.indexOf("Mobile")> -1;
+    var is_mobile = navigator.appVersion.indexOf("Mobile") > -1;
 
     var defaultBtnColor = "btn-secondary";
     var clickedBtnColor = "btn-unique";
     var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger'];
     var youkuUrl = 'https://ups.youku.com/ups/get.json?vid=' + youkuId + '==&ccode=0502&client_ip=0.0.0.0&client_ts=1499760827&utid=g2aAEVoJyn0CAQ4%2Fpk5BVR8P'
-    
+
     document.getElementById('jerk').onended = function () {
         var index = $(this).data('idx');
         $('#part > button').removeClass(clickedBtnColor)
@@ -103,37 +103,37 @@
             }
 
             //添加文件分块按钮
-            $(languagePlaylist).each(function(k,mp4Obj){
+            $(languagePlaylist).each(function (k, mp4Obj) {
                 //遍历语言
                 var language = '国语';
-                if(mp4Obj.lang == 'gouyu'){
+                if (mp4Obj.lang == 'gouyu') {
                     language = '国语';
                 }
-                if(mp4Obj.lang == 'tai'){
+                if (mp4Obj.lang == 'tai') {
                     language = '台湾';
                 }
-                if(mp4Obj.lang == 'yue'){
+                if (mp4Obj.lang == 'yue') {
                     language = '粤语';
                 }
-                if(mp4Obj.lang == 'en'){
+                if (mp4Obj.lang == 'en') {
                     language = '英语';
                 }
-                if(languagePlaylist.length > 1){
+                if (languagePlaylist.length > 1) {
                     var total_min = Math.floor(mp4Obj.milliseconds_video / 60000);
-                    $('#part').append('<h3 class="text-center">'+language+':'+total_min+'分钟'+'</h3>');
+                    $('#part').append('<h3 class="text-center">' + language + ':' + total_min + '分钟' + '</h3>');
                 }
                 $(mp4Obj.list).each(function (idx, vo) {
-                var colorClass = colors[idx%(colors.length)];
-                //var colorClass = defaultBtnColor;
-                var partBtn = $('<button class="btn btn-' + colorClass + ' btn-sm " data-src=""></button>');
-                var mins = Math.floor(vo.total_milliseconds_video / 60000);
-                var secnd = Math.floor(vo.total_milliseconds_video / 1000) % 60;
-                partBtn.text('第' + (idx + 1) + '段:' + mins + '分' + secnd + '秒').data('src', vo.cdn_url).data('idx', idx);
-                if (idx == 0) {
-                    partBtn.addClass(clickedBtnColor);
-                }
-                $('#part').append(partBtn);
-            });
+                    var colorClass = colors[idx % (colors.length)];
+                    //var colorClass = defaultBtnColor;
+                    var partBtn = $('<button class="btn btn-' + colorClass + ' btn-sm " data-src=""></button>');
+                    var mins = Math.floor(vo.total_milliseconds_video / 60000);
+                    var secnd = Math.floor(vo.total_milliseconds_video / 1000) % 60;
+                    partBtn.text('第' + (idx + 1) + '段:' + mins + '分' + secnd + '秒').data('src', vo.cdn_url).data('idx', idx);
+                    if (idx == 0) {
+                        partBtn.addClass(clickedBtnColor);
+                    }
+                    $('#part').append(partBtn);
+                });
 
             });
 
@@ -149,6 +149,23 @@
         error: function () {
             alert('解析优酷失败');
         }
+    });
+
+</script>
+{{end}} {{if .Article.VideoMiaopaiId }}
+<div class="embed-responsive embed-responsive-16by9 mb-1">
+    <video controls src="//gslb.miaopai.com/stream/{{.Article.VideoMiaopaiId}}.mp4"></video>
+</div>
+{{end}} {{if .Article.VideoWeiboId }}
+<div id='video-div' class="embed-responsive embed-responsive-16by9 mb-1">
+    <video controls autoplay src=""></video>
+</div>
+<script>
+    $('#video-div').hide();
+    $.post("/video/weibo-parse", { id: '{{.Article.VideoWeiboId}}' }, function (data, status) {
+        $('#video-div > video').attr('src', data)
+        $('#video-div').fadeIn().show();
+
     });
 </script>
 {{end}}

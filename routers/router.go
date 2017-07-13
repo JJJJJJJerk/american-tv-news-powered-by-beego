@@ -31,4 +31,6 @@ func init() {
 	// beego.AutoRouter(&controllers.ImageController{}) //对image使用自动路由
 	beego.Router("/subtitle", &controllers.SubtitleController{}, "get:Index")
 	beego.Router("/subtitle/load-more", &controllers.SubtitleController{}, "post:LoadMore")
+
+	beego.Router("/video/weibo-parse", &controllers.VideoController{}, "post:WeiboVideoParse")
 }

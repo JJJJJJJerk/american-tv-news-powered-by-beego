@@ -39,6 +39,8 @@ type Article struct {
 	CreatedTime    string `gorm:"-"`
 	CreatedWeekday string `gorm:"-"`
 	VideoYoukuId   string `gorm:"-"`
+	VideoMiaopaiId string `gorm:"-"`
+	VideoWeiboId   string `gorm:"-"`
 }
 
 //做一些计算
@@ -65,7 +67,7 @@ func (art *Article) AfterFind() (err error) {
 	}
 	art.CoverageURL = imageModel.GetImageURL(param)
 
-	//解析视频类型的vid
+	//解析视频类型的优酷vid
 	if strings.Contains(art.UrlVideo, "youku.com") {
 		//http://v.youku.com/v_show/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975
 		//http://m.youku.com/video/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975&source=
@@ -74,6 +76,38 @@ func (art *Article) AfterFind() (err error) {
 		for k, v := range ids {
 			if k == 1 {
 				art.VideoYoukuId = v
+			}
+		}
+	}
+	//解析微博
+	//https://m.weibo.cn/status/Fc99eEAbb?fid=1034%3Ae4cb370b2f219a79e8e0d55a4a3bb673&jumpfrom=weibocom
+	//http://weibo.com/tv/v/Fc99eEAbb?fid=1034:e4cb370b2f219a79e8e0d55a4a3bb673
+	//http://weibo.com/tv/v/Fc13IAmqT?fid=1034:94f6f34920fa8d2a353f85b6f3fde66a
+	//http://weibo.com/tv/v/Fc2Mudq0n?fid=1034:2534bf1ffad6701f1a4ac7e60575c756
+	//http://weibo.com/tv/v/Fc4DPrLRJ?from=vhot
+	//http://weibo.com/tv/v/Fc99eEAbb?fid=1034:e4cb370b2f219a79e8e0d55a4a3bb673
+
+	if strings.Contains(art.UrlVideo, "weibo.") {
+		//http://v.youku.com/v_show/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975
+		//http://m.youku.com/video/id_XMjg4Mzc0NjAxMg==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A&f=50346975&source=
+		reg := regexp.MustCompile(`\?fid=(\d{4}:\w{32})`)
+		ids := reg.FindStringSubmatch(art.UrlVideo)
+		for k, v := range ids {
+			if k == 1 {
+				art.VideoWeiboId = v
+			}
+		}
+	}
+	//解析秒拍
+	//http://www.miaopai.com/show/guASDNtbED2~Q-G9lBSCx1ECxxj~vqCc.htm
+	//http://www.miaopai.com/show/XvEqhME836J9MvRgh6xFz~BY5PNjYS~e.htm
+	//http://gslb.miaopai.com/stream/c48Xw9OZhOmLRaQeG1vqIxFax5Pmp29O.mp4?yx=&refer=weibo_app&Expires=1499883561&ssig=ibesKAxQRj&KID=unistore,video&playerType=miaopai
+	if strings.Contains(art.UrlVideo, "miaopai.") {
+		reg := regexp.MustCompile(`(?:/show/)(.+)(?:\.htm)`)
+		ids := reg.FindStringSubmatch(art.UrlVideo)
+		for k, v := range ids {
+			if k == 1 {
+				art.VideoMiaopaiId = v
 			}
 		}
 	}
