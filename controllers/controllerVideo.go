@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"io/ioutil"
+	"my_go_web/models"
 	"net/http"
 	"regexp"
 
@@ -16,6 +17,19 @@ type VideoController struct {
 
 func (c *VideoController) WeiboVideoParse() {
 	fid := c.GetString("id")
+	key := fmt.Sprint("mp4.", fid)
+	if x, found := models.CacheManager.Get(key); found {
+		c.Data["json"] = x.(string)
+	} else {
+		mp4Url := c.fetchMp4Url(fid)
+		c.Data["json"] = mp4Url
+		//这个过期时间也许还需要调整
+		models.CacheManager.Set(key, mp4Url, models.C_EXPIRE_TIME_HOUR_01)
+	}
+	c.ServeJSON()
+}
+
+func (c *VideoController) fetchMp4Url(fid string) (mp4Url string) {
 	url := fmt.Sprint("http://video.weibo.com/show?fid=", fid, "&type=mp4")
 	//reg := regexp.MustCompile()
 	client := &http.Client{}
@@ -26,7 +40,7 @@ func (c *VideoController) WeiboVideoParse() {
 	req.Header.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 	req.Header.Add("Accept-Language", "en-US,en;q=0.8")
 	req.Header.Add("Accept-Charset", "UTF-8,*;q=0.5")
-	c.Data["json"] = ""
+	mp4Url = ""
 	if resp, err := client.Do(req); err == nil && resp.StatusCode == 200 {
 		bodyBytes, _ := ioutil.ReadAll(resp.Body)
 		bodyString := string(bodyBytes)
@@ -35,10 +49,9 @@ func (c *VideoController) WeiboVideoParse() {
 		srcs := reg.FindStringSubmatch(bodyString)
 		for k, v := range srcs {
 			if k == 1 {
-				c.Data["json"] = v
+				mp4Url = v
 			}
 		}
 	}
-	c.ServeJSON()
-
+	return
 }
