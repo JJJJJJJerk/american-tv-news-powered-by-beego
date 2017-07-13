@@ -7,7 +7,6 @@
                         <a href="/article/{{$value.ID}}" title="{{$value.Title}}">
                                 <div class="view overlay hm-white-slight show-cursor">
                                         <img src="{{$value.CoverageURL}}" alt="{{$value.Title}}" class="img-fluid w-100">
-
                                         <div class="series-card-details d-flex align-items-center">
                                                 <span class="badge badge-danger  tag-name-link mt-1 "> {{$value.FirstTagName}}</span>
                                                 <span class="badge badge-primary tag-week-day mt-1 mr-3">{{$value.CreatedWeekday}}</span>
@@ -21,12 +20,11 @@
                         <div class="card-block">
                                 <!--Title-->
                                 <p class="card-text excerpt">{{ $value.Excerpt }}</p>
-
                                 <ul class="list-inline d-flex justify-content-between mb-0">
                                         <li class="list-inline-item">
-                                                <strong><span class="fa fa-calendar" title="发布日期"></strong> <span class="text-danger date">{{$value.CreatedDate}}</span>
+                                                <strong class="fa fa-calendar" title="发布日期"></strong> 
+                                                <span class="time text-danger" data-time="{{$value.CreatedAt}}">{{$value.CreatedAt}}</span>
                                         </li>
-
                                         <li class="list-inline-item">
                                                 <strong class="mr-1"><span class="ion-eye" title="阅读数量 read count"></strong>
                                                 <span class="text-danger read"> {{$value.Vote.Visit}}</span>
@@ -72,9 +70,12 @@
                 cloneNode.find('p').text(articleItem.Excerpt);
                 cloneNode.find('span.read').text(articleItem.Vote.Visit);
                 cloneNode.find('span.favorate').text(articleItem.Vote.FavorateCount);
-                cloneNode.find('span.date').text(articleItem.CreatedDate);
+                cloneNode.find('span.time').data('time',articleItem.CreatedAt).text(articleItem.CreatedAt);
                 cloneNode.find('span.score').text(articleItem.Vote.Score);
+                changeTimeTagToHumanTime(cloneNode.find('span.time'));
+
                 $('body > div.container.pt-1 > div.row.no-gutters').append(cloneNode);
+
         }
         function getData() {
                 $.post('/article/load-more', { offset: offset, size: size }, function (reponse) {

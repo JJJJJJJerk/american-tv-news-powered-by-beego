@@ -3,35 +3,13 @@
 //所有页面都需要执行该js
 
 
-(function (){
-    //使用原生的js 来设置 导航栏高亮
-let current_url = window.location.href;
-
-
-
-
-jQuery.each(menus, function (i, dom) {
-    //在html data-uri设置uri
-    //根据网站设置高亮菜单
-    let node_uri = $(dom).data('uri');
-    if (current_url.indexOf(node_uri)) {
-        $(dom).toggleClass('active')
-    }
-});
-
-//设置面包屑高亮
-
-}());
-
-
 
 
 //去掉html tag 得到 plain string
-function stripHtml(html)
-{
-   var tmp = document.createElement("DIV");
-   tmp.innerHTML = html;
-   return tmp.textContent || tmp.innerText || "";
+function stripHtml(html) {
+  var tmp = document.createElement("DIV");
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || "";
 }
 
 //资讯列表页面就执行以下js
@@ -39,21 +17,17 @@ function stripHtml(html)
 //The following solution works in Chrome, Firefox, Safari, IE9+ and also with iframes:
 
 
-function humanTime(date) {
-
+function humanTime(dateString) {
+  var string = dateString.substring(0, 19);
+  var date = new Date(string);
   var seconds = Math.floor((new Date() - date) / 1000);
 
-  var interval = Math.floor(seconds / 31536000);
-
+  interval = Math.floor(seconds / 3600 / 24 / 30);
   if (interval > 1) {
-    return interval + "年前";
+    return dateString.substring(0, 10);
   }
-  interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
-    return interval + "月前";
-  }
-  interval = Math.floor(seconds / 86400);
-  if (interval > 1) {
+  interval = Math.floor(seconds / 3600/24);
+  if (interval >1) {
     return interval + "天前";
   }
   interval = Math.floor(seconds / 3600);
@@ -66,3 +40,27 @@ function humanTime(date) {
   }
   return Math.floor(seconds) + "秒前";
 }
+
+  //格式化是时间
+
+function changeTimeTagToHumanTime(jqTimeNode){
+    var text = humanTime(jqTimeNode.data('time'));
+    jqTimeNode.text(text);
+}
+var current_url = window.location.href;
+
+$(function () {
+  $('span.time').each(function (idx, ele) {
+      changeTimeTagToHumanTime($(ele));
+  });
+  //设置导航菜单高亮
+  $('.nav-link').each(function (i, dom) {
+    //在html data-uri设置uri
+    //根据网站设置高亮菜单
+    let node_uri = $(dom).attr('href');
+    if (current_url.indexOf(node_uri)>0) {
+       $(dom).parent('li.nav-item').toggleClass('active')
+    }
+  });
+  //设置面包屑高亮
+});
