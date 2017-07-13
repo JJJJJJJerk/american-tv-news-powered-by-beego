@@ -15,7 +15,7 @@ import (
 //这个是查血的初始
 var Gorm *gorm.DB
 
-const PageSize = 15
+const PageSize = 18
 
 var CacheManager *cache.Cache
 

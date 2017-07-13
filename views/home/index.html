@@ -55,8 +55,8 @@
 
 <script>
         /*初始化*/
-        var offset = 30; /*offset*/
-        var size = 3
+        var offset = 18; /*offset*/
+        var size = 6
         function fillJsonDataIntoDomeNode(articleItem) {
                 cloneNode = $(' div.row.no-gutters > div.article-card-padding:first').clone();
                 var href = '/article/' + articleItem.ID;
@@ -73,7 +73,6 @@
                 cloneNode.find('span.time').data('time',articleItem.CreatedAt).text(articleItem.CreatedAt);
                 cloneNode.find('span.score').text(articleItem.Vote.Score);
                 changeTimeTagToHumanTime(cloneNode.find('span.time'));
-
                 $('body > div.container.pt-1 > div.row.no-gutters').append(cloneNode);
 
         }

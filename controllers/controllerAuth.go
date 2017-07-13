@@ -15,6 +15,7 @@ type AuthController struct {
 
 //sign up
 func (c *AuthController) GetRegister() {
+	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
 	c.TplName = "auth/register.html"
 }
 
@@ -29,7 +30,7 @@ func (c *AuthController) PostRegister() {
 	}
 
 	email := c.GetString("email")
-	isExistUser := models.User{}
+	var isExistUser models.User
 	models.Gorm.Where("email = ?", email).First(&isExistUser)
 	if isExistUser.ID > 0 {
 		beego.Warning("用户已近存在")
@@ -54,7 +55,7 @@ func (c *AuthController) PostRegister() {
 		return
 
 	} else {
-		c.SetSession("loginInfo", isExistUser)
+		c.SetSession(AuthSessionName, isExistUser)
 		c.Data["json"] = map[string]interface{}{"status": "success", "message": "添加新用户成功", "data": nil}
 		c.ServeJSON()
 		return

@@ -26,8 +26,8 @@ function humanTime(dateString) {
   if (interval > 1) {
     return dateString.substring(0, 10);
   }
-  interval = Math.floor(seconds / 3600/24);
-  if (interval >1) {
+  interval = Math.floor(seconds / 3600 / 24);
+  if (interval > 1) {
     return interval + "天前";
   }
   interval = Math.floor(seconds / 3600);
@@ -41,25 +41,27 @@ function humanTime(dateString) {
   return Math.floor(seconds) + "秒前";
 }
 
-  //格式化是时间
+//格式化是时间
 
-function changeTimeTagToHumanTime(jqTimeNode){
-    var text = humanTime(jqTimeNode.data('time'));
-    jqTimeNode.text(text);
+function changeTimeTagToHumanTime(jqTimeNode) {
+  var text = humanTime(jqTimeNode.data('time'));
+  jqTimeNode.text(text);
 }
 var current_url = window.location.href;
 
+//js 转换实践格式
+$('span.time').each(function (idx, ele) {
+  changeTimeTagToHumanTime($(ele));
+});
+
 $(function () {
-  $('span.time').each(function (idx, ele) {
-      changeTimeTagToHumanTime($(ele));
-  });
   //设置导航菜单高亮
   $('.nav-link').each(function (i, dom) {
     //在html data-uri设置uri
     //根据网站设置高亮菜单
     let node_uri = $(dom).attr('href');
-    if (current_url.indexOf(node_uri)>0) {
-       $(dom).parent('li.nav-item').toggleClass('active')
+    if (current_url.indexOf(node_uri) > 0) {
+      $(dom).parent('li.nav-item').toggleClass('active')
     }
   });
   //设置面包屑高亮

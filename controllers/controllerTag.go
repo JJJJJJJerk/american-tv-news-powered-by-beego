@@ -9,21 +9,6 @@ type TagController struct {
 	BaseController
 }
 
-func (c *TagController) Index() {
-
-	articles := []models.Article{}
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
-
-	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "fa fa-home", "资讯"}}
-	c.Data["Articles"] = articles
-	c.Data["Keyword"] = "美剧keywords"
-	c.Data["Description"] = "美剧描述"
-	c.Data["Title"] = "美剧资讯"
-
-	c.Layout = "layout/base.html"
-	c.TplName = "article/index.html"
-}
-
 func (c *TagController) View() {
 	tagId, _ := c.GetInt(":id")
 	//浏览计数
@@ -49,7 +34,6 @@ func (c *TagController) View() {
 	c.Layout = "layout/base_index.html"
 	c.TplName = "tag/view.html"
 }
-
 func (c *TagController) LoadMore() {
 	offset, _ := c.GetInt("offset")
 	size, _ := c.GetInt("size")
