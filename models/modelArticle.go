@@ -9,6 +9,8 @@ import (
 
 	"regexp"
 
+	"fmt"
+
 	"github.com/astaxie/beego"
 	"github.com/jinzhu/gorm"
 )
@@ -24,10 +26,11 @@ type Article struct {
 	VideoCode   string
 	IsShow      uint
 	KeyWord     string
-	Discription string
+	Description string
 	CoverageUri string
 	Images      []Image
-	Tags        []Tag `gorm:"many2many:article_tag;"`
+	Tags        []Tag  `gorm:"many2many:article_tag;"`
+	Shows       []Show `gorm:"many2many:article_show;"`
 	Vote        *Vote
 
 	FirstTagName   string `gorm:"_"`
@@ -41,7 +44,10 @@ type Article struct {
 	VideoYoukuId   string `gorm:"-"`
 	VideoMiaopaiId string `gorm:"-"`
 	VideoWeiboId   string `gorm:"-"`
+	Links          []Link `gorm:"-"`
 }
+
+const ShowHost = "//www.trytv.org/"
 
 //做一些计算
 func (art *Article) AfterFind() (err error) {
@@ -55,12 +61,7 @@ func (art *Article) AfterFind() (err error) {
 	//param := "?imageView2/1/w/120/h/120"
 	//param := "?imageView2/1/w/480/h/270"
 	param := "?imageMogr2/auto-orient/thumbnail/!480x270r/gravity/NorthWest/crop/480x270/format/png/blur/1x0/quality/100|imageslim"
-	if len(art.Tags) > 0 {
-		firstTag := art.Tags[0]
-		art.FirstTagID = firstTag.ID
-		art.FirstTagName = firstTag.Name
-		art.FirstTagNameEn = firstTag.NameEn
-	}
+
 	imageModel := Image{Key: "article-placeholder"}
 	if art.CoverageUri != "" {
 		imageModel.Key = art.CoverageUri
@@ -110,6 +111,26 @@ func (art *Article) AfterFind() (err error) {
 				art.VideoMiaopaiId = v
 			}
 		}
+	}
+
+	//处理标签
+	for k, v := range art.Tags {
+		//设置第一个标签
+		if k == 0 {
+			art.FirstTagID = v.ID
+			art.FirstTagName = v.Name
+			art.FirstTagNameEn = v.NameEn
+		}
+		//设置外链内链
+		url := fmt.Sprint("/tag/", v.ID)
+		link := Link{Name: v.Name, Url: url}
+		art.Links = append(art.Links, link)
+	}
+	for _, show := range art.Shows {
+		url := fmt.Sprint(ShowHost, "show/", show.ID)
+		showName := fmt.Sprint(show.NameEn, show.NameZh)
+		link := Link{Name: showName, Url: url}
+		art.Links = append(art.Links, link)
 	}
 
 	return

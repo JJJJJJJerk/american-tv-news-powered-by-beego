@@ -33,8 +33,7 @@
 
     <!--str2html 显示输出html代码-->
     <article id="content">{{str2html .Article.Body}}</article>
-
-
+    {{template "article/_links.html" .}}
 </div>
 <script>
     //aritcle 图片样式修改 w-100

@@ -23,8 +23,8 @@ func (c *VideoController) WeiboVideoParse() {
 	} else {
 		mp4Url := c.fetchMp4Url(fid)
 		c.Data["json"] = mp4Url
-		//这个过期时间也许还需要调整
-		models.CacheManager.Set(key, mp4Url, models.C_EXPIRE_TIME_HOUR_01)
+		//这个过期时间也许还需要调整 进过验证有效期为一小时
+		models.CacheManager.Set(key, mp4Url, models.C_EXPIRE_TIME_MIN_01*55)
 	}
 	c.ServeJSON()
 }

@@ -16,3 +16,8 @@ type Vote struct {
 	VoteCount     uint16
 	FavorateCount uint16
 }
+
+type Link struct {
+	Name string
+	Url string
+}

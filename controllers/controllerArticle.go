@@ -34,20 +34,20 @@ func (c *ArticleController) View() {
 	models.Gorm.Model(&vote).Update("visit")
 
 	article := models.Article{}
-	models.Gorm.Preload("Tags").Preload("Images").First(&article, articleID)
+	models.Gorm.Preload("Tags").Preload("Images").Preload("Shows").First(&article, articleID)
 
 	//设置head seo参数
 	//设置breadcrumb
 	//设置side bar
 	//设置head navigation bar
-	url := fmt.Sprintf("/article/%d", articleID)
-
-	tagUrl := fmt.Sprintf("/tag/%d", article.Tags[0].ID)
-	tagName := article.Tags[0].Name
+	url := fmt.Sprint("/article/", articleID)
+	tagUrl := fmt.Sprint("/tag/", article.FirstTagID)
+	tagName := fmt.Sprint(article.FirstTagName, article.FirstTagNameEn)
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {tagUrl, "fa fa-book", tagName}, {url, "fa fa-cloud", article.Title}}
 	c.Data["Article"] = article
 	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
+	c.Data["Description"] = article.Description
 	c.Data["Tags"] = models.FetchAllTagsCached()
 
 	if json, err := json.Marshal(article.Images); err == nil {

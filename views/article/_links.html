@@ -1,0 +1,8 @@
+<div class="d-flex justify-content-around text-center" id="links">
+    {{range $index, $value := .Article.Links}}
+          {{if eq $index 0 }}
+            <span class="lead badge badge-default">相关资源:</span>
+          {{end}}
+         <a href="{{$value.Url}}" class="badge badge-primary" >{{$value.Name}}</a>
+    {{end}}
+</div>
