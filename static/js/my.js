@@ -67,7 +67,7 @@ $(function () {
   $('.nav-link').each(function (i, dom) {
     //在html data-uri设置uri
     //根据网站设置高亮菜单
-    let node_uri = $(dom).attr('href');
+    var node_uri = $(dom).attr('href');
     if (current_url.indexOf(node_uri) > 0) {
       $(dom).parent('li.nav-item').toggleClass('active')
     }
