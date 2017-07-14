@@ -3,6 +3,16 @@
           {{if eq $index 0 }}
             <span class="lead badge badge-default">相关资源:</span>
           {{end}}
-         <a href="{{$value.Url}}" class="badge badge-primary" >{{$value.Name}}</a>
+         <a href="{{$value.Url}}" class="badge badge-primary">{{$value.Name}}</a>
     {{end}}
 </div>
+
+<script>
+  $("#links a").each(function(idx,ele){
+    var url = $(ele).attr('href');
+    if (url.indexOf('trytv.org') > -1){
+        var text = $(ele).removeClass('badge-primary').text()
+        $(ele).addClass('badge-warning').text("资源下载:"+text);
+    }
+  });
+</script>
