@@ -21,7 +21,7 @@
                                 <div class="subtitle-item" data-id="{{$value.ID}}">
                                     <div class="row d-flex align-items-center h-100">
                                         <p class="col-8 mb-0 text-center">
-                                            7天文章更新数量: 
+                                            7天文章更新数量:
                                         </p>
                                         <div class="col-4 text-center">
                                             {{$value.ArticleCount}}
@@ -45,9 +45,9 @@
         $('div.card.tag > div.text-center.text-white').removeClass(colorClasses[0]).addClass(function (idx, classString) {
             return colorClasses[idx % count];
         });
-        $('div.subtitle-item').click(function(){
+        $('div.subtitle-item').click(function () {
             var id = $(this).data('id');
-            location.href = '/tag/'+id;
+            location.href = '/tag/' + id;
         });
     }
     setSubtilteWithColor();
