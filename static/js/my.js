@@ -17,7 +17,11 @@ function stripHtml(html) {
 //The following solution works in Chrome, Firefox, Safari, IE9+ and also with iframes:
 
 
-function humanTime(dateString) {
+
+
+//格式化是时间
+
+function changeTimeTagToHumanTime(dateString) {
   var string = dateString.substring(0, 19);
   var date = new Date(string);
   var seconds = Math.floor((new Date() - date) / 1000);
@@ -38,22 +42,27 @@ function humanTime(dateString) {
   if (interval > 1) {
     return interval + "分前";
   }
+  spanTimeJqNode.text()
   return Math.floor(seconds) + "秒前";
 }
 
-//格式化是时间
-
-function changeTimeTagToHumanTime(jqTimeNode) {
-  var text = humanTime(jqTimeNode.data('time'));
-  jqTimeNode.text(text);
+function changeTimeTagToMonthDate(dateString) {
+  return dateString.substring(5, 10);
 }
+
 var current_url = window.location.href;
 
 //js 转换实践格式
-$('span.time').each(function (idx, ele) {
-  changeTimeTagToHumanTime($(ele));
+$('span.time.human-date').each(function (idx, ele) {
+  var dataString = $(ele).data('time');
+  var res = changeTimeTagToHumanTime(dataString);
+  $(ele).text(res);
 });
-
+$('span.time.month-date').each(function (idx, ele) {
+  var dataString = $(ele).data('time');
+  var res = changeTimeTagToMonthDate(dataString);
+  $(ele).text(res);
+});
 $(function () {
   //设置导航菜单高亮
   $('.nav-link').each(function (i, dom) {
