@@ -42,7 +42,6 @@ function changeTimeTagToHumanTime(dateString) {
   if (interval > 1) {
     return interval + "分前";
   }
-  spanTimeJqNode.text()
   return Math.floor(seconds) + "秒前";
 }
 
