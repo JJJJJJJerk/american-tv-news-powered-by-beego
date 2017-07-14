@@ -4,19 +4,21 @@ package models
 
 import (
 	"encoding/json"
+	"time"
 
 	"github.com/jinzhu/gorm"
 )
 
 type Tag struct {
 	gorm.Model
-	Name        string
-	Description string
-	KeyWord     string
-	Image       *Image
-	ImageId     uint
-	NameEn      string
-	Articles    []Article `gorm:"many2many:article_tag;"`
+	Name         string
+	Description  string
+	KeyWord      string
+	Image        *Image
+	ImageId      uint
+	NameEn       string
+	Articles     []Article `gorm:"many2many:article_tag;"`
+	ArticleCount int       `gorm:"-"`
 }
 
 func FetchAllTagsCached() (tags []Tag) {
@@ -26,9 +28,17 @@ func FetchAllTagsCached() (tags []Tag) {
 		buffffer := []byte(foo)
 		json.Unmarshal(buffffer, &tags)
 	} else {
-		Gorm.Find(&tags)
+		now := time.Now().AddDate(0, 0, -7)
+		timestring := now.Format("2006-01-02 15:04:05")
+		Gorm.Preload("Articles", "articles.created_at >?", timestring).Find(&tags)
 		data, _ := json.Marshal(tags)
 		CacheManager.Set(CK_TAG_ALL, string(data), C_EXPIRE_TIME_FOREVER)
 	}
+	return
+}
+
+func (tag *Tag) AfterFind() (err error) {
+	//装换excerpt
+	tag.ArticleCount = len(tag.Articles)
 	return
 }

@@ -189,3 +189,7 @@ a.subtitle {
 .qr-media {
     cursor: pointer;
 }
+
+div.card.tag > div.subtitle-item {
+    cursor: pointer;
+}

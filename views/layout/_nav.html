@@ -22,6 +22,9 @@
         <li class="nav-item ">
           <a class="nav-link " href="/tag/8">名言锦句</a>
         </li>
+        <li class="nav-item ">
+          <a class="nav-link " data-toggle="modal" data-target="#allTags"><span class="ion-android-apps"></span></a>
+        </li>
         <li class="nav-item btn-group">
           <a class="nav-link dropdown-toggle" id="all-tags" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">更多</a>
           <div class="dropdown-menu" aria-labelledby="all-tags">
@@ -113,3 +116,6 @@
   })
 
 </script>
+
+
+{{template "tag/_allTags.html" .}}

@@ -44,3 +44,9 @@ func (c *TagController) LoadMore() {
 	models.Gorm.Model(&tag).Offset(offset).Limit(size).Order("articles.updated_at DESC").Preload("Images").Preload("Tags").Preload("Vote").Related(&articles, "Articles")
 	c.JsonRetrun("success", "欢迎访问我们的小站", articles)
 }
+
+func (c *TagController) IndexPost() {
+	var tags []models.Tag
+	models.Gorm.Find(&tags)
+	c.JsonRetrun("success", "欢迎使用moojoTV", tags)
+}

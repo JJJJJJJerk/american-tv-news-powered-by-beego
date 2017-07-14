@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div class="modal fade" id="allTags" tabindex="-1" role="dialog" aria-labelledby="all tags" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">全部文章分类</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row no-gutters">
+                        {{range $index, $value := .Tags}}
+                        <div class="col-sm-12 col-md-6 col-lg-4 pb-1 pl-1 subtitle-container">
+                            <div class="card tag">
+                                <div class="text-white text-center">
+                                    <p class="subtitle-title-zh m-1">{{$value.Name}}</p>
+                                    <p class="subtitle-title-en mx-1 mb-1">{{$value.NameEn}}</p>
+                                </div>
+                                <div class="subtitle-item" data-id="{{$value.ID}}">
+                                    <div class="row d-flex align-items-center h-100">
+                                        <p class="col-8 mb-0 text-center">
+                                            7天文章更新数量: 
+                                        </p>
+                                        <div class="col-4 text-center">
+                                            {{$value.ArticleCount}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setSubtilteWithColor() {
+        var colorClasses = ['danger-color', 'orange', 'primary-color', 'success-color', 'info-color', 'warning-color', 'default-color'];
+        var count = colorClasses.length;
+        $('div.card.tag > div.text-center.text-white').removeClass(colorClasses[0]).addClass(function (idx, classString) {
+            return colorClasses[idx % count];
+        });
+        $('div.subtitle-item').click(function(){
+            var id = $(this).data('id');
+            location.href = '/tag/'+id;
+        });
+    }
+    setSubtilteWithColor();
+
+</script>

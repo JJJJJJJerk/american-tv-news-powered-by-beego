@@ -48,7 +48,6 @@ func (c *ArticleController) View() {
 	c.Data["Vote"] = vote
 	c.Data["Title"] = article.Title
 	c.Data["Description"] = article.Description
-	c.Data["Tags"] = models.FetchAllTagsCached()
 
 	if json, err := json.Marshal(article.Images); err == nil {
 		strrrr := string(json)

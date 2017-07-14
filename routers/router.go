@@ -14,9 +14,10 @@ import (
 func init() {
 	beego.Router("/", &controllers.HomeController{}, "get:Get")
 	// //注册自动路由
-	
+
 	beego.Router("/tag/:id([0-9]+)", &controllers.TagController{}, "get:View") //匹配:id 是数字的路由
 	beego.Router("/tag/load-more", &controllers.TagController{}, "post:LoadMore")
+	beego.Router("/tag", &controllers.TagController{}, "post:IndexPost") //获取tag 列表
 
 	//beego.Router("/article", &controllers.ArticlesController{}, "get:Index")
 	beego.Router("/article/:id([0-9]+)", &controllers.ArticleController{}, "get:View") //匹配:id 是数字的路由
