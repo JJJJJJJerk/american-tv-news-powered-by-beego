@@ -17,7 +17,9 @@ func (c *TagController) View() {
 	models.Gorm.First(&tag, tagId)
 
 	//models.Gorm.Related("Tags", "article_tag.tag_id = ?", tag.ID).Preload("Images").Limit(90).Find(&articles)
-	models.Gorm.Model(&tag).Order("articles.updated_at desc").Limit(models.PageSize).Preload("Images").Preload("Vote").Related(&articles, "Articles")
+	if models.Gorm.Model(&tag).Order("articles.updated_at desc").Limit(models.PageSize).Preload("Images").Preload("Vote").Related(&articles, "Articles").RecordNotFound() {
+		c.Abort("404")
+	}
 
 	//设置head seo参数
 	//设置breadcrumb

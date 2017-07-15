@@ -34,7 +34,9 @@ func (c *ArticleController) View() {
 	models.Gorm.Model(&vote).Update("visit")
 
 	article := models.Article{}
-	models.Gorm.Preload("Tags").Preload("Images").Preload("Shows").First(&article, articleID)
+	if models.Gorm.Preload("Tags").Preload("Images").Preload("Shows").First(&article, articleID).RecordNotFound() {
+		c.Abort("404")
+	}
 
 	//设置head seo参数
 	//设置breadcrumb

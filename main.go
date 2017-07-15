@@ -3,6 +3,7 @@ package main
 import (
 	//init(register) html-template function ...
 
+	"my_go_web/controllers"
 	_ "my_go_web/models"
 	_ "my_go_web/routers"
 	_ "my_go_web/tools" //init reuters
@@ -22,6 +23,7 @@ func main() {
 	//taskSpiderDygodMeiju := toolbox.NewTask("taskSpiderDygodMeiju", "27 * */2 * * *", func() error { spider.RunDygodMeijuSpider(); return nil })
 	//toolbox.AddTask("taskSpiderDygodMeiju", taskSpiderDygodMeiju)
 	//toolbox.StartTask()
+	beego.ErrorController(&controllers.ErrorController{})
 
 	beego.Run()
 
