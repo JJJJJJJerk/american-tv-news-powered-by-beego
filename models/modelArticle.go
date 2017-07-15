@@ -4,6 +4,7 @@ package models
 
 import (
 	"math"
+	"time"
 
 	"strings"
 
@@ -33,18 +34,18 @@ type Article struct {
 	Shows       []Show `gorm:"many2many:article_show;"`
 	Vote        *Vote
 
-	FirstTagName   string `gorm:"_"`
-	FirstTagNameEn string `gorm:"_"`
-	FirstTagID     uint   `gorm:"_"`
-	Excerpt        string `gorm:"-"`
-	CoverageURL    string `gorm:"-"`
-	CreatedDate    string `gorm:"-"`
-	CreatedTime    string `gorm:"-"`
-	CreatedWeekday string `gorm:"-"`
-	VideoYoukuId   string `gorm:"-"`
-	VideoMiaopaiId string `gorm:"-"`
-	VideoWeiboId   string `gorm:"-"`
-	Links          []Link `gorm:"-"`
+	FirstTagName     string `gorm:"_"`
+	FirstTagNameEn   string `gorm:"_"`
+	FirstTagID       uint   `gorm:"_"`
+	Excerpt          string `gorm:"-"`
+	CoverageURL      string `gorm:"-"`
+	CreatedDate      string `gorm:"-"`
+	CreatedTime      string `gorm:"-"`
+	CreatedHumanTime string `gorm:"-"`
+	VideoYoukuId     string `gorm:"-"`
+	VideoMiaopaiId   string `gorm:"-"`
+	VideoWeiboId     string `gorm:"-"`
+	Links            []Link `gorm:"-"`
 }
 
 const ShowHost = "//www.trytv.org/"
@@ -57,7 +58,7 @@ func (art *Article) AfterFind() (err error) {
 	//转换时间啊
 	art.CreatedDate = beego.Date(art.CreatedAt, "m-d")
 	art.CreatedTime = beego.Date(art.CreatedAt, "H:i")
-	art.CreatedWeekday = art.CreatedAt.Format("Mon 15:04")
+	art.CreatedHumanTime = CovertTimeToHumanTime(art.CreatedAt)
 	//param := "?imageView2/1/w/120/h/120"
 	//param := "?imageView2/1/w/480/h/270"
 	param := "?imageMogr2/auto-orient/thumbnail/!480x270r/gravity/NorthWest/crop/480x270/format/png/blur/1x0/quality/100|imageslim"
@@ -152,4 +153,26 @@ func GetAllArticles(pageIndex int) (articles []Article, totalPage int) {
 	articles = []Article{}
 	Gorm.Offset(offset).Limit(PageSize).Order("created_time DESC").Preload("Vote").Find(&articles)
 	return
+}
+
+func CovertTimeToHumanTime(t time.Time) (humanTimeString string) {
+	secT := t.Unix()
+	secNow := time.Now().Unix()
+	duration := secNow - secT
+	if duration < 60 {
+		humanTimeString = "现在"
+		return
+	} else if duration < 3600 {
+		humanTimeString = fmt.Sprint(duration/60, "分前")
+		return
+	} else if duration < 24*3600 {
+		humanTimeString = fmt.Sprint(duration/3600, "小时前")
+		return
+	} else if duration < 24*3600*30 {
+		humanTimeString = fmt.Sprint(duration/24/3600, "天前")
+		return
+	} else {
+		humanTimeString = t.Format("2016-01-02")
+		return
+	}
 }

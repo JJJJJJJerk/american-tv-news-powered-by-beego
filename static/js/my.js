@@ -21,47 +21,11 @@ function stripHtml(html) {
 
 //格式化是时间
 
-function changeTimeTagToHumanTime(dateString) {
-  var string = dateString.substring(0, 19);
-  var date = new Date(string);
-  var seconds = Math.floor((new Date() - date) / 1000);
 
-  interval = Math.floor(seconds / 3600 / 24 / 30);
-  if (interval > 1) {
-    return dateString.substring(0, 10);
-  }
-  interval = Math.floor(seconds / 3600 / 24);
-  if (interval > 1) {
-    return interval + "天前";
-  }
-  interval = Math.floor(seconds / 3600);
-  if (interval > 1) {
-    return interval + "小时前";
-  }
-  interval = Math.floor(seconds / 60);
-  if (interval > 1) {
-    return interval + "分前";
-  }
-  return Math.floor(seconds) + "秒前";
-}
-
-function changeTimeTagToMonthDate(dateString) {
-  return dateString.substring(5, 10);
-}
 
 var current_url = window.location.href;
 
-//js 转换实践格式
-$('span.time.human-date').each(function (idx, ele) {
-  var dataString = $(ele).data('time');
-  var res = changeTimeTagToHumanTime(dataString);
-  $(ele).text(res);
-});
-$('span.time.month-date').each(function (idx, ele) {
-  var dataString = $(ele).data('time');
-  var res = changeTimeTagToMonthDate(dataString);
-  $(ele).text(res);
-});
+
 $(function () {
   //设置导航菜单高亮
   $('.nav-link').each(function (i, dom) {

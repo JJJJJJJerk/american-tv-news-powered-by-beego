@@ -10,7 +10,7 @@
 
                                         <div class="series-card-details d-flex align-items-center">
                                                 <span class="badge badge-danger  tag-name-link mt-1 "> {{$.Tag.Name}}</span>
-                                                <span class="badge badge-primary tag-week-day mt-1 mr-3 time human-date" data-time="{{$value.CreatedAt}}">{{$value.CreatedAt}}</span>
+                                                <span class="badge badge-primary tag-week-day mt-1 mr-3" data-time="{{$value.CreatedAt}}">{{$value.CreatedHumanTime}}</span>
                                                 <h4 class="text-center w-100">{{$value.Title}}</h4>
                                         </div>
                                 </div>
@@ -25,7 +25,7 @@
                                 <ul class="list-inline d-flex justify-content-between mb-0">
                                         <li class="list-inline-item">
                                                 <strong class="fa fa-calendar" title="发布日期"></strong> 
-                                                <span class="time month-date text-danger" data-time="{{$value.CreatedAt}}">{{$value.CreatedAt}}</span>
+                                                <span class="text-danger month-date" data-time="{{$value.CreatedAt}}">{{$value.CreatedDate}}</span>
                                         </li>
 
                                         <li class="list-inline-item">
@@ -74,8 +74,8 @@
                 cloneNode.find('span.read').text(articleItem.Vote.Visit);
                 cloneNode.find('span.favorate').text(articleItem.Vote.FavorateCount);
                 cloneNode.find('span.score').text(articleItem.Vote.Score);
-                cloneNode.find('span.time.human-date').text(changeTimeTagToHumanTime(articleItem.CreatedAt));
-                cloneNode.find('span.time.month-date').text(changeTimeTagToMonthDate(articleItem.CreatedAt));
+                cloneNode.find('span.tag-week-day').text(articleItem.CreatedHumanTime);
+                cloneNode.find('span.month-date').text(articleItem.CreatedDate);
                 $('body > div.container.pt-1 > div.row.no-gutters').append(cloneNode);
         }
         function getData() {
