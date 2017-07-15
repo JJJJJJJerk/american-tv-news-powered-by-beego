@@ -1,9 +1,9 @@
-<div class="d-flex justify-content-around text-center" id="links">
+<div class="div" id="links">
     {{range $index, $value := .Article.Links}}
           {{if eq $index 0 }}
-            <span class="lead badge badge-default">相关资源:</span>
+            <strong >相关资源:</strong>
           {{end}}
-         <a href="{{$value.Url}}" class="badge badge-primary">{{$value.Name}}</a>
+         <a href="{{$value.Url}}" class="mx-2" >{{$value.Name}}</a>
     {{end}}
 </div>
 
@@ -11,8 +11,7 @@
   $("#links a").each(function(idx,ele){
     var url = $(ele).attr('href');
     if (url.indexOf('trytv.org') > -1){
-        var text = $(ele).removeClass('badge-primary').text()
-        $(ele).addClass('badge-warning').text("资源下载:"+text);
+        $(ele).addClass('text-danger');
     }
   });
 </script>
