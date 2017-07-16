@@ -70,7 +70,7 @@ func (image *Image) AfterFind() (err error) {
 	//装换excerpt
 	qiniu := "?imageMogr2/gravity/NorthWest/crop/620x350/interlace/1"
 	image.Src = fmt.Sprintf("%s%s%s", CdnHost, image.Key, qiniu)
-	withLogoWaterMark := "?watermark/2/text/VFJZ576O5Ymn/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0ZDRkJGQg==/dissolve/100/gravity/NorthWest/dx/5/dy/5"
+	withLogoWaterMark := "?imageView2/0/q/75|watermark/2/text/bW9qb1RW/font/6buR5L2T/fontsize/420/fill/I0ZGRkZGRg==/dissolve/100/gravity/NorthWest/dx/10/dy/10|imageslim"
 	image.OriginWithWaterMark = fmt.Sprintf("%s%s%s", CdnHost, image.Key, withLogoWaterMark)
 	return
 }

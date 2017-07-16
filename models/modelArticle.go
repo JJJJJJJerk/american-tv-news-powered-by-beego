@@ -61,7 +61,7 @@ func (art *Article) AfterFind() (err error) {
 	art.CreatedHumanTime = CovertTimeToHumanTime(art.CreatedAt)
 	//param := "?imageView2/1/w/120/h/120"
 	//param := "?imageView2/1/w/480/h/270"
-	param := "?imageMogr2/auto-orient/thumbnail/!480x270r/gravity/NorthWest/crop/480x270/format/png/blur/1x0/quality/100|imageslim"
+	param := "?imageMogr2/thumbnail/!620x350r/gravity/Center/crop/480x270/blur/1x0/quality/80|watermark/2/text/bW9qb3R2/font/6buR5L2T/fontsize/360/fill/I0ZGRkZGRg==/dissolve/100/gravity/SouthWest/dx/10/dy/10|imageslim"
 
 	imageModel := Image{Key: "article-placeholder"}
 	if art.CoverageUri != "" {

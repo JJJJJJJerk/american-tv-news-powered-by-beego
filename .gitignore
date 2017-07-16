@@ -6,3 +6,4 @@ main
 test.log
 test.*.log
 nohup.out
+conf/app.conf
