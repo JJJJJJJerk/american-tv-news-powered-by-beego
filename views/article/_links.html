@@ -11,7 +11,7 @@
   $("#links a").each(function(idx,ele){
     var url = $(ele).attr('href');
     if (url.indexOf('trytv.org') > -1){
-        $(ele).addClass('text-danger');
+        $(ele).addClass('text-danger').attr('target','_blank')
     }
   });
 </script>
