@@ -15,9 +15,7 @@ const (
 
 type BaseController struct {
 	beego.Controller //集成beego controller
-	Uid              uint
 	//UserInfo         *models.Users
-	IsAdmin bool //是否是管理员
 }
 type Crumb struct {
 	Href  string
@@ -35,18 +33,13 @@ func (this *BaseController) Prepare() {
 	sessionUser := this.GetSession(AuthSessionName)
 	if sessionUser == nil {
 		this.Data["User"] = nil
-		this.Uid = 0
 		this.Data["Uid"] = 0
 		this.Data["IsAdmin"] = false
-		this.IsAdmin = false
 	} else {
 		user := this.GetSession(AuthSessionName).(models.User)
 		this.Data["User"] = user
-		this.Uid = user.ID
 		this.Data["Uid"] = user.ID
 		this.Data["IsAdmin"] = user.ID == 1
-		this.IsAdmin = user.ID == 1
-
 	}
 	if (this.Ctx.Request.Method == "GET") && !this.Ctx.Input.IsAjax() {
 		this.Data["Xsrf"] = this.XSRFToken() //防止跨域

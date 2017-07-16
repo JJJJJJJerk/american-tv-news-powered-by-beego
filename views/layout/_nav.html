@@ -41,7 +41,7 @@
           <a class="nav-link dropdown-toggle waves-effect waves-light p-0 m-0" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"><img class="rounded-circle"  src="{{ .User.WeiboAvatar}}" width="35" height="35"></a>
           <div class="dropdown-menu dropdown-warning dropdown-menu-right" aria-labelledby="dropdownMenu1">
-            {{if eq Uid 1}}
+            {{if .IsAdmin}}
               <a href="//www.trytv.org/article/create" target="_blank" class="dropdown-item waves-effect waves-light">发表文章</a>
               <a href="//www.trytv.org/article" target="_blank" class="dropdown-item waves-effect waves-light">文章列表</a>
             {{end}}
