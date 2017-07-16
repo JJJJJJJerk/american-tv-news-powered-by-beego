@@ -21,10 +21,10 @@ keyword=mojotv.cn|
 description=欧美娱乐资讯
 #cdnhost=https://oeveb4zm9.qnssl.com/
 [dev]
-mysqluser=root
-mysqlpass=ZHou1987
-mysqlurls=115.28.94.157
+mysqluser=**
+mysqlpass=**
+mysqlurls=**
 [prod]
-mysqluser=root
-mysqlpass=ZHou198712142811
-mysqlurls=localhost
+mysqluser=**
+mysqlpass=**
+mysqlurls=**
