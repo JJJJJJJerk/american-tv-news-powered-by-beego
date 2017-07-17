@@ -171,8 +171,11 @@ func CovertTimeToHumanTime(t time.Time) (humanTimeString string) {
 	} else if duration < 24*3600*30 {
 		humanTimeString = fmt.Sprint(duration/24/3600, "天前")
 		return
+	} else if duration < 24*3600*366 {
+		humanTimeString = fmt.Sprint(duration/24/3600/30, "月前")
+		return
 	} else {
-		humanTimeString = t.Format("2016-01-02")
+		humanTimeString = t.Format("2006-01-02")
 		return
 	}
 }
