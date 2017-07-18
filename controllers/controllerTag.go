@@ -17,7 +17,7 @@ func (c *TagController) View() {
 	models.Gorm.First(&tag, tagId)
 
 	//models.Gorm.Related("Tags", "article_tag.tag_id = ?", tag.ID).Preload("Images").Limit(90).Find(&articles)
-	if models.Gorm.Model(&tag).Order("articles.updated_at desc").Limit(models.PageSize).Preload("Images").Preload("Vote").Related(&articles, "Articles").RecordNotFound() {
+	if models.Gorm.Model(&tag).Order("articles.created_at desc").Limit(models.PageSize).Preload("Images").Preload("Vote").Related(&articles, "Articles").RecordNotFound() {
 		c.Abort("404")
 	}
 
@@ -43,7 +43,7 @@ func (c *TagController) LoadMore() {
 	tag := models.Tag{}
 	tag.ID = uint(tagId)
 	articles := []models.Article{}
-	models.Gorm.Model(&tag).Offset(offset).Limit(size).Order("articles.updated_at DESC").Preload("Images").Preload("Tags").Preload("Vote").Related(&articles, "Articles")
+	models.Gorm.Model(&tag).Offset(offset).Limit(size).Order("articles.created_at DESC").Preload("Images").Preload("Tags").Preload("Vote").Related(&articles, "Articles")
 	c.JsonRetrun("success", "欢迎访问我们的小站", articles)
 }
 
