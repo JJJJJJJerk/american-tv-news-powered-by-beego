@@ -200,3 +200,7 @@ a.subtitle {
 div.card.tag > div.subtitle-item {
     cursor: pointer;
 }
+
+.breadcrumb {
+    font-size: 12px;
+}
