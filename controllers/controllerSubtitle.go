@@ -15,9 +15,9 @@ func (c *SubtitleController) Index() {
 
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/subtitle/index", "fa fa-home", "资讯"}}
 	c.Data["Subtitles"] = subtitles
-	c.Data["Keyword"] = "美剧keywords"
-	c.Data["Description"] = "美剧描述"
-	c.Data["Title"] = "美剧资讯"
+	c.Data["Keyword"] = "mojoTV字幕,字幕下载,热门美剧,美剧电影,生肉字幕"
+	c.Data["Description"] = "mojoTV提供最新欧美美剧资讯,最新预告片,各种趣味小视频,精选制作的美剧字幕"
+	c.Data["Title"] = "mojoTV字幕|提供热门美剧资源字幕"
 
 	c.Layout = "layout/base_view.html"
 	c.TplName = "subtitle/index.html"
