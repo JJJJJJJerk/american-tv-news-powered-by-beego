@@ -61,6 +61,8 @@ func (c *AuthController) GetRegister() {
 		// logs.Debug("weibo struct accesstoken:%v", weiboResponseJson)
 		if user.ID > 0 {
 			//用户已注册
+			//直接登陆
+			c.SetSession(AuthSessionName, user)
 			c.Redirect("/", 303)
 			return
 		}
