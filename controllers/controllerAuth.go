@@ -22,12 +22,13 @@ type WeibAuth2Response struct {
 	Uid          uint   `json:"uid,string"`
 }
 
+//http://open.weibo.com/wiki/2/users/show
 type WeiboUser struct {
-	Id           uint
-	Screen_name  string
-	Name         string
-	Description  string
-	Avatar_large string
+	Id           uint   `json:"id"`
+	Screen_name  string `json:"screen_name"`
+	Name         string `json:"name"`
+	Description  string `json:"description"`
+	Avatar_large string `json:"avatar_large"`
 }
 
 //sign up
