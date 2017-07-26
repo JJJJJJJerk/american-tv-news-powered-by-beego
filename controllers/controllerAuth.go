@@ -8,6 +8,7 @@ import (
 	"net/url"
 
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -53,6 +54,9 @@ func (c *AuthController) GetRegister() {
 		//logs.Debug("token struct:", weiboResponseJson)
 		//logs.Debug("token uid and access token", weiboResponseJson.Uid, weiboResponseJson.Access_token)
 		models.Gorm.Where("weibo_token = ?", weiboResponseJson.Access_token).First(&user)
+		logs.Debug("weibo struct user:%v", user)
+		logs.Debug("weibo struct accesstoken:%v", weiboResponseJson)
+
 		if user.ID > 0 {
 			//用户已注册
 			c.Redirect("/", 303)
