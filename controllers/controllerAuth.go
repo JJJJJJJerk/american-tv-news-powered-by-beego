@@ -52,8 +52,8 @@ func (c *AuthController) GetRegister() {
 
 		//logs.Debug("token struct:", weiboResponseJson)
 		//logs.Debug("token uid and access token", weiboResponseJson.Uid, weiboResponseJson.Access_token)
-
-		if models.Gorm.Where("weibo_id = ?", weiboResponseJson.Uid).First(&user).RecordNotFound() == false {
+		models.Gorm.Where("weibo_token = ?", weiboResponseJson.Access_token).First(&user)
+		if user.ID > 0 {
 			//用户已注册
 			c.Redirect("/", 303)
 			return
