@@ -10,7 +10,7 @@ type User struct {
 	Email       string `gorm:"size:255"`
 	Password    string
 	AvatarImage string
-	WeiboId     uint
+	WeiboId     uint `gorm:"column:weibo_id"`
 	WeiboAvatar string
 	WeiboName   string
 	WeiboToken  string
