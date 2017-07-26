@@ -13,6 +13,7 @@ type User struct {
 	WeiboId     uint
 	WeiboAvatar string
 	WeiboName   string
+	WeiboToken  string
 }
 
 func (user *User) AfterFind() (err error) {

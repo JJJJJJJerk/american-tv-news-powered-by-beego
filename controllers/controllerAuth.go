@@ -8,6 +8,8 @@ import (
 	"net/url"
 
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
+	"github.com/prometheus/common/log"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -52,6 +54,9 @@ func (c *AuthController) GetRegister() {
 
 		//logs.Debug("token struct:", weiboResponseJson)
 		//logs.Debug("token uid and access token", weiboResponseJson.Uid, weiboResponseJson.Access_token)
+
+		logs.Debug("first weibo id", weiboResponseJson.Uid)
+
 		models.Gorm.Where("weibo_id = ?", weiboResponseJson.Uid).First(&user)
 		// logs.Debug("weibo struct user:%v", user)
 		// logs.Debug("weibo struct accesstoken:%v", weiboResponseJson)
@@ -70,6 +75,7 @@ func (c *AuthController) GetRegister() {
 		json.NewDecoder(respInfo.Body).Decode(&weiboUser)
 		//logs.Debug("weibo name info:%v", weiboUser.Name)
 		//logs.Debug("weibo struct info:%v", weiboUser)
+		logs.Debug("first weibo info id", weiboUser.Id)
 
 		user.WeiboId = weiboUser.Id
 		user.Name = weiboUser.Name
@@ -111,7 +117,10 @@ func (c *AuthController) PostRegister() {
 	isExistUser.Name = c.GetString("name")
 	isExistUser.WeiboAvatar = c.GetString("avatar_image")
 	wbId, _ := c.GetInt("weibo_id")
+	log.Debug("jerk:", wbId)
 	isExistUser.WeiboId = uint(wbId)
+	log.Debug("jerk:", isExistUser.WeiboId)
+
 	models.Gorm.Create(&isExistUser)
 	if isExistUser.ID < 1 {
 		beego.Critical("用户注册数据库添加失败")
