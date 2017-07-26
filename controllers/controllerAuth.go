@@ -19,7 +19,7 @@ type AuthController struct {
 }
 type WeibAuth2Response struct {
 	Access_token string `json:"access_token"`
-	Uid          uint   `json:"uid"`
+	Uid          uint   `json:"uid,string"`
 }
 
 type WeiboUser struct {
