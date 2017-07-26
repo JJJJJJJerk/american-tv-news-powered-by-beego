@@ -10,5 +10,14 @@ type User struct {
 	Email       string `gorm:"size:255"`
 	Password    string
 	AvatarImage string
+	WeiboId     uint
 	WeiboAvatar string
+	WeiboName   string
+}
+
+func (user *User) AfterFind() (err error) {
+	if user.WeiboAvatar != "" && user.AvatarImage == "" {
+		user.AvatarImage = user.WeiboAvatar
+	}
+	return
 }

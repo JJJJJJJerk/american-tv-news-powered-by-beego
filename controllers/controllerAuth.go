@@ -1,7 +1,11 @@
 package controllers
 
 import (
+	"encoding/json"
+	"fmt"
 	"my_go_web/models"
+	"net/http"
+	"net/url"
 
 	"github.com/astaxie/beego"
 
@@ -12,9 +16,63 @@ type AuthController struct {
 	beego.Controller //集成beego controller
 
 }
+type WeibAuth2Response struct {
+	Access_token string
+	Expires_in   uint
+	Remind_in    uint
+	Uid          uint
+}
+
+type WeiboUser struct {
+	Id           uint
+	Screen_name  string
+	Name         string
+	Description  string
+	Avatar_large string
+}
 
 //sign up
 func (c *AuthController) GetRegister() {
+	user := models.User{}
+
+	//weibo auth2 回调
+	weiboCode := c.GetString("code")
+	if weiboCode != "" {
+		resp, _ := http.PostForm("https://api.weibo.com/oauth2/access_token", url.Values{
+			"client_id":     {WeiboAppId},
+			"client_secret": {WeiboAppSecret},
+			"grant_type":    {"authorization_code"},
+			"code":          {weiboCode},
+			"redirect_uri":  {"https://www.mojotv.cn/auth/register"},
+		})
+		defer resp.Body.Close()
+
+		//解析json 获取token和uid
+
+		var weiboResponseJson WeibAuth2Response
+		json.NewDecoder(resp.Body).Decode(&weiboResponseJson)
+
+		if models.Gorm.Where("weibo_id = ?", weiboResponseJson.Uid).First(&user).RecordNotFound() == false {
+			//用户已注册
+			c.Redirect("/", 303)
+			return
+		}
+
+		//用户未注册     获取用户信息
+		getURL := fmt.Sprintf("https://api.weibo.com/2/users/show.json?access_token=%s&uid=%s", weiboResponseJson.Access_token, weiboResponseJson.Uid)
+		respInfo, _ := http.Get(getURL)
+		//解析json 获取token和uid
+		var weiboUser WeiboUser
+		json.NewDecoder(respInfo.Body).Decode(&weiboUser)
+
+		user.WeiboId = weiboUser.Id
+		user.Name = weiboUser.Name
+		user.AvatarImage = weiboUser.Avatar_large
+		user.Email = fmt.Sprint(weiboUser.Id, "@weibo.com")
+		user.AvatarImage = weiboUser.Avatar_large
+		models.Gorm.Create(&user)
+	}
+	c.Data["User"] = user
 	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
 	c.TplName = "auth/register.html"
 }
@@ -32,7 +90,7 @@ func (c *AuthController) PostRegister() {
 	email := c.GetString("email")
 	var isExistUser models.User
 	models.Gorm.Where("email = ?", email).First(&isExistUser)
-	if isExistUser.ID > 0 {
+	if isExistUser.ID > 0 && isExistUser.WeiboId < 0 {
 		beego.Warning("用户已近存在")
 		c.Data["json"] = map[string]interface{}{"status": "error", "message": "email已经注册", "data": nil}
 		c.ServeJSON()
@@ -47,6 +105,7 @@ func (c *AuthController) PostRegister() {
 	isExistUser.Email = email
 	isExistUser.Password = string(hashedPassword)
 	isExistUser.Name = c.GetString("name")
+	isExistUser.AvatarImage = "trytv_default_avatar.png"
 	models.Gorm.Create(&isExistUser)
 	if isExistUser.ID < 1 {
 		beego.Critical("用户注册数据库添加失败")

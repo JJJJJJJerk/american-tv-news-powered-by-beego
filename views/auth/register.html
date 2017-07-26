@@ -13,14 +13,14 @@
               <!--user name validation-->
               <div class="md-form mb-2">
                 <i class="fa fa-user-circle-o prefix"></i>
-                <input type="text" name="name" id="form1" class="form-control validate">
+                <input type="text" name="name" id="form1" class="form-control validate" name="{{.User.Name}}">
                 <label for="form1" data-error="wrong" data-success="right">姓名 Full name</label>
               </div>
 
               <!--Email validation-->
               <div class="md-form mb-2">
                 <i class="fa fa-envelope prefix"></i>
-                <input type="email" id="form2" class="form-control validate" name="email">
+                <input type="email" id="form2" class="form-control validate" name="email" value="{{.User.Email}}">
                 <label for="form2" data-error="wrong" data-success="right">邮箱 Email</label>
               </div>
 

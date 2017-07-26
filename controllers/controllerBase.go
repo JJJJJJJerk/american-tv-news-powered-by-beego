@@ -7,6 +7,8 @@ import (
 )
 
 const (
+	WeiboAppId      = "2646862509"
+	WeiboAppSecret  = "da8185c89ee23d4d1d5f08fe6f3d5d89"
 	FlashSuccess    = "flash_success"
 	FlashInfo       = "flash_info"
 	FlashError      = "flash_Error"
@@ -29,7 +31,7 @@ type Crumb struct {
 // }
 
 func (this *BaseController) Prepare() {
-
+	this.Data["WeiboAuth2Url"] = "https://api.weibo.com/oauth2/authorize?client_id=2646862509&response_type=code&redirect_uri=https://www.mojotv.cn/auth/register&display=mobile"
 	sessionUser := this.GetSession(AuthSessionName)
 	if sessionUser == nil {
 		this.Data["User"] = nil
