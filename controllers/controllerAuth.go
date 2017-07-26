@@ -51,10 +51,9 @@ func (c *AuthController) GetRegister() {
 
 		var weiboResponseJson WeibAuth2Response
 		json.NewDecoder(resp.Body).Decode(&weiboResponseJson)
-		logs.Debug("body token:", resp.Body)
 
-		logs.Debug("token struct:", weiboResponseJson)
-		logs.Debug("token uid and access token", weiboResponseJson.Uid, weiboResponseJson.Access_token)
+		//logs.Debug("token struct:", weiboResponseJson)
+		//logs.Debug("token uid and access token", weiboResponseJson.Uid, weiboResponseJson.Access_token)
 
 		if models.Gorm.Where("weibo_id = ?", weiboResponseJson.Uid).First(&user).RecordNotFound() == false {
 			//用户已注册
@@ -62,7 +61,7 @@ func (c *AuthController) GetRegister() {
 			return
 		}
 		//用户未注册     获取用户信息
-		getURL := fmt.Sprintf("https://api.weibo.com/2/users/show.json?access_token=%s&uid=%s", weiboResponseJson.Access_token, weiboResponseJson.Uid)
+		getURL := fmt.Sprintf("https://api.weibo.com/2/users/show.json?access_token=%s&uid=%d", weiboResponseJson.Access_token, weiboResponseJson.Uid)
 		respInfo, _ := http.Get(getURL)
 		defer respInfo.Body.Close()
 
