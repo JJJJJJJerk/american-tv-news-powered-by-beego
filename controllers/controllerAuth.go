@@ -52,10 +52,10 @@ func (c *AuthController) GetRegister() {
 
 		var weiboResponseJson WeibAuth2Response
 		json.NewDecoder(resp.Body).Decode(&weiboResponseJson)
-		logs.Debug("auto token:", resp.Body)
+		logs.Debug("body token:", resp.Body)
 
-		logs.Debug("\nauto token:", weiboResponseJson)
-		logs.Debug("\nauto token:%v", weiboResponseJson.Uid, weiboResponseJson.Access_token)
+		logs.Debug("token struct:", weiboResponseJson)
+		logs.Debug("token uid and access token", weiboResponseJson.Uid, weiboResponseJson.Access_token)
 
 		if models.Gorm.Where("weibo_id = ?", weiboResponseJson.Uid).First(&user).RecordNotFound() == false {
 			//用户已注册
