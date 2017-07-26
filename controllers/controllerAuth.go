@@ -18,10 +18,8 @@ type AuthController struct {
 
 }
 type WeibAuth2Response struct {
-	Access_token string
-	Expires_in   uint
-	Remind_in    uint
-	Uid          uint
+	Access_token string `json:"access_token"`
+	Uid          uint   `json:"uid"`
 }
 
 type WeiboUser struct {
