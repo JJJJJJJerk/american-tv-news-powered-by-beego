@@ -9,7 +9,6 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
-	"github.com/prometheus/common/log"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -117,9 +116,9 @@ func (c *AuthController) PostRegister() {
 	isExistUser.Name = c.GetString("name")
 	isExistUser.WeiboAvatar = c.GetString("avatar_image")
 	wbId, _ := c.GetInt("weibo_id")
-	log.Debug("jerk:", wbId)
+	logs.Debug("jerk:", wbId)
 	isExistUser.WeiboId = uint(wbId)
-	log.Debug("jerk:", isExistUser.WeiboId)
+	logs.Debug("jerk:", isExistUser.WeiboId)
 
 	models.Gorm.Create(&isExistUser)
 	if isExistUser.ID < 1 {
