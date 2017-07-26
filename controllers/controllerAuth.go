@@ -79,7 +79,7 @@ func (c *AuthController) GetRegister() {
 		user.WeiboId = weiboUser.Id
 		user.Name = weiboUser.Name
 		user.AvatarImage = weiboUser.Avatar_large
-		user.Email = fmt.Sprint(weiboUser.Id, "@weibo.com")
+		user.Email = fmt.Sprint("weibo_", weiboUser.Id, "@mojotv.cn")
 	}
 	c.Data["User"] = user
 	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
@@ -132,7 +132,6 @@ func (c *AuthController) PostRegister() {
 		c.Data["json"] = map[string]interface{}{"status": "success", "message": "添加新用户成功", "data": nil}
 		c.ServeJSON()
 		return
-
 	}
 }
 
