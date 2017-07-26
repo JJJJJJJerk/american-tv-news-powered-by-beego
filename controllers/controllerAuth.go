@@ -60,16 +60,17 @@ func (c *AuthController) GetRegister() {
 			c.Redirect("/", 303)
 			return
 		}
-
 		//用户未注册     获取用户信息
 		getURL := fmt.Sprintf("https://api.weibo.com/2/users/show.json?access_token=%s&uid=%s", weiboResponseJson.Access_token, weiboResponseJson.Uid)
 		respInfo, _ := http.Get(getURL)
+		defer respInfo.Body.Close()
+
 		//解析json 获取token和uid
 		var weiboUser WeiboUser
 		json.NewDecoder(respInfo.Body).Decode(&weiboUser)
-		logs.Debug("\nweibo user info:%v", respInfo.Body)
-		logs.Debug("\nweibo user info:%v", weiboUser.Name)
-		logs.Debug("\nweibo user info:%v", weiboUser)
+		logs.Debug("weibo body info:%v", respInfo.Body)
+		logs.Debug("weibo name info:%v", weiboUser.Name)
+		logs.Debug("weibo struct info:%v", weiboUser)
 
 		user.WeiboId = weiboUser.Id
 		user.Name = weiboUser.Name
