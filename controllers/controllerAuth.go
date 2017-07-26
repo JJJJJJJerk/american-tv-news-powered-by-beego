@@ -92,7 +92,7 @@ func (c *AuthController) PostRegister() {
 	email := c.GetString("email")
 	var isExistUser models.User
 	models.Gorm.Where("email = ?", email).First(&isExistUser)
-	if isExistUser.ID > 0 && isExistUser.WeiboId < 0 {
+	if isExistUser.ID > 0 && isExistUser.WeiboId < 1 {
 		beego.Warning("用户已近存在")
 		c.Data["json"] = map[string]interface{}{"status": "error", "message": "email已经注册", "data": nil}
 		c.ServeJSON()
@@ -107,7 +107,9 @@ func (c *AuthController) PostRegister() {
 	isExistUser.Email = email
 	isExistUser.Password = string(hashedPassword)
 	isExistUser.Name = c.GetString("name")
-	isExistUser.AvatarImage = "trytv_default_avatar.png"
+	isExistUser.WeiboAvatar = c.GetString("avatar_image")
+	wbId, _ := c.GetInt("weibo_id")
+	isExistUser.WeiboId = uint(wbId)
 	models.Gorm.Create(&isExistUser)
 	if isExistUser.ID < 1 {
 		beego.Critical("用户注册数据库添加失败")

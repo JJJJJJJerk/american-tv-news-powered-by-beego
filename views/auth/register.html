@@ -6,6 +6,9 @@
       <div class="offset-sm-3 col-sm-6">
         <div class="card">
           <div class="card-header text-center">
+            {{if .User.WeiboId }}
+              <span class="fa fa-weibo text-danger"></span>
+            {{end}}
             用户注册
           </div>
           <div class="card-block">
@@ -23,7 +26,13 @@
               <div class="md-form mb-2">
                 <i class="fa fa-envelope prefix"></i>
                 <input type="email" id="form2" class="form-control validate" name="email" value="{{.User.Email}}">
-                <label for="form2" data-error="wrong" data-success="right">邮箱 Email</label>
+                <label for="form2" data-error="wrong" data-success="right">
+                  {{if .User.WeiboId }}
+                    <span class="text-danger">微博假邮箱,建议修改成自己的真实邮箱</span>
+                  {{else}}
+                    邮箱 Email
+                  {{end}}
+                </label>
               </div>
 
               <!--Password validation-->
