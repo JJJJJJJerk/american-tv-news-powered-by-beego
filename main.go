@@ -14,7 +14,7 @@ import (
 
 func main() {
 
-	beego.SetLogger("file", `{"filename":"test.log"}`)
+	beego.SetLogger("file", `{"filename":"weibologin.log"}`)
 
 	//spider.RunDygodMovieSpider()
 	//没56分钟27秒执行一次;

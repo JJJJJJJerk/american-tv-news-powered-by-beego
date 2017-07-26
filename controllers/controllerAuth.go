@@ -8,6 +8,7 @@ import (
 	"net/url"
 
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/logs"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -51,6 +52,7 @@ func (c *AuthController) GetRegister() {
 
 		var weiboResponseJson WeibAuth2Response
 		json.NewDecoder(resp.Body).Decode(&weiboResponseJson)
+		logs.Debug("auto token:", weiboResponseJson)
 
 		if models.Gorm.Where("weibo_id = ?", weiboResponseJson.Uid).First(&user).RecordNotFound() == false {
 			//用户已注册
@@ -64,6 +66,7 @@ func (c *AuthController) GetRegister() {
 		//解析json 获取token和uid
 		var weiboUser WeiboUser
 		json.NewDecoder(respInfo.Body).Decode(&weiboUser)
+		logs.Debug("weibo user info:", weiboUser)
 
 		user.WeiboId = weiboUser.Id
 		user.Name = weiboUser.Name
