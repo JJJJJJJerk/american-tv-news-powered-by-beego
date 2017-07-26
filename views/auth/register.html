@@ -13,7 +13,9 @@
               <!--user name validation-->
               <div class="md-form mb-2">
                 <i class="fa fa-user-circle-o prefix"></i>
-                <input type="text" name="name" id="form1" class="form-control validate" name="{{.User.Name}}">
+                <input type="text" name="weibo_id" hidden value="{{.User.WeiboId}}">
+                <input type="text" name="avatar_image" hidden value="{{.User.AvatarImage}}">
+                <input type="text" name="name" id="form1" class="form-control validate" value="{{.User.Name}}">
                 <label for="form1" data-error="wrong" data-success="right">姓名 Full name</label>
               </div>
 
@@ -50,7 +52,6 @@
                 <div class="col-xs-6">
                     <a href="/" class="btn btn-unique  btn-lg waves-effect waves-light btn-block">返回首页</a>
                 </div>
-
               </div>
             </form>
 

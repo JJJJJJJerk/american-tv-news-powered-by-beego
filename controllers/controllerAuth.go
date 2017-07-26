@@ -8,7 +8,6 @@ import (
 	"net/url"
 
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/logs"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -34,7 +33,6 @@ type WeiboUser struct {
 //sign up
 func (c *AuthController) GetRegister() {
 	user := models.User{}
-
 	//weibo auth2 回调
 	weiboCode := c.GetString("code")
 	if weiboCode != "" {
@@ -68,16 +66,13 @@ func (c *AuthController) GetRegister() {
 		//解析json 获取token和uid
 		var weiboUser WeiboUser
 		json.NewDecoder(respInfo.Body).Decode(&weiboUser)
-		logs.Debug("weibo body info:%v", respInfo.Body)
-		logs.Debug("weibo name info:%v", weiboUser.Name)
-		logs.Debug("weibo struct info:%v", weiboUser)
+		//logs.Debug("weibo name info:%v", weiboUser.Name)
+		//logs.Debug("weibo struct info:%v", weiboUser)
 
 		user.WeiboId = weiboUser.Id
 		user.Name = weiboUser.Name
 		user.AvatarImage = weiboUser.Avatar_large
 		user.Email = fmt.Sprint(weiboUser.Id, "@weibo.com")
-		user.AvatarImage = weiboUser.Avatar_large
-		models.Gorm.Create(&user)
 	}
 	c.Data["User"] = user
 	c.Data["Xsrf"] = c.XSRFToken() //防止跨域
