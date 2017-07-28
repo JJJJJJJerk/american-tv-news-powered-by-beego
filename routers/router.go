@@ -13,6 +13,8 @@ import (
 //
 func init() {
 	beego.Router("/", &controllers.HomeController{}, "get:Get")
+	beego.Router("/toutiao-is-awesome", &controllers.AuthController{}, "get:ToutiaoAd")
+
 	// //注册自动路由
 
 	beego.Router("/tag/:id([0-9]+)", &controllers.TagController{}, "get:View") //匹配:id 是数字的路由

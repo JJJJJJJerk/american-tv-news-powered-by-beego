@@ -19,3 +19,5 @@ func (c *HomeController) Get() {
 	c.Layout = "layout/base_index.html"
 	c.TplName = "home/index.html"
 }
+
+
