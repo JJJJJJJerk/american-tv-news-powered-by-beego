@@ -1,3 +1,7 @@
+ {{if .Article.VideoTitle}}
+<h5 class="text-center mt-1"><span class="fa fa-video-camera mr-1 text-danger"></span>{{.Article.VideoTitle}}<span class="fa fa-video-camera ml-1 text-danger"></span></h5>
+{{end}} 
+
 {{if .Article.VideoYoukuId}}
 <div class="embed-responsive embed-responsive-16by9">
     <video id="jerk" controls data-idx='0' data-idx='9999'></video>
@@ -152,7 +156,8 @@
     });
 
 </script>
-{{end}} {{if .Article.VideoMiaopaiId }}
+{{end}} 
+{{if .Article.VideoMiaopaiId }}
 <div class="embed-responsive embed-responsive-16by9 mb-1">
     <video controls src="//gslb.miaopai.com/stream/{{.Article.VideoMiaopaiId}}.mp4"></video>
 </div>
@@ -167,5 +172,6 @@
         $('#video-div').fadeIn().show();
 
     });
+
 </script>
 {{end}}

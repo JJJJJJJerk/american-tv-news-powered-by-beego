@@ -29,6 +29,7 @@ type Article struct {
 	KeyWord     string
 	Description string
 	CoverageUri string
+	VideoTitle  string
 	Images      []Image
 	Tags        []Tag  `gorm:"many2many:article_tag;"`
 	Shows       []Show `gorm:"many2many:article_show;"`
