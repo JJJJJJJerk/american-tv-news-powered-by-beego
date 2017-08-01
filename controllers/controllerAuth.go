@@ -186,13 +186,12 @@ func (c *AuthController) GetLogout() {
 	c.Redirect("/", 302)
 }
 
-
-
 func (c *AuthController) ToutiaoAd() {
+	c.Redirect("/", 301)
 
-	c.Data["Title"] = "mojoTV美剧|最新最快最热的美剧周边资讯"
-	c.Data["Keyword"] = "mojoTV美剧,轻松学英语,欧美美剧资讯,国外搞笑小视频,"
-	c.Data["Description"] = "mojoTV美剧|提供最新最热最快最热的美剧资讯,海量英语学习资源,欧美搞笑有创意的短视频gif动图,海量美剧双语原生字幕,这里是英语爱好者的乐园,让每一个人都爱上学习英语"
-	c.Layout = "layout/base_index.html"
-	c.TplName = "home/toutiaoAd.html"
+	// c.Data["Title"] = "mojoTV美剧|最新最快最热的美剧周边资讯"
+	// c.Data["Keyword"] = "mojoTV美剧,轻松学英语,欧美美剧资讯,国外搞笑小视频,"
+	// c.Data["Description"] = "mojoTV美剧|提供最新最热最快最热的美剧资讯,海量英语学习资源,欧美搞笑有创意的短视频gif动图,海量美剧双语原生字幕,这里是英语爱好者的乐园,让每一个人都爱上学习英语"
+	// c.Layout = "layout/base_index.html"
+	// c.TplName = "home/toutiaoAd.html"
 }
