@@ -31,7 +31,7 @@ type Crumb struct {
 // }
 
 func (this *BaseController) Prepare() {
-	this.Data["WeiboAuth2Url"] = "https://api.weibo.com/oauth2/authorize?client_id=2646862509&response_type=code&redirect_uri=https://www.mojotv.cn/auth/register&display=mobile"
+	this.Data["WeiboAuth2Url"] = "https://api.weibo.com/oauth2/authorize?client_id=2646862509&response_type=code&redirect_uri=http://www.mojotv.cn/auth/register&display=mobile"
 	sessionUser := this.GetSession(AuthSessionName)
 	if sessionUser == nil {
 		this.Data["User"] = nil
