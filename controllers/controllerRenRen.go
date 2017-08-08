@@ -143,6 +143,7 @@ func (c *RenRenController) cacheOrPostReturnJson(cacheKey string, apiURI string,
 			models.CacheManager.Set(cacheKey, string(content), models.C_EXPIRE_TIME_HOUR_01)
 		}
 	}
+
 	c.Ctx.Output.Header("Content-Type", "application/json; charset=utf-8")
 	c.Ctx.Output.Body(content)
 	return
