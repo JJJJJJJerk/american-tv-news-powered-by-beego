@@ -95,7 +95,7 @@ func (c *RenRenController) Season() {
 	seasonId := c.GetString(":seasonId")
 	cacheKey := fmt.Sprint(SERVER, apiURI, "/seasonId/", seasonId)
 	paraData := url.Values{
-		"seasonId": {"seasonId"},
+		"seasonId": {seasonId},
 	}
 	c.cacheOrPostReturnJson(cacheKey, apiURI, paraData, FakeHeader)
 }
