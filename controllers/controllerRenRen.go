@@ -105,7 +105,7 @@ func (c *RenRenController) Album() {
 	albumId := c.GetString(":albumId")
 	cacheKey := fmt.Sprint(SERVER, apiURI, "/albumId/", albumId)
 	paraData := url.Values{
-		"albumId": {"albumId"},
+		"albumId": {albumId},
 	}
 	c.cacheOrPostReturnJson(cacheKey, apiURI, paraData, FakeHeader)
 }
