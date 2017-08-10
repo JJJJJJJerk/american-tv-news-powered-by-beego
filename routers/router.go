@@ -39,7 +39,7 @@ func init() {
 
 	beego.Router("/rrv/index", &controllers.RenRenController{}, "get:Index")
 	beego.Router("/rrv/m3u8/:episodeSid([0-9]+)", &controllers.RenRenController{}, "get:M3u8")
-	beego.Router("/rrv/search/:keyword:string", &controllers.RenRenController{}, "get:Search")
+	beego.Router("/rrv/search/:keyword", &controllers.RenRenController{}, "get:Search")
 	beego.Router("/rrv/top", &controllers.RenRenController{}, "get:Top")
 	beego.Router("/rrv/hot", &controllers.RenRenController{}, "get:Hot")
 	beego.Router("/rrv/season/:seasonId([0-9]+)", &controllers.RenRenController{}, "get:Season")
