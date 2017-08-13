@@ -14,16 +14,21 @@ type VideoParseController struct {
 
 func (c *VideoParseController) Index() {
 	cacheKey := c.GetString("video")
-	cacheKey = fmt.Sprint("'", cacheKey, "'")
+	//cacheKey = fmt.Sprint("'", cacheKey, "'")
 	var content []byte
 	if x, found := models.CacheManager.Get(cacheKey); found {
 		foo := x.(string)
 		content = []byte(foo)
 	} else {
-		cmd := exec.Command("you-get", "--json", cacheKey)
+		cmdString := "you-get"
+
+		cmd := exec.Command(cmdString, "-u", cacheKey)
 		output, err := cmd.CombinedOutput()
+		fmt.Println(string(output))
+
 		if err != nil {
-			fmt.Println(string(output))
+			fmt.Println(err)
+
 			fmt.Println(string(output))
 		} else {
 			content = output
