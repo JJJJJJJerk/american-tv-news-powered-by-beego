@@ -47,6 +47,4 @@ func init() {
 	beego.Router("/rrv/category/:categoryType/pages/:pages([0-9]+)", &controllers.RenRenController{}, "get:Category")
 	//category
 
-	beego.Router("/api/video-parse", &controllers.VideoParseController{}, "get:Index")
-
 }
