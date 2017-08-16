@@ -24,6 +24,8 @@ type Image struct {
 	Width               uint
 	Height              uint
 	Format              string
+	Translation         string
+	ImgurId             uint
 	Src                 string `gorm:"-"`
 	OriginWithWaterMark string `gorm:"-"`
 }

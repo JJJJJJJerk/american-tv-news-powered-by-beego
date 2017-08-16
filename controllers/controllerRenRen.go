@@ -15,7 +15,7 @@ import (
 
 const SERVER = "http://api.rr.tv"
 const SECRET_KEY = "clientSecret=08a30ffbc8004c9a916110683aab0060"
-const TOKEN = "5f8f489d12f64488aa310334f32153b4"
+const TOKEN = "945e82b94c08447aafe45e6051159737"
 
 var FakeHeader = http.Header{
 	"token":         {TOKEN},

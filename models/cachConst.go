@@ -9,6 +9,7 @@ import (
 const CK_QUOTE = "ck.base.quotes.5random"
 const CK_IMG_5_RANDOM = "ck.base.images.5random"
 const CK_TAG_ALL = "ck.base.tags.all"
+const CK_Imgur_ALL = "ck.base.imgur.all"
 
 const C_EXPIRE_TIME_FOREVER = -1
 const C_EXPIRE_TIME_YEAR = time.Hour * 24 * 365
