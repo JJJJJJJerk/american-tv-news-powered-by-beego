@@ -1,6 +1,6 @@
 <!--正文部分-->
 
-<div class="row no-gutters">
+<div class="row no-gutters" id="subtitle">
     {{range $index, $value := .Subtitles}}
     <div class="col-sm-12 col-md-6 col-lg-4 pb-1 pl-1 subtitle-container">
         <div class="card">
@@ -47,7 +47,7 @@
     function setSubtilteWithColor(){
         var colorClasses = ['danger-color', 'orange', 'primary-color', 'success-color', 'info-color', 'warning-color', 'default-color'];
         var count = colorClasses.length;
-        $('div.row.no-gutters > div.subtitle-container >div.card >div.text-white.text-center').removeClass(colorClasses[0]).addClass(function (idx, classString) {
+        $('#subtitle > div.subtitle-container >div.card >div.text-white.text-center').removeClass(colorClasses[0]).addClass(function (idx, classString) {
             return colorClasses[idx%count];
         });
     }
@@ -59,16 +59,16 @@
     var offset = 30; /*offset*/
     var size = 18;
     function fillJsonDataIntoDomeNode(subObj) {
-        cloneNode = $(' div.row.no-gutters > div.subtitle-container:first').clone();
 
-        cloneNode.find('p.subtitle-title-zh').text(subObj.Name_Zh);
-        cloneNode.find('p.subtitle-title-en').text(subObj.Name_En);
+        cloneNode = $(' #subtitle > div.subtitle-container:first').clone();
+
+        cloneNode.find('p.subtitle-title-zh').text(subObj.NameZh);
+        cloneNode.find('p.subtitle-title-en').text(subObj.NameEn);
         cloneNode.find('ul.col-9 > li:nth-child(1) > small').text(subObj.HumamTime)
         cloneNode.find('ul.col-9 > li:nth-child(2) > small').text(subObj.Lang)
         cloneNode.find('ul.col-9 > li:nth-child(3) > small').text(subObj.Format)
         cloneNode.find('ul.col-9 > li:nth-child(4) > small').text(subObj.FileName)
         cloneNode.find('a.subtitle').attr('href',subObj.OssUrl).attr('download',subObj.FileName)
-
         $('div.row.no-gutters').append(cloneNode);
     }
     function getData() {
