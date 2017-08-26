@@ -46,5 +46,7 @@ func init() {
 	beego.Router("/rrv/album/:albumId([0-9]+)", &controllers.RenRenController{}, "get:Album")
 	beego.Router("/rrv/category/:categoryType/pages/:pages([0-9]+)", &controllers.RenRenController{}, "get:Category")
 	//category
+	//微信文章API
+	beego.Router("/wx-api/article/index/:offset([0-9]+)/:size([0-9]+)", &controllers.WxApiController{}, "get:ArticleIndex")
 
 }

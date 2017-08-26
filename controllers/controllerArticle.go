@@ -10,21 +10,6 @@ type ArticleController struct {
 	BaseController
 }
 
-func (c *ArticleController) Index() {
-
-	articles := []models.Article{}
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
-
-	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "fa fa-home", "资讯"}}
-	c.Data["Articles"] = articles
-	c.Data["Keyword"] = "美剧keywords"
-	c.Data["Description"] = "美剧描述"
-	c.Data["Title"] = "美剧资讯"
-
-	c.Layout = "layout/base.html"
-	c.TplName = "article/index.html"
-}
-
 func (c *ArticleController) View() {
 	articleID, _ := c.GetInt(":id")
 	//浏览计数
@@ -64,10 +49,8 @@ func (c *ArticleController) View() {
 
 func (c *ArticleController) LoadMore() {
 	offset, _ := c.GetInt("offset")
-	size := 6
 	//tagId, _ := c.GetInt("tagId")
-	articles := []models.Article{}
-	models.Gorm.Offset(offset).Limit(size).Order("created_at DESC").Preload("Tags").Preload("Vote").Preload("Images").Find(&articles)
+	articles := models.GetBatchArticles(offset, 6)
 	c.JsonRetrun("success", "欢迎访问我们的小站", articles)
 }
 

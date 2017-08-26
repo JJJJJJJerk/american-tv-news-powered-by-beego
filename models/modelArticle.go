@@ -3,6 +3,7 @@ package models
 //http://jinzhu.me/gorm/ gorm 文档
 
 import (
+	"encoding/json"
 	"math"
 	"time"
 
@@ -179,4 +180,20 @@ func CovertTimeToHumanTime(t time.Time) (humanTimeString string) {
 		humanTimeString = t.Format("2006-01-02")
 		return
 	}
+}
+
+//首页获取文章地址;
+func GetBatchArticles(offset, size int) (articles []Article) {
+	cacheKey := fmt.Sprint("home_articles_fetch_", offset, "_", size)
+	//fmt.Println(cacheKey)
+	if x, found := CacheManager.Get(cacheKey); found {
+		foo := x.(string)
+		buffffer := []byte(foo)
+		json.Unmarshal(buffffer, &articles)
+	} else {
+		Gorm.Offset(offset).Limit(size).Order("created_at DESC").Preload("Tags").Preload("Vote").Preload("Images").Find(&articles)
+		data, _ := json.Marshal(articles)
+		CacheManager.Set(CK_TAG_ALL, string(data), C_EXPIRE_TIME_MIN_15)
+	}
+	return
 }

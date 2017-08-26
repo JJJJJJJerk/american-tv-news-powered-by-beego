@@ -9,8 +9,7 @@ type HomeController struct {
 }
 
 func (c *HomeController) Get() {
-	articles := []models.Article{}
-	models.Gorm.Limit(models.PageSize).Order("created_at DESC").Preload("Vote").Preload("Tags").Preload("Images").Find(&articles)
+	articles := models.GetBatchArticles(0, models.PageSize)
 	c.Data["BreadCrumbs"] = []Crumb{{"/", "fa fa-home", "首页"}, {"/article", "fa fa-fire", "资讯"}}
 	c.Data["Articles"] = articles
 	c.Data["Title"] = "mojoTV资讯|最新最快最热的美剧周边资讯"
