@@ -18,3 +18,10 @@ func (c *WxApiController) ArticleIndex() {
 	c.Data["json"] = &articles
 	c.ServeJSON()
 }
+func (c *WxApiController) LoadMore() {
+	offset, _ := c.GetInt(":offset", 0)
+	//tagId, _ := c.GetInt("tagId")
+	articles := models.GetBatchArticles(offset, 6)
+	c.Data["json"] = &articles
+	c.ServeJSON()
+}

@@ -48,5 +48,6 @@ func init() {
 	//category
 	//微信文章API
 	beego.Router("/wx-api/article/index/:offset([0-9]+)/:size([0-9]+)", &controllers.WxApiController{}, "get:ArticleIndex")
+	beego.Router("/wx-api/article/load-more/:offset([0-9]+)", &controllers.WxApiController{}, "get:LoadMore")
 
 }
