@@ -193,7 +193,21 @@ func GetBatchArticles(offset, size int) (articles []Article) {
 	} else {
 		Gorm.Offset(offset).Limit(size).Order("created_at DESC").Preload("Tags").Preload("Vote").Preload("Images").Find(&articles)
 		data, _ := json.Marshal(articles)
-		CacheManager.Set(CK_TAG_ALL, string(data), C_EXPIRE_TIME_MIN_15)
+		CacheManager.Set(cacheKey, string(data), C_EXPIRE_TIME_MIN_15)
+	}
+	return
+}
+func GetBatchArticlesForWx(offset, size int) (articles []Article) {
+	cacheKey := fmt.Sprint("home_articles_fetch_for_wx", offset, "_", size)
+	//fmt.Println(cacheKey)
+	if x, found := CacheManager.Get(cacheKey); found {
+		foo := x.(string)
+		buffffer := []byte(foo)
+		json.Unmarshal(buffffer, &articles)
+	} else {
+		Gorm.Offset(offset).Limit(size).Order("created_at DESC").Preload("Tags").Preload("Images").Where("url_video LIKE ?", "%.youku.%").Find(&articles)
+		data, _ := json.Marshal(articles)
+		CacheManager.Set(cacheKey, string(data), C_EXPIRE_TIME_MIN_15)
 	}
 	return
 }
