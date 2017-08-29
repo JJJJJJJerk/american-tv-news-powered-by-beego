@@ -7,7 +7,6 @@ import (
 //http://jinzhu.me/gorm/ gorm 文档
 
 const CK_QUOTE = "ck.base.quotes.5random"
-const CK_IMG_5_RANDOM = "ck.base.images.5random"
 const CK_TAG_ALL = "ck.base.tags.all"
 const CK_Imgur_ALL = "ck.base.imgur.all"
 
