@@ -22,13 +22,12 @@ type Imgur struct {
 func FetchAllImgurCached() (imgurs []Imgur) {
 
 	if x, found := CacheManager.Get(CK_Imgur_ALL); found {
-		foo := x.(string)
-		buffffer := []byte(foo)
-		json.Unmarshal(buffffer, &imgurs)
+		buffer := x.([]byte)
+		json.Unmarshal(buffer, &imgurs)
 	} else {
 		Gorm.Preload("Images").Find(&imgurs)
-		data, _ := json.Marshal(imgurs)
-		CacheManager.Set(CK_Imgur_ALL, string(data), C_EXPIRE_TIME_HOUR_01)
+		buffer, _ := json.Marshal(imgurs)
+		CacheManager.Set(CK_Imgur_ALL,buffer, C_EXPIRE_TIME_HOUR_01)
 	}
 	return
 }

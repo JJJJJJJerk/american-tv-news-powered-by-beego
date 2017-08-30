@@ -20,15 +20,12 @@ type Quote struct {
 
 func Get3RandomQuote() (quotes []Quote) {
 	if x, found := CacheManager.Get(CK_QUOTE); found {
-		foo := x.(string)
-		buffffer := []byte(foo)
-		var items []Quote
-		json.Unmarshal(buffffer, &items)
-		quotes = items
+		buffer := x.([]byte)
+		json.Unmarshal(buffer, &quotes)
 	} else {
 		quotes = QuoteRandom3()
-		data, _ := json.Marshal(quotes)
-		CacheManager.Set(CK_QUOTE, string(data), C_EXPIRE_TIME_FOREVER)
+		buffer, _ := json.Marshal(&quotes)
+		CacheManager.Set(CK_QUOTE, buffer, C_EXPIRE_TIME_FOREVER)
 	}
 	return
 }

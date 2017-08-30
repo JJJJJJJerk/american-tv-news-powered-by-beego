@@ -187,13 +187,12 @@ func GetBatchArticles(offset, size int) (articles []Article) {
 	cacheKey := fmt.Sprint("home_articles_fetch_", offset, "_", size)
 	//fmt.Println(cacheKey)
 	if x, found := CacheManager.Get(cacheKey); found {
-		foo := x.(string)
-		buffffer := []byte(foo)
-		json.Unmarshal(buffffer, &articles)
+		buffer := x.([]byte)
+		json.Unmarshal(buffer, &articles)
 	} else {
 		Gorm.Offset(offset).Limit(size).Order("created_at DESC").Preload("Tags").Preload("Vote").Preload("Images").Find(&articles)
-		data, _ := json.Marshal(articles)
-		CacheManager.Set(cacheKey, string(data), C_EXPIRE_TIME_MIN_15)
+		buffer, _ := json.Marshal(articles)
+		CacheManager.Set(cacheKey, buffer, C_EXPIRE_TIME_MIN_15)
 	}
 	return
 }
@@ -201,13 +200,13 @@ func GetBatchArticlesForWx(offset, size int) (articles []Article) {
 	cacheKey := fmt.Sprint("home_articles_fetch_for_wx", offset, "_", size)
 	//fmt.Println(cacheKey)
 	if x, found := CacheManager.Get(cacheKey); found {
-		foo := x.(string)
-		buffffer := []byte(foo)
-		json.Unmarshal(buffffer, &articles)
+		buffer := x.([]byte)
+		//buffer
+		json.Unmarshal(buffer, &articles)
 	} else {
 		Gorm.Offset(offset).Limit(size).Order("created_at DESC").Preload("Tags").Preload("Images").Where("url_video LIKE ?", "%.youku.%").Find(&articles)
-		data, _ := json.Marshal(articles)
-		CacheManager.Set(cacheKey, string(data), C_EXPIRE_TIME_MIN_15)
+		buffer, _ := json.Marshal(articles)
+		CacheManager.Set(cacheKey, buffer, C_EXPIRE_TIME_MIN_15)
 	}
 	return
 }

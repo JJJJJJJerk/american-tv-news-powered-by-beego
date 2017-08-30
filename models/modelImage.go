@@ -55,15 +55,14 @@ func Fetch5RandomQuoteImage() (images []Image) {
 func Fetch5RandomQuoteImageCached() (images []Image) {
 	const cachKey = "ck.base.images.5random"
 	if x, found := CacheManager.Get(cachKey); found {
-		foo := x.(string)
-		buffffer := []byte(foo)
+		buffer := x.([]byte)
 		var items []Image
-		json.Unmarshal(buffffer, &items)
+		json.Unmarshal(buffer, &items)
 		images = items
 	} else {
 		images = Fetch5RandomQuoteImage()
-		data, _ := json.Marshal(images)
-		CacheManager.Set(cachKey, string(data), C_EXPIRE_TIME_HOUR_03)
+		buffer, _ := json.Marshal(images)
+		CacheManager.Set(cachKey, buffer, C_EXPIRE_TIME_HOUR_03)
 	}
 	return
 }

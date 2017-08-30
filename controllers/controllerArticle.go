@@ -23,14 +23,14 @@ func (c *ArticleController) View() {
 	cacheKey := fmt.Sprint("mojotv.article_detail.", articleID)
 	//fmt.Println(cacheKey)
 	if x, found := models.CacheManager.Get(cacheKey); found {
-		foo := x.(string)
-		buffffer := []byte(foo)
-		json.Unmarshal(buffffer, &article)
+		//x 就是 []byte
+		buffer := x.([]byte)
+		json.Unmarshal(buffer, &article)
 	} else {
 		if models.Gorm.Preload("Tags").Preload("Images").Preload("Shows").First(&article, articleID).RecordNotFound() {
 			c.Abort("404")
 		}
-		data, _ := json.Marshal(article)
+		buffer, _ := json.Marshal(article)
 		var expireTime time.Duration
 		if article.UpdatedAt.After(time.Now().Add(-time.Minute * 30)) {
 			expireTime = time.Minute * 2
@@ -51,7 +51,7 @@ func (c *ArticleController) View() {
 		} else {
 			expireTime = models.C_EXPIRE_TIME_FOREVER
 		}
-		models.CacheManager.Set(cacheKey, string(data), expireTime)
+		models.CacheManager.Set(cacheKey, buffer, expireTime)
 	}
 
 	//设置head seo参数
