@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"my_go_web/models"
+	"time"
 )
 
 type ArticleController struct {
@@ -18,9 +19,39 @@ func (c *ArticleController) View() {
 	vote.Visit++
 	models.Gorm.Model(&vote).Update("visit")
 
-	article := models.Article{}
-	if models.Gorm.Preload("Tags").Preload("Images").Preload("Shows").First(&article, articleID).RecordNotFound() {
-		c.Abort("404")
+	var article models.Article
+	cacheKey := fmt.Sprint("mojotv.article_detail.", articleID)
+	//fmt.Println(cacheKey)
+	if x, found := models.CacheManager.Get(cacheKey); found {
+		foo := x.(string)
+		buffffer := []byte(foo)
+		json.Unmarshal(buffffer, &article)
+	} else {
+		if models.Gorm.Preload("Tags").Preload("Images").Preload("Shows").First(&article, articleID).RecordNotFound() {
+			c.Abort("404")
+		}
+		data, _ := json.Marshal(article)
+		var expireTime time.Duration
+		if article.UpdatedAt.After(time.Now().Add(-time.Minute * 30)) {
+			expireTime = time.Minute * 2
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 2)) {
+			expireTime = time.Minute * 15
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 6)) {
+			expireTime = time.Minute * 30
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 12)) {
+			expireTime = time.Hour * 1
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24)) {
+			expireTime = time.Hour * 2
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 48)) {
+			expireTime = time.Hour * 6
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24 * 3)) {
+			expireTime = time.Hour * 24
+		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24 * 7)) {
+			expireTime = time.Hour * 48
+		} else {
+			expireTime = models.C_EXPIRE_TIME_FOREVER
+		}
+		models.CacheManager.Set(cacheKey, string(data), expireTime)
 	}
 
 	//设置head seo参数
