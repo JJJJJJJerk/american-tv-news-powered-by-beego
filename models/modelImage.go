@@ -63,7 +63,7 @@ func Fetch5RandomQuoteImageCached() (images []Image) {
 	} else {
 		images = Fetch5RandomQuoteImage()
 		data, _ := json.Marshal(images)
-		CacheManager.Set(cachKey, string(data), C_EXPIRE_TIME_HOUR_01)
+		CacheManager.Set(cachKey, string(data), C_EXPIRE_TIME_HOUR_03)
 	}
 	return
 }
