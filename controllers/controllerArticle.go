@@ -32,23 +32,11 @@ func (c *ArticleController) View() {
 		}
 		buffer, _ := json.Marshal(article)
 		var expireTime time.Duration
-		if article.UpdatedAt.After(time.Now().Add(-time.Minute * 30)) {
+		if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24)) {
 			expireTime = time.Minute * 2
-		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 2)) {
-			expireTime = time.Minute * 15
-		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 6)) {
-			expireTime = time.Minute * 30
-		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 12)) {
-			expireTime = time.Hour * 1
-		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24)) {
-			expireTime = time.Hour * 2
 		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 48)) {
 			expireTime = time.Hour * 6
 		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24 * 3)) {
-			expireTime = time.Hour * 24
-		} else if article.UpdatedAt.After(time.Now().Add(-time.Hour * 24 * 7)) {
-			expireTime = time.Hour * 48
-		} else {
 			expireTime = models.C_EXPIRE_TIME_FOREVER
 		}
 		models.CacheManager.Set(cacheKey, buffer, expireTime)
