@@ -30,11 +30,7 @@ func init() {
 	beego.Router("/auth/register", &controllers.AuthController{}, "get:GetRegister")
 	beego.Router("/auth/register", &controllers.AuthController{}, "post:PostRegister")
 	beego.Router("/auth/logout", &controllers.AuthController{}, "get:GetLogout")
-
-	// beego.AutoRouter(&controllers.ImageController{}) //对image使用自动路由
-	beego.Router("/subtitle", &controllers.SubtitleController{}, "get:Index")
-	beego.Router("/subtitle/load-more", &controllers.SubtitleController{}, "post:LoadMore")
-
+	
 	beego.Router("/video/weibo-parse", &controllers.VideoController{}, "post:WeiboVideoParse")
 
 	beego.Router("/rrv/index", &controllers.RenRenController{}, "get:Index")
