@@ -30,7 +30,7 @@ func init() {
 	beego.Router("/auth/register", &controllers.AuthController{}, "get:GetRegister")
 	beego.Router("/auth/register", &controllers.AuthController{}, "post:PostRegister")
 	beego.Router("/auth/logout", &controllers.AuthController{}, "get:GetLogout")
-	
+
 	beego.Router("/video/weibo-parse", &controllers.VideoController{}, "post:WeiboVideoParse")
 
 	beego.Router("/rrv/index", &controllers.RenRenController{}, "get:Index")
@@ -44,5 +44,9 @@ func init() {
 	//category
 	//微信文章API
 	beego.Router("/wx-api/article/index/:offset([0-9]+)/:size([0-9]+)", &controllers.WxApiController{}, "get:ArticleIndex")
+
+	//范西特视频
+	beego.Router("/ftv/:mcid([0-9]+)/:vid([0-9]+)/:cid([0-9]+)", &controllers.FantasyController{}, "get:Index")
+	
 
 }

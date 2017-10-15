@@ -13,7 +13,7 @@ import (
 	"github.com/astaxie/beego"
 )
 
-const SERVER = "http://api.rr.tv"
+const SERVER = "https://api.rr.tv"
 const SECRET_KEY = "clientSecret=08a30ffbc8004c9a916110683aab0060"
 
 //const TOKEN = "945e82b94c08447aafe45e6051159737"
@@ -47,15 +47,16 @@ var TOKENS = []string{
 var tokenIndex = 0
 
 func generateFakeHeader() (headers http.Header) {
-	var randomToken = TOKENS[tokenIndex%(len(TOKENS))]
+	// var randomToken = TOKENS[tokenIndex%(len(TOKENS))]
 	return http.Header{
-		"token":         {randomToken},
-		"clientType":    {"android_%E8%B1%8C%E8%B1%86%E8%8D%9A"},
-		"clientVersion": {"3.5.3.1"},
-		"deviceId":      {"861134030056126"},
-		"signature":     {"643c184f77372e364550e77adc0360cd"},
-		"t":             {"1491433993933"},
-		"Content-Type":  {"application/x-www-form-urlencoded"},
+		"token":          {"6b6cfdd3e90843c0a0914425638db7ef"},
+		"clientType":     {"android_RRMJ"},
+		"clientVersion":  {"3.6.3"},
+		"deviceId":       {"861134030056126"},
+		"signature":      {"643c184f77372e364550e77adc0360cd"},
+		"t":              {"1491433993933"},
+		"Content-Type":   {"application/x-www-form-urlencoded"},
+		"Authentication": {"RRTV 470164b995ea4aa5a53f9e5cbceded472:IxIYBj:LPWfRb:I9gvePR5R2N8muXD7NWPCj"},
 	}
 }
 
