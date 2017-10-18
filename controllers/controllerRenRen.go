@@ -77,7 +77,7 @@ func (c *RenRenController) M3u8() {
 	var FakeHeader = generateFakeHeader()
 	var episodeSid = c.GetString(":episodeSid")
 	//https://github.com/wilsonwen/kanmeiju/blob/adc56d8665b3c99a8d48df3cc2f1eaf623f7be6e/index.js line203
-	apiURI := "/video/findM3u8ByEpisodeSid"
+	apiURI := "/video/findM3u8ByEpisodeSidAuth"
 	cacheKey := fmt.Sprint(SERVER, apiURI, "/episodeSid/", episodeSid)
 
 	paraData := url.Values{
