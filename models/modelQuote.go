@@ -12,7 +12,7 @@ import (
 
 type Quote struct {
 	gorm.Model
-	English  string `json:"english";`
+	English  string `json: "english";`
 	Chinese  string `json:"chinese";`
 	Writer   string `gorm:"size:255";json:"writer";`
 	ImageUri string `orm:"column(body)";json:"image_uri";`

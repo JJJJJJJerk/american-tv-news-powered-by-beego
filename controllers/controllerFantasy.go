@@ -6,7 +6,7 @@ import (
 
 	"io/ioutil"
 	"math/rand"
-	"my_go_web/models"
+	"www.mojotv.cn/models"
 	"net/http"
 
 	"github.com/astaxie/beego"

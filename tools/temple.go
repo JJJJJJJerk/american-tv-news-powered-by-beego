@@ -3,7 +3,8 @@ package tools
 //防止模板相关的方便函数
 import (
 	"fmt"
-	"my_go_web/models"
+
+	"www.mojotv.cn/models"
 
 	"github.com/astaxie/beego"
 )

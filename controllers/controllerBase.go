@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"my_go_web/models"
+	"www.mojotv.cn/models"
 
 	"github.com/astaxie/beego"
 )

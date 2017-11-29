@@ -3,10 +3,10 @@ package main
 import (
 	//init(register) html-template function ...
 
-	"my_go_web/controllers"
-	_ "my_go_web/models"
-	_ "my_go_web/routers"
-	_ "my_go_web/tools" //init reuters
+	"www.mojotv.cn/controllers"
+	_ "www.mojotv.cn/models"
+	_ "www.mojotv.cn/routers"
+	_ "www.mojotv.cn/tools" //init reuters
 	//init(register) html-template function ...
 
 	"github.com/astaxie/beego"

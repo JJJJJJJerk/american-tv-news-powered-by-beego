@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"my_go_web/models"
+	"www.mojotv.cn/models"
 	"net/http"
 	"net/url"
 

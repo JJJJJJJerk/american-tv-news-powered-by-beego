@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"my_go_web/controllers"
+	"www.mojotv.cn/controllers"
 
 	"github.com/astaxie/beego"
 )
@@ -47,6 +47,5 @@ func init() {
 
 	//范西特视频
 	beego.Router("/ftv/:mcid([0-9]+)/:vid([0-9]+)/:cid([0-9]+)", &controllers.FantasyController{}, "get:Index")
-	
 
 }

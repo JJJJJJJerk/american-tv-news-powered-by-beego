@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"fmt"
-	"my_go_web/models"
+	"www.mojotv.cn/models"
 )
 
 type TagController struct {
