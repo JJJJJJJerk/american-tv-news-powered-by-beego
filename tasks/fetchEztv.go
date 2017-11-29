@@ -32,11 +32,11 @@ type EztvXmlEpisode struct {
 func init() {
 	//创建定时任务
 	taskFetchEztvXml := toolbox.NewTask("fetch-eztv", "43 13 8-20 * * *", fetchEztvXmlThenParse)
-	err := taskFetchEztvXml.Run()
+	//err := taskFetchEztvXml.Run()
 	//检测定时任务
-	if err != nil {
-		log.Fatal(err)
-	}
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 	//添加定时任务
 	toolbox.AddTask("fetch-eztv", taskFetchEztvXml)
 	//启动定时任务
