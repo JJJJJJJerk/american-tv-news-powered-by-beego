@@ -6,7 +6,7 @@ import (
 	"www.mojotv.cn/controllers"
 	_ "www.mojotv.cn/models"
 	_ "www.mojotv.cn/routers"
-	_ "www.mojotv.cn/tasks"//启动定时任务
+	_ "www.mojotv.cn/tasks" //启动定时任务
 	_ "www.mojotv.cn/tools" //init reuters
 	//init(register) html-template function ...
 
@@ -33,5 +33,4 @@ func main() {
 		ExposeHeaders:   []string{"Content-Length", "Access-Control-Allow-Origin"},
 	}))
 	beego.Run()
-
 }
